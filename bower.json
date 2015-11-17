@@ -1,0 +1,18 @@
+{
+  "name": "image-api-spec",
+  "version": "2.3.1",
+  "homepage": "https://github.com/imgix/image-api-spec",
+  "authors": [
+    "Jason Eberle <jason@imgix.com>"
+  ],
+  "description": "A single source of truth for the imgix URL API",
+  "main": [
+    "dist/parameters.json",
+    "dist/parameters.js"
+  ],
+  "ignore": [
+    ".*",
+    "README.md",
+    "package.json"
+  ]
+}

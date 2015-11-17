@@ -1,0 +1,1730 @@
+(function (root, factory) {
+  if (typeof define === 'function' && define.amd) {
+    // AMD. Register as an anonymous module unless amdModuleId is set
+    define([], function () {
+      return (factory());
+    });
+  } else if (typeof exports === 'object') {
+    // Node. Does not work with strict CommonJS, but
+    // only CommonJS-like environments that support module.exports,
+    // like Node.
+    module.exports = factory();
+  } else {
+    root['imgixParameters'] = factory();
+  }
+}(this, function () {
+
+return {
+	"parameters": {
+		"auto": {
+			"display_name": "auto features",
+			"category": "automatic",
+			"expects": [
+				{
+					"type": "list",
+					"possible_values": [
+						"enhance",
+						"format",
+						"redeye"
+					]
+				}
+			],
+			"url": "https://www.imgix.com/docs/reference/automatic#param-auto",
+			"short_description": "Applies automatic enhancements to images."
+		},
+		"ba": {
+			"display_name": "blend align",
+			"category": "blend",
+			"expects": [
+				{
+					"type": "list",
+					"possible_values": [
+						"top",
+						"bottom",
+						"middle",
+						"left",
+						"right",
+						"center"
+					]
+				}
+			],
+			"depends": [
+				"blend"
+			],
+			"url": "https://www.imgix.com/docs/reference/blend#param-blendalign",
+			"short_description": "Changes the blend alignment relative to the parent image."
+		},
+		"balph": {
+			"display_name": "blend alpha",
+			"category": "blend",
+			"expects": [
+				{
+					"type": "number",
+					"min": 0,
+					"max": 100
+				}
+			],
+			"default": 100,
+			"depends": [
+				"blend"
+			],
+			"url": "https://www.imgix.com/docs/reference/blend#param-blendalpha",
+			"short_description": "Changes the alpha of the blend image."
+		},
+		"bc": {
+			"display_name": "blend crop",
+			"category": "blend",
+			"expects": [
+				{
+					"type": "list",
+					"possible_values": [
+						"top",
+						"bottom",
+						"left",
+						"right",
+						"faces"
+					]
+				}
+			],
+			"depends": [
+				"blend"
+			],
+			"url": "https://www.imgix.com/docs/reference/blend#param-blendcrop",
+			"short_description": "Specifies the type of crop for blend images."
+		},
+		"bf": {
+			"display_name": "blend fit",
+			"category": "blend",
+			"expects": [
+				{
+					"type": "string",
+					"possible_values": [
+						"clamp",
+						"clip",
+						"crop",
+						"scale",
+						"max"
+					]
+				}
+			],
+			"default": "clip",
+			"depends": [
+				"blend"
+			],
+			"url": "https://www.imgix.com/docs/reference/blend#param-blendfit",
+			"short_description": "Specifies the fit mode for blend images."
+		},
+		"bg": {
+			"display_name": "background color",
+			"category": "background",
+			"expects": [
+				{
+					"type": "hex_color"
+				}
+			],
+			"default": "fff",
+			"url": "https://www.imgix.com/docs/reference/background#param-bg",
+			"short_description": "Colors the background of padded images."
+		},
+		"bh": {
+			"display_name": "blend height",
+			"category": "blend",
+			"expects": [
+				{
+					"type": "number",
+					"min": 0
+				}
+			],
+			"depends": [
+				"blend"
+			],
+			"url": "https://www.imgix.com/docs/reference/blend#param-blendheight",
+			"short_description": "Adjusts the height of the blend image."
+		},
+		"blend": {
+			"display_name": "blend",
+			"category": "blend",
+			"expects": [
+				{
+					"type": "hex_color"
+				},
+				{
+					"type": "url"
+				}
+			],
+			"url": "https://www.imgix.com/docs/reference/blend#param-blend",
+			"short_description": "Specifies the location of the blend image."
+		},
+		"blur": {
+			"display_name": "blur",
+			"category": "stylize",
+			"expects": [
+				{
+					"type": "number",
+					"min": 0,
+					"max": 2000
+				}
+			],
+			"default": 0,
+			"url": "https://www.imgix.com/docs/reference/stylize#param-blur",
+			"short_description": "Applies a gaussian blur to an image."
+		},
+		"bm": {
+			"display_name": "blend mode",
+			"category": "blend",
+			"expects": [
+				{
+					"type": "string",
+					"possible_values": [
+						"color",
+						"burn",
+						"dodge",
+						"darken",
+						"difference",
+						"exclusion",
+						"hardlight",
+						"hue",
+						"lighten",
+						"luminosity",
+						"multiply",
+						"overlay",
+						"saturation",
+						"screen",
+						"softlight",
+						"normal"
+					]
+				}
+			],
+			"default": "overlay",
+			"depends": [
+				"blend"
+			],
+			"url": "https://www.imgix.com/docs/reference/blend#param-blendmode",
+			"short_description": "Sets the blend mode for a blend image."
+		},
+		"border": {
+			"display_name": "border",
+			"category": "border_and_padding",
+			"expects": [
+				{
+					"0": {
+						"type": "integer",
+						"min": 0
+					},
+					"1": {
+						"type": "hex_color"
+					},
+					"type": "list",
+					"length": 2
+				}
+			],
+			"url": "https://www.imgix.com/docs/reference/border-padding#param-border",
+			"short_description": "Applies a border to an image."
+		},
+		"bp": {
+			"display_name": "blend padding",
+			"category": "blend",
+			"expects": [
+				{
+					"type": "number",
+					"min": 0
+				}
+			],
+			"default": 0,
+			"depends": [
+				"blend"
+			],
+			"url": "https://www.imgix.com/docs/reference/blend#param-blendpadding",
+			"short_description": "Applies padding to the blend image."
+		},
+		"bri": {
+			"display_name": "brightness",
+			"category": "adjustment",
+			"expects": [
+				{
+					"type": "number",
+					"min": -100,
+					"max": 100
+				}
+			],
+			"default": 0,
+			"url": "https://www.imgix.com/docs/reference/adjustment#param-bri",
+			"short_description": "Adjusts the brightness of the source image."
+		},
+		"bs": {
+			"display_name": "blend size",
+			"category": "blend",
+			"expects": [
+				{
+					"type": "string",
+					"possible_values": [
+						"inherit"
+					]
+				}
+			],
+			"depends": [
+				"blend"
+			],
+			"url": "https://www.imgix.com/docs/reference/blend#param-blendsize",
+			"short_description": "Adjusts the size of the blend image."
+		},
+		"bw": {
+			"display_name": "blend width",
+			"category": "blend",
+			"expects": [
+				{
+					"type": "number",
+					"min": 0
+				}
+			],
+			"depends": [
+				"blend"
+			],
+			"url": "https://www.imgix.com/docs/reference/blend#param-blendwidth",
+			"short_description": "Adjusts the width of the blend image."
+		},
+		"bx": {
+			"display_name": "blend x",
+			"category": "blend",
+			"expects": [
+				{
+					"type": "number",
+					"min": 0
+				}
+			],
+			"default": 0,
+			"depends": [
+				"blend"
+			],
+			"url": "https://www.imgix.com/docs/reference/blend#param-blendx",
+			"short_description": "Adjusts the x-offset of the blend image relative to its parent."
+		},
+		"by": {
+			"display_name": "blend y",
+			"category": "blend",
+			"expects": [
+				{
+					"type": "number",
+					"min": 0
+				}
+			],
+			"default": 0,
+			"depends": [
+				"blend"
+			],
+			"url": "https://www.imgix.com/docs/reference/blend#param-blendy",
+			"short_description": "Adjusts the y-offset of the blend image relative to its parent."
+		},
+		"ch": {
+			"display_name": "client-hints",
+			"category": "format",
+			"expects": [
+				{
+					"type": "list",
+					"possible_values": [
+						"width",
+						"dpr"
+					]
+				}
+			],
+			"short_description": "Sets one or more Client-Hints headers"
+		},
+		"chromasub": {
+			"display_name": "chroma subsampling",
+			"category": "format",
+			"expects": [
+				{
+					"type": "integer",
+					"possible_values": [
+						444,
+						422,
+						420
+					]
+				}
+			],
+			"default": 420,
+			"url": "https://www.imgix.com/docs/reference/format#param-chromasub",
+			"short_description": "Specifies the output chroma subsampling rate."
+		},
+		"colorquant": {
+			"display_name": "color quantization",
+			"category": "format",
+			"expects": [
+				{
+					"type": "integer",
+					"min": 2,
+					"max": 256
+				}
+			],
+			"url": "https://www.imgix.com/docs/reference/format#param-colorquant",
+			"short_description": "Limits the number of unique colors in an image."
+		},
+		"colors": {
+			"display_name": "color count",
+			"category": "palette",
+			"expects": [
+				{
+					"type": "integer",
+					"min": 0,
+					"max": 16
+				}
+			],
+			"default": 6,
+			"depends": [
+				"palette"
+			],
+			"url": "https://www.imgix.com/docs/reference/palette#param-colors",
+			"short_description": "Specifies how many colors to include in a palette-extraction response."
+		},
+		"con": {
+			"display_name": "contrast",
+			"category": "adjustment",
+			"expects": [
+				{
+					"type": "number",
+					"min": -100,
+					"max": 100
+				}
+			],
+			"default": 0,
+			"url": "https://www.imgix.com/docs/reference/adjustment#param-con",
+			"short_description": "Adjusts the contrast of the source image."
+		},
+		"crop": {
+			"display_name": "crop mode",
+			"category": "size",
+			"expects": [
+				{
+					"type": "list",
+					"possible_values": [
+						"top",
+						"bottom",
+						"left",
+						"right",
+						"faces",
+						"entropy"
+					]
+				}
+			],
+			"depends": [
+				"fit=crop"
+			],
+			"url": "https://www.imgix.com/docs/reference/size#param-crop",
+			"short_description": "Specifies how to crop an image."
+		},
+		"cs": {
+			"display_name": "colorspace",
+			"category": "format",
+			"expects": [
+				{
+					"type": "string",
+					"possible_values": [
+						"srgb",
+						"adobergb1998"
+					]
+				}
+			],
+			"short_description": "Specifies the color space of the output image."
+		},
+		"dl": {
+			"display_name": "download",
+			"category": "format",
+			"expects": [
+				{
+					"type": "string"
+				}
+			],
+			"url": "https://www.imgix.com/docs/reference/format#param-download",
+			"short_description": "Forces a URL to use send-file in its response."
+		},
+		"dpi": {
+			"display_name": "dots per inch",
+			"category": "format",
+			"expects": [
+				{
+					"type": "number"
+				}
+			],
+			"url": "https://www.imgix.com/docs/reference/format#param-dpi",
+			"short_description": "Sets the DPI value in the EXIF header."
+		},
+		"dpr": {
+			"display_name": "device pixel ratio",
+			"category": "pixel_density",
+			"expects": [
+				{
+					"type": "number",
+					"min": 0.75,
+					"max": 8
+				}
+			],
+			"default": 1,
+			"url": "https://www.imgix.com/docs/reference/pixeldensity#param-dpr",
+			"short_description": "Adjusts the device-pixel-ratio of the output image."
+		},
+		"exp": {
+			"display_name": "exposure",
+			"category": "adjustment",
+			"expects": [
+				{
+					"type": "number",
+					"min": -100,
+					"max": 100
+				}
+			],
+			"default": 0,
+			"url": "https://www.imgix.com/docs/reference/adjustment#param-exp",
+			"short_description": "Adjusts the exposure of the output image."
+		},
+		"faceindex": {
+			"display_name": "face index",
+			"category": "face_detection",
+			"expects": [
+				{
+					"type": "integer",
+					"min": 1
+				}
+			],
+			"depends": [
+				"fit=facearea"
+			],
+			"url": "https://www.imgix.com/docs/reference/face-detection#param-faceindex",
+			"short_description": "Selects a face to crop to."
+		},
+		"facepad": {
+			"display_name": "face padding",
+			"category": "face_detection",
+			"expects": [
+				{
+					"type": "number",
+					"min": 0
+				}
+			],
+			"default": 1,
+			"depends": [
+				"fit=facearea"
+			],
+			"url": "https://www.imgix.com/docs/reference/face-detection#param-facepad",
+			"short_description": "Adjusts padding around a selected face."
+		},
+		"faces": {
+			"display_name": "faces",
+			"category": "face_detection",
+			"expects": [
+				{
+					"type": "integer",
+					"possible_values": [
+						1
+					]
+				}
+			],
+			"depends": [
+				"fm=json"
+			],
+			"url": "https://www.imgix.com/docs/reference/face-detection#param-faces",
+			"short_description": "Specifies that face data should be included in output when combined with `fm=json`."
+		},
+		"fit": {
+			"display_name": "fit mode",
+			"category": "size",
+			"expects": [
+				{
+					"type": "string",
+					"possible_values": [
+						"clamp",
+						"clip",
+						"crop",
+						"facearea",
+						"fill",
+						"max",
+						"min",
+						"scale"
+					]
+				}
+			],
+			"default": "clip",
+			"aliases": [
+				"f"
+			],
+			"url": "https://www.imgix.com/docs/reference/size#param-fit",
+			"short_description": "Specifies how to map the source image to the output image dimensions."
+		},
+		"flip": {
+			"display_name": "flip direction",
+			"category": "rotation",
+			"expects": [
+				{
+					"type": "string",
+					"possible_values": [
+						"h",
+						"v",
+						"hv"
+					]
+				}
+			],
+			"url": "https://www.imgix.com/docs/reference/rotation#param-flip",
+			"short_description": "Flips an image on a specified axis."
+		},
+		"fm": {
+			"display_name": "output format",
+			"category": "format",
+			"expects": [
+				{
+					"type": "string",
+					"possible_values": [
+						"gif",
+						"jpg",
+						"jp2",
+						"json",
+						"jxr",
+						"pjpg",
+						"mp4",
+						"png",
+						"png8",
+						"png32",
+						"webp"
+					]
+				}
+			],
+			"url": "https://www.imgix.com/docs/reference/format#param-fm",
+			"short_description": "Changes the format of the output image."
+		},
+		"gam": {
+			"display_name": "gamma",
+			"category": "adjustment",
+			"expects": [
+				{
+					"type": "number",
+					"min": -100,
+					"max": 100
+				}
+			],
+			"default": 0,
+			"url": "https://www.imgix.com/docs/reference/adjustment#param-gam",
+			"short_description": "Adjusts the gamma of the source image."
+		},
+		"h": {
+			"display_name": "height",
+			"category": "size",
+			"expects": [
+				{
+					"type": "number"
+				},
+				{
+					"type": "unit_scalar"
+				}
+			],
+			"url": "https://www.imgix.com/docs/reference/size#param-h",
+			"short_description": "Adjusts the height of the output image."
+		},
+		"high": {
+			"display_name": "high",
+			"category": "adjustment",
+			"expects": [
+				{
+					"type": "number",
+					"min": -100,
+					"max": 100
+				}
+			],
+			"default": 0,
+			"url": "https://www.imgix.com/docs/reference/adjustment#param-high",
+			"short_description": "Adjusts the highlights of the source image."
+		},
+		"htn": {
+			"display_name": "halftone",
+			"category": "stylize",
+			"expects": [
+				{
+					"type": "number",
+					"min": 0,
+					"max": 100
+				}
+			],
+			"default": 0,
+			"url": "https://www.imgix.com/docs/reference/stylize#param-htn",
+			"short_description": "Applies a half-tone effect to the source image."
+		},
+		"hue": {
+			"display_name": "hue shift",
+			"category": "adjustment",
+			"expects": [
+				{
+					"type": "number",
+					"min": 0,
+					"max": 360
+				}
+			],
+			"default": 0,
+			"url": "https://www.imgix.com/docs/reference/adjustment#param-hue",
+			"short_description": "Adjusts the hue of the source image."
+		},
+		"invert": {
+			"display_name": "invert",
+			"category": "adjustment",
+			"expects": [
+				{
+					"type": "string",
+					"possible_values": [
+						"true"
+					]
+				}
+			],
+			"url": "https://www.imgix.com/docs/reference/adjustment#param-invert",
+			"short_description": "Inverts the colors on the source image."
+		},
+		"lossless": {
+			"display_name": "lossless",
+			"category": "format",
+			"expects": [
+				{
+					"type": "integer",
+					"possible_values": [
+						0,
+						1
+					]
+				},
+				{
+					"type": "string",
+					"possible_values": [
+						"false",
+						"true"
+					]
+				}
+			],
+			"default": "false",
+			"depends": [
+				"fm=webp",
+				"fm=jxr"
+			],
+			"url": "https://www.imgix.com/docs/reference/format#param-fm",
+			"short_description": "Specifies that the output image should be a lossless variant."
+		},
+		"mark": {
+			"display_name": "watermark image",
+			"category": "watermark",
+			"expects": [
+				{
+					"type": "url"
+				}
+			],
+			"aliases": [
+				"m"
+			],
+			"url": "https://www.imgix.com/docs/reference/watermark#param-mark",
+			"short_description": "Specifies the location of the watermark image."
+		},
+		"markalign": {
+			"display_name": "watermark alignment mode",
+			"category": "watermark",
+			"expects": [
+				{
+					"type": "list",
+					"possible_values": [
+						"top",
+						"middle",
+						"bottom",
+						"left",
+						"center",
+						"right"
+					]
+				}
+			],
+			"aliases": [
+				"ma"
+			],
+			"depends": [
+				"mark"
+			],
+			"url": "https://www.imgix.com/docs/reference/watermark#param-markalign",
+			"short_description": "Changes the watermark alignment relative to the parent image."
+		},
+		"markalpha": {
+			"display_name": "watermark alpha",
+			"category": "watermark",
+			"expects": [
+				{
+					"type": "integer",
+					"min": 0,
+					"max": 100
+				}
+			],
+			"default": 100,
+			"depends": [
+				"mark"
+			],
+			"url": "https://www.imgix.com/docs/reference/watermark#param-markalpha",
+			"short_description": "Changes the alpha of the watermark image."
+		},
+		"markbase": {
+			"display_name": "watermark url base",
+			"category": "watermark",
+			"expects": [
+				{
+					"type": "url"
+				}
+			],
+			"aliases": [
+				"mb"
+			],
+			"depends": [
+				"mark"
+			],
+			"short_description": "Changes base URL of the watermark image."
+		},
+		"markfit": {
+			"display_name": "watermark fit mode",
+			"category": "watermark",
+			"expects": [
+				{
+					"type": "string",
+					"possible_values": [
+						"clip",
+						"crop",
+						"fill",
+						"max",
+						"scale"
+					]
+				}
+			],
+			"default": "clip",
+			"aliases": [
+				"mf"
+			],
+			"depends": [
+				"mark",
+				"markw",
+				"markh"
+			],
+			"url": "https://www.imgix.com/docs/reference/watermark#param-markfit",
+			"short_description": "Specifies the fit mode for watermark images."
+		},
+		"markh": {
+			"display_name": "watermark height",
+			"category": "watermark",
+			"expects": [
+				{
+					"type": "number"
+				},
+				{
+					"type": "unit_scalar"
+				}
+			],
+			"aliases": [
+				"mh"
+			],
+			"depends": [
+				"mark"
+			],
+			"url": "https://www.imgix.com/docs/reference/watermark#param-markh",
+			"short_description": "Adjusts the height of the watermark image."
+		},
+		"markpad": {
+			"display_name": "watermark padding",
+			"category": "watermark",
+			"expects": [
+				{
+					"type": "number"
+				}
+			],
+			"default": 10,
+			"aliases": [
+				"mp"
+			],
+			"depends": [
+				"mark"
+			],
+			"url": "https://www.imgix.com/docs/reference/watermark#param-markpad",
+			"short_description": "Applies padding to the watermark image."
+		},
+		"markscale": {
+			"display_name": "watermark scale",
+			"category": "watermark",
+			"expects": [
+				{
+					"type": "number",
+					"min": 0,
+					"max": 100
+				}
+			],
+			"aliases": [
+				"ms"
+			],
+			"depends": [
+				"mark"
+			],
+			"url": "https://www.imgix.com/docs/reference/watermark#param-markscale",
+			"short_description": "Adjusts the scale of the watermark image."
+		},
+		"markw": {
+			"display_name": "watermark width",
+			"category": "watermark",
+			"expects": [
+				{
+					"type": "number"
+				},
+				{
+					"type": "unit_scalar"
+				}
+			],
+			"aliases": [
+				"mw"
+			],
+			"depends": [
+				"mark"
+			],
+			"url": "https://www.imgix.com/docs/reference/watermark#param-markw",
+			"short_description": "Adjusts the width of the watermark image."
+		},
+		"markx": {
+			"display_name": "watermark x-position",
+			"category": "watermark",
+			"expects": [
+				{
+					"type": "integer"
+				}
+			],
+			"aliases": [
+				"mx"
+			],
+			"depends": [
+				"mark"
+			],
+			"url": "https://www.imgix.com/docs/reference/watermark#param-markx",
+			"short_description": "Adjusts the x-offset of the watermark image relative to its parent."
+		},
+		"marky": {
+			"display_name": "watermark y-position",
+			"category": "watermark",
+			"expects": [
+				{
+					"type": "integer"
+				}
+			],
+			"aliases": [
+				"my"
+			],
+			"depends": [
+				"mark"
+			],
+			"url": "https://www.imgix.com/docs/reference/watermark#param-marky",
+			"short_description": "Adjusts the y-offset of the watermark image relative to its parent."
+		},
+		"mask": {
+			"display_name": "mask",
+			"category": "mask",
+			"expects": [
+				{
+					"type": "string",
+					"possible_values": [
+						"ellipse"
+					]
+				},
+				{
+					"type": "url"
+				}
+			],
+			"url": "https://www.imgix.com/docs/reference/mask#param-mask",
+			"short_description": "Specifies the location of the mask image."
+		},
+		"mono": {
+			"display_name": "monochrome",
+			"category": "stylize",
+			"expects": [
+				{
+					"type": "hex_color"
+				}
+			],
+			"aliases": [
+				"monochrome"
+			],
+			"url": "https://www.imgix.com/docs/reference/stylize#param-mono",
+			"short_description": "Applies a monochrome effect to the source image."
+		},
+		"nr": {
+			"display_name": "noise blur",
+			"category": "noise",
+			"expects": [
+				{
+					"type": "number",
+					"min": -100,
+					"max": 100
+				}
+			],
+			"default": 20,
+			"url": "https://www.imgix.com/docs/reference/noise#param-nr",
+			"short_description": "Reduces the noise in an image."
+		},
+		"nrs": {
+			"display_name": "noise sharpen",
+			"category": "noise",
+			"expects": [
+				{
+					"type": "number",
+					"min": -100,
+					"max": 100
+				}
+			],
+			"default": 20,
+			"url": "https://www.imgix.com/docs/reference/noise#param-nrs",
+			"short_description": "Provides a threshold by which to sharpen an image."
+		},
+		"or": {
+			"display_name": "orientation",
+			"category": "rotation",
+			"expects": [
+				{
+					"type": "integer",
+					"possible_values": [
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						90,
+						180,
+						270
+					]
+				}
+			],
+			"aliases": [
+				"orient"
+			],
+			"url": "https://www.imgix.com/docs/reference/rotation#param-or",
+			"short_description": "Changes the image orientation."
+		},
+		"pad": {
+			"display_name": "padding",
+			"category": "border_and_padding",
+			"expects": [
+				{
+					"type": "integer",
+					"min": 0
+				}
+			],
+			"default": 0,
+			"url": "https://www.imgix.com/docs/reference/border-padding#param-pad",
+			"short_description": "Pads an image."
+		},
+		"page": {
+			"display_name": "pdf page number",
+			"category": "pdf",
+			"expects": [
+				{
+					"type": "integer",
+					"min": 1
+				}
+			],
+			"default": 1,
+			"url": "https://www.imgix.com/docs/reference/pdf#param-page",
+			"short_description": "Selects a page from a PDF for display."
+		},
+		"palette": {
+			"display_name": "palette extraction",
+			"category": "palette",
+			"expects": [
+				{
+					"type": "string",
+					"possible_values": [
+						"css",
+						"json"
+					]
+				}
+			],
+			"url": "https://www.imgix.com/docs/reference/palette#param-palette",
+			"short_description": "Specifies an output format for palette-extraction."
+		},
+		"prefix": {
+			"display_name": "css prefix",
+			"category": "palette",
+			"expects": [
+				{
+					"type": "string"
+				}
+			],
+			"default": "image",
+			"depends": [
+				"palette=css"
+			],
+			"url": "https://www.imgix.com/docs/reference/palette#param-prefix",
+			"short_description": "Specifies a CSS prefix for all classes in palette-extraction."
+		},
+		"px": {
+			"display_name": "pixellate",
+			"category": "stylize",
+			"expects": [
+				{
+					"type": "number",
+					"min": 0,
+					"max": 100
+				}
+			],
+			"default": 0,
+			"url": "https://www.imgix.com/docs/reference/stylize#param-px",
+			"short_description": "Applies a pixelation effect to an image."
+		},
+		"q": {
+			"display_name": "output quality",
+			"category": "format",
+			"expects": [
+				{
+					"type": "number",
+					"min": 0,
+					"max": 100
+				}
+			],
+			"default": 75,
+			"depends": [
+				"fm=jpg",
+				"fm=pjpg",
+				"fm=webp",
+				"fm=jxr"
+			],
+			"url": "https://www.imgix.com/docs/reference/format#param-q",
+			"short_description": "Adjusts the quality of an output image."
+		},
+		"rect": {
+			"display_name": "crop rectangle",
+			"category": "size",
+			"expects": [
+				{
+					"0": {
+						"type": "number",
+						"min": 0
+					},
+					"1": {
+						"type": "number",
+						"min": 0
+					},
+					"2": {
+						"type": "number",
+						"min": 0
+					},
+					"3": {
+						"type": "number",
+						"min": 0
+					},
+					"type": "list"
+				}
+			],
+			"url": "https://www.imgix.com/docs/reference/size#param-rect",
+			"short_description": "Crops an image to a specified rectangle."
+		},
+		"rot": {
+			"display_name": "rotation angle",
+			"category": "rotation",
+			"expects": [
+				{
+					"type": "number",
+					"min": 0,
+					"max": 359
+				}
+			],
+			"default": 0,
+			"url": "https://www.imgix.com/docs/reference/rotation#param-rot",
+			"short_description": "Rotates an image by a specified number of degrees."
+		},
+		"sat": {
+			"display_name": "saturation",
+			"category": "adjustment",
+			"expects": [
+				{
+					"type": "number",
+					"min": -100,
+					"max": 100
+				}
+			],
+			"default": 0,
+			"url": "https://www.imgix.com/docs/reference/adjustment#param-sat",
+			"short_description": "Adjusts the saturation of an image."
+		},
+		"sepia": {
+			"display_name": "sepia",
+			"category": "stylize",
+			"expects": [
+				{
+					"type": "number",
+					"min": 0,
+					"max": 100
+				}
+			],
+			"default": 0,
+			"url": "https://www.imgix.com/docs/reference/stylize#param-sepia",
+			"short_description": "Applies a sepia effect to an image."
+		},
+		"shad": {
+			"display_name": "shadow",
+			"category": "adjustment",
+			"expects": [
+				{
+					"type": "number",
+					"min": -100,
+					"max": 100
+				}
+			],
+			"default": 0,
+			"url": "https://www.imgix.com/docs/reference/adjustment#param-shad",
+			"short_description": "Adjusts the highlights of the source image."
+		},
+		"sharp": {
+			"display_name": "sharpen",
+			"category": "adjustment",
+			"expects": [
+				{
+					"type": "number",
+					"min": 0,
+					"max": 100
+				}
+			],
+			"default": 0,
+			"url": "https://www.imgix.com/docs/reference/adjustment#param-sharp",
+			"short_description": "Adjusts the sharpness of the source image."
+		},
+		"trim": {
+			"display_name": "trim mode",
+			"category": "trim",
+			"expects": [
+				{
+					"type": "string",
+					"possible_values": [
+						"auto",
+						"color"
+					]
+				}
+			],
+			"url": "https://www.imgix.com/docs/reference/trim#param-trim",
+			"short_description": "Trims the source image."
+		},
+		"trimcolor": {
+			"display_name": "trim color",
+			"category": "trim",
+			"expects": [
+				{
+					"type": "hex_color"
+				}
+			],
+			"depends": [
+				"trim=color"
+			],
+			"url": "https://www.imgix.com/docs/reference/trim#param-trimcolor",
+			"short_description": "Specifies a trim color on a trim operation."
+		},
+		"trimmd": {
+			"display_name": "trim mean difference",
+			"category": "trim",
+			"expects": [
+				{
+					"type": "number"
+				}
+			],
+			"default": 11,
+			"depends": [
+				"trim=auto"
+			],
+			"url": "https://www.imgix.com/docs/reference/text#param-trimmd",
+			"short_description": "Specifies the mean difference on a trim operation."
+		},
+		"trimsd": {
+			"display_name": "trim standard deviation",
+			"category": "trim",
+			"expects": [
+				{
+					"type": "number"
+				}
+			],
+			"default": 10,
+			"depends": [
+				"trim=auto"
+			],
+			"url": "https://www.imgix.com/docs/reference/trim#param-trimsd",
+			"short_description": "Specifies the standard deviation on a trim operation."
+		},
+		"trimtol": {
+			"display_name": "trim tolerance",
+			"category": "trim",
+			"expects": [
+				{
+					"type": "number",
+					"min": 0
+				}
+			],
+			"default": 0,
+			"depends": [
+				"trim=color"
+			],
+			"url": "https://www.imgix.com/docs/reference/trim#param-trimtol",
+			"short_description": "Specifies the tolerance on a trim operation."
+		},
+		"txt": {
+			"display_name": "text",
+			"category": "text",
+			"expects": [
+				{
+					"type": "string"
+				}
+			],
+			"aliases": [
+				"t"
+			],
+			"url": "https://www.imgix.com/docs/reference/text#param-txt",
+			"short_description": "Sets the text to render."
+		},
+		"txtalign": {
+			"display_name": "text align",
+			"category": "text",
+			"expects": [
+				{
+					"type": "list",
+					"possible_values": [
+						"top",
+						"middle",
+						"bottom",
+						"left",
+						"center",
+						"right"
+					]
+				}
+			],
+			"aliases": [
+				"ta"
+			],
+			"depends": [
+				"txt"
+			],
+			"url": "https://www.imgix.com/docs/reference/text#param-txtalign",
+			"short_description": "Sets the alignment of rendered text."
+		},
+		"txtclip": {
+			"display_name": "text clipping",
+			"category": "text",
+			"expects": [
+				{
+					"type": "string",
+					"possible_values": [
+						"start",
+						"middle",
+						"end",
+						"ellipsis"
+					]
+				}
+			],
+			"default": "end",
+			"aliases": [
+				"tcl"
+			],
+			"depends": [
+				"txt"
+			],
+			"url": "https://www.imgix.com/docs/reference/text#param-txtclip",
+			"short_description": "Sets the clipping properties of rendered text."
+		},
+		"txtclr": {
+			"display_name": "text color",
+			"category": "text",
+			"expects": [
+				{
+					"type": "hex_color"
+				}
+			],
+			"aliases": [
+				"txtcolor",
+				"tc"
+			],
+			"depends": [
+				"txt"
+			],
+			"url": "https://www.imgix.com/docs/reference/text#param-txtclr",
+			"short_description": "Specifies the color of rendered text"
+		},
+		"txtfit": {
+			"display_name": "text fit mode",
+			"category": "text",
+			"expects": [
+				{
+					"type": "string",
+					"possible_values": [
+						"max"
+					]
+				}
+			],
+			"depends": [
+				"txt"
+			],
+			"url": "https://www.imgix.com/docs/reference/text#param-txtfit",
+			"short_description": "Specifies the fit approach for rendered text."
+		},
+		"txtfont": {
+			"display_name": "text font",
+			"category": "text",
+			"expects": [
+				{
+					"type": "list"
+				}
+			],
+			"aliases": [
+				"tf"
+			],
+			"depends": [
+				"txt"
+			],
+			"url": "https://www.imgix.com/docs/reference/text#param-txtfont",
+			"short_description": "Selects a font for rendered text."
+		},
+		"txtline": {
+			"display_name": "text outline",
+			"category": "text",
+			"expects": [
+				{
+					"type": "number",
+					"min": 0
+				}
+			],
+			"default": 0,
+			"aliases": [
+				"tl"
+			],
+			"depends": [
+				"txt"
+			],
+			"url": "https://www.imgix.com/docs/reference/text#param-txtline",
+			"short_description": "Outlines the rendered text with a specified color."
+		},
+		"txtlineclr": {
+			"display_name": "text outline color",
+			"category": "text",
+			"expects": [
+				{
+					"type": "hex_color"
+				}
+			],
+			"default": "FFF",
+			"aliases": [
+				"txtlinecolor"
+			],
+			"depends": [
+				"txt",
+				"txtline"
+			],
+			"url": "https://www.imgix.com/docs/reference/text#param-txtlineclr",
+			"short_description": "Specifies a text outline color."
+		},
+		"txtpad": {
+			"display_name": "text padding",
+			"category": "text",
+			"expects": [
+				{
+					"type": "number"
+				}
+			],
+			"default": 10,
+			"aliases": [
+				"tp"
+			],
+			"depends": [
+				"txt"
+			],
+			"url": "https://www.imgix.com/docs/reference/text#param-txtpad",
+			"short_description": "Specifies padding for rendered text."
+		},
+		"txtshad": {
+			"display_name": "text shadow",
+			"category": "text",
+			"expects": [
+				{
+					"type": "number"
+				}
+			],
+			"default": 0,
+			"aliases": [
+				"tsh"
+			],
+			"depends": [
+				"txt"
+			],
+			"url": "https://www.imgix.com/docs/reference/text#param-txtshad",
+			"short_description": "Applies a shadow to rendered text."
+		},
+		"txtsize": {
+			"display_name": "text font size",
+			"category": "text",
+			"expects": [
+				{
+					"type": "number",
+					"min": 0
+				}
+			],
+			"default": 12,
+			"aliases": [
+				"tsz"
+			],
+			"depends": [
+				"txt"
+			],
+			"url": "https://www.imgix.com/docs/reference/text#param-txtsize",
+			"short_description": "Sets the size of rendered text."
+		},
+		"txtwidth": {
+			"display_name": "text width",
+			"category": "text",
+			"expects": [
+				{
+					"type": "number",
+					"min": 0
+				}
+			],
+			"depends": [
+				"txt"
+			],
+			"url": "https://www.imgix.com/docs/reference/text#param-txtwidth",
+			"short_description": "Sets the width of rendered text."
+		},
+		"usm": {
+			"display_name": "unsharp mask",
+			"category": "adjustment",
+			"expects": [
+				{
+					"type": "number",
+					"min": -100,
+					"max": 100
+				}
+			],
+			"default": 0,
+			"url": "https://www.imgix.com/docs/reference/adjustment#param-usm",
+			"short_description": "Sharpens the source image using an unsharp mask."
+		},
+		"usmrad": {
+			"display_name": "unsharp mask radius",
+			"category": "adjustment",
+			"expects": [
+				{
+					"type": "number",
+					"min": 0
+				}
+			],
+			"default": 2.5,
+			"depends": [
+				"usm"
+			],
+			"url": "https://www.imgix.com/docs/reference/adjustment#param-usmrad",
+			"short_description": "Specifies the radius for an unsharp mask operation."
+		},
+		"vib": {
+			"display_name": "vibrance",
+			"category": "adjustment",
+			"expects": [
+				{
+					"type": "number",
+					"min": -100,
+					"max": 100
+				}
+			],
+			"default": 0,
+			"url": "https://www.imgix.com/docs/reference/adjustment#param-vib",
+			"short_description": "Adjusts the vibrance an image."
+		},
+		"w": {
+			"display_name": "width",
+			"category": "size",
+			"expects": [
+				{
+					"type": "number"
+				},
+				{
+					"type": "unit_scalar"
+				}
+			],
+			"url": "https://www.imgix.com/docs/reference/size#param-w",
+			"short_description": "Adjusts the width of the output image."
+		}
+	},
+	"deprecatedParameters": {
+		"class": {
+			"display_name": "css class",
+			"category": "palette",
+			"expects": [
+				{
+					"type": "string"
+				}
+			],
+			"depends": [
+				"palette=css"
+			],
+			"deprecated": true,
+			"url": "https://www.imgix.com/docs/reference/palette#param-colors",
+			"short_description": "Specifies the CSS class to use for palette extraction."
+		},
+		"skin": {
+			"display_name": "skin detection",
+			"category": "misc",
+			"expects": [
+				{
+					"type": "string",
+					"possible_values": [
+						"map"
+					]
+				}
+			],
+			"experimental": true,
+			"deprecated": true
+		}
+	},
+	"experimentalParameters": {
+		"fps": {
+			"display_name": "frames per second",
+			"category": "animation",
+			"expects": [
+				{
+					"type": "number"
+				}
+			],
+			"experimental": true,
+			"short_description": "Specifies the framerate of the generated image."
+		},
+		"frame": {
+			"display_name": "frame number",
+			"category": "animation",
+			"expects": [
+				{
+					"type": "integer",
+					"min": 1
+				}
+			],
+			"experimental": true,
+			"short_description": "Specifies the frame of an animated image to use."
+		},
+		"loop": {
+			"display_name": "animation loop count",
+			"category": "animation",
+			"expects": [
+				{
+					"type": "integer",
+					"min": 0
+				}
+			],
+			"default": 0,
+			"experimental": true,
+			"short_description": "Specifies the number of times an animated image should repeat. A value of 0 means infinite looping."
+		},
+		"reverse": {
+			"display_name": "frame number",
+			"category": "animation",
+			"expects": [
+				{
+					"type": "integer",
+					"possible_values": [
+						0,
+						1
+					]
+				},
+				{
+					"type": "string",
+					"possible_values": [
+						"false",
+						"true"
+					]
+				}
+			],
+			"default": "false",
+			"experimental": true,
+			"short_description": "Reverses the frame order on the source animation."
+		},
+		"rott": {
+			"display_name": "rotation type",
+			"category": "rotation",
+			"expects": [
+				{
+					"type": "string",
+					"possible_values": [
+						"pivot",
+						"straighten"
+					]
+				}
+			],
+			"experimental": true,
+			"short_description": "Changes the rotation type."
+		},
+		"skin": {
+			"display_name": "skin detection",
+			"category": "misc",
+			"expects": [
+				{
+					"type": "string",
+					"possible_values": [
+						"map"
+					]
+				}
+			],
+			"experimental": true,
+			"deprecated": true
+		},
+		"txtlead": {
+			"display_name": "text leading",
+			"category": "text",
+			"expects": [
+				{
+					"type": "number",
+					"min": 0
+				}
+			],
+			"default": 0,
+			"depends": [
+				"txt"
+			],
+			"experimental": true,
+			"short_description": "Sets the leading for rendered text. Only works on the multi-line text endpoint."
+		},
+		"txttrack": {
+			"display_name": "text tracking",
+			"category": "text",
+			"expects": [
+				{
+					"type": "number",
+					"min": -4
+				}
+			],
+			"default": 0,
+			"aliases": [
+				"tt"
+			],
+			"depends": [
+				"txt"
+			],
+			"experimental": true,
+			"short_description": "Sets the tracking for rendered text. Only works on the multi-line text endpoint."
+		}
+	},
+	"aliases": {
+		"f": "fit",
+		"m": "mark",
+		"ma": "markalign",
+		"mb": "markbase",
+		"mf": "markfit",
+		"mh": "markh",
+		"mp": "markpad",
+		"ms": "markscale",
+		"mw": "markw",
+		"mx": "markx",
+		"my": "marky",
+		"monochrome": "mono",
+		"orient": "or",
+		"t": "txt",
+		"ta": "txtalign",
+		"tcl": "txtclip",
+		"txtcolor": "txtclr",
+		"tc": "txtclr",
+		"tf": "txtfont",
+		"tl": "txtline",
+		"txtlinecolor": "txtlineclr",
+		"tp": "txtpad",
+		"tsh": "txtshad",
+		"tsz": "txtsize",
+		"tt": "txttrack"
+	},
+	"version": "2.3.1"
+};
+
+}));
