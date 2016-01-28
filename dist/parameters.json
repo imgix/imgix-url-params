@@ -3,6 +3,9 @@
 		"auto": {
 			"display_name": "auto features",
 			"category": "automatic",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "list",
@@ -19,6 +22,9 @@
 		"ba": {
 			"display_name": "blend align",
 			"category": "blend",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "list",
@@ -41,6 +47,9 @@
 		"balph": {
 			"display_name": "blend alpha",
 			"category": "blend",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "number",
@@ -58,6 +67,9 @@
 		"bc": {
 			"display_name": "blend crop",
 			"category": "blend",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "list",
@@ -79,6 +91,9 @@
 		"bf": {
 			"display_name": "blend fit",
 			"category": "blend",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "string",
@@ -101,6 +116,10 @@
 		"bg": {
 			"display_name": "background color",
 			"category": "background",
+			"available_in": [
+				"url",
+				"graph"
+			],
 			"expects": [
 				{
 					"type": "hex_color"
@@ -113,6 +132,9 @@
 		"bh": {
 			"display_name": "blend height",
 			"category": "blend",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "number",
@@ -128,6 +150,9 @@
 		"blend": {
 			"display_name": "blend",
 			"category": "blend",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "hex_color"
@@ -142,6 +167,10 @@
 		"blur": {
 			"display_name": "blur",
 			"category": "stylize",
+			"available_in": [
+				"url",
+				"graph"
+			],
 			"expects": [
 				{
 					"type": "number",
@@ -156,6 +185,9 @@
 		"bm": {
 			"display_name": "blend mode",
 			"category": "blend",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "string",
@@ -189,6 +221,10 @@
 		"border": {
 			"display_name": "border",
 			"category": "border_and_padding",
+			"available_in": [
+				"url",
+				"graph"
+			],
 			"expects": [
 				{
 					"0": {
@@ -208,6 +244,9 @@
 		"bp": {
 			"display_name": "blend padding",
 			"category": "blend",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "number",
@@ -224,6 +263,10 @@
 		"bri": {
 			"display_name": "brightness",
 			"category": "adjustment",
+			"available_in": [
+				"url",
+				"graph"
+			],
 			"expects": [
 				{
 					"type": "number",
@@ -238,6 +281,9 @@
 		"bs": {
 			"display_name": "blend size",
 			"category": "blend",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "string",
@@ -255,6 +301,9 @@
 		"bw": {
 			"display_name": "blend width",
 			"category": "blend",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "number",
@@ -270,6 +319,9 @@
 		"bx": {
 			"display_name": "blend x",
 			"category": "blend",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "number",
@@ -286,6 +338,9 @@
 		"by": {
 			"display_name": "blend y",
 			"category": "blend",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "number",
@@ -302,6 +357,9 @@
 		"ch": {
 			"display_name": "client-hints",
 			"category": "format",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "list",
@@ -316,6 +374,11 @@
 		"chromasub": {
 			"display_name": "chroma subsampling",
 			"category": "format",
+			"available_in": [
+				"url",
+				"graph",
+				"output"
+			],
 			"expects": [
 				{
 					"type": "integer",
@@ -333,6 +396,11 @@
 		"colorquant": {
 			"display_name": "color quantization",
 			"category": "format",
+			"available_in": [
+				"url",
+				"graph",
+				"output"
+			],
 			"expects": [
 				{
 					"type": "integer",
@@ -346,6 +414,10 @@
 		"colors": {
 			"display_name": "color count",
 			"category": "palette",
+			"available_in": [
+				"url",
+				"output"
+			],
 			"expects": [
 				{
 					"type": "integer",
@@ -363,6 +435,10 @@
 		"con": {
 			"display_name": "contrast",
 			"category": "adjustment",
+			"available_in": [
+				"url",
+				"graph"
+			],
 			"expects": [
 				{
 					"type": "number",
@@ -377,6 +453,10 @@
 		"crop": {
 			"display_name": "crop mode",
 			"category": "size",
+			"available_in": [
+				"url",
+				"graph"
+			],
 			"expects": [
 				{
 					"type": "list",
@@ -399,6 +479,11 @@
 		"cs": {
 			"display_name": "colorspace",
 			"category": "format",
+			"available_in": [
+				"url",
+				"graph",
+				"output"
+			],
 			"expects": [
 				{
 					"type": "string",
@@ -413,6 +498,10 @@
 		"dl": {
 			"display_name": "download",
 			"category": "format",
+			"available_in": [
+				"url",
+				"output"
+			],
 			"expects": [
 				{
 					"type": "string"
@@ -424,6 +513,11 @@
 		"dpi": {
 			"display_name": "dots per inch",
 			"category": "format",
+			"available_in": [
+				"url",
+				"graph",
+				"output"
+			],
 			"expects": [
 				{
 					"type": "number"
@@ -435,6 +529,11 @@
 		"dpr": {
 			"display_name": "device pixel ratio",
 			"category": "pixel_density",
+			"available_in": [
+				"url",
+				"graph",
+				"output"
+			],
 			"expects": [
 				{
 					"type": "number",
@@ -449,6 +548,10 @@
 		"exp": {
 			"display_name": "exposure",
 			"category": "adjustment",
+			"available_in": [
+				"url",
+				"graph"
+			],
 			"expects": [
 				{
 					"type": "number",
@@ -463,6 +566,10 @@
 		"faceindex": {
 			"display_name": "face index",
 			"category": "face_detection",
+			"available_in": [
+				"url",
+				"graph"
+			],
 			"expects": [
 				{
 					"type": "integer",
@@ -478,6 +585,10 @@
 		"facepad": {
 			"display_name": "face padding",
 			"category": "face_detection",
+			"available_in": [
+				"url",
+				"graph"
+			],
 			"expects": [
 				{
 					"type": "number",
@@ -494,6 +605,10 @@
 		"faces": {
 			"display_name": "faces",
 			"category": "face_detection",
+			"available_in": [
+				"url",
+				"graph"
+			],
 			"expects": [
 				{
 					"type": "integer",
@@ -511,6 +626,10 @@
 		"fit": {
 			"display_name": "fit mode",
 			"category": "size",
+			"available_in": [
+				"url",
+				"graph"
+			],
 			"expects": [
 				{
 					"type": "string",
@@ -536,6 +655,10 @@
 		"flip": {
 			"display_name": "flip direction",
 			"category": "rotation",
+			"available_in": [
+				"url",
+				"graph"
+			],
 			"expects": [
 				{
 					"type": "string",
@@ -552,6 +675,11 @@
 		"fm": {
 			"display_name": "output format",
 			"category": "format",
+			"available_in": [
+				"url",
+				"graph",
+				"output"
+			],
 			"expects": [
 				{
 					"type": "string",
@@ -576,6 +704,10 @@
 		"gam": {
 			"display_name": "gamma",
 			"category": "adjustment",
+			"available_in": [
+				"url",
+				"graph"
+			],
 			"expects": [
 				{
 					"type": "number",
@@ -590,6 +722,10 @@
 		"h": {
 			"display_name": "height",
 			"category": "size",
+			"available_in": [
+				"url",
+				"graph"
+			],
 			"expects": [
 				{
 					"type": "number"
@@ -604,6 +740,10 @@
 		"high": {
 			"display_name": "high",
 			"category": "adjustment",
+			"available_in": [
+				"url",
+				"graph"
+			],
 			"expects": [
 				{
 					"type": "number",
@@ -618,6 +758,10 @@
 		"htn": {
 			"display_name": "halftone",
 			"category": "stylize",
+			"available_in": [
+				"url",
+				"graph"
+			],
 			"expects": [
 				{
 					"type": "number",
@@ -632,6 +776,10 @@
 		"hue": {
 			"display_name": "hue shift",
 			"category": "adjustment",
+			"available_in": [
+				"url",
+				"graph"
+			],
 			"expects": [
 				{
 					"type": "number",
@@ -646,6 +794,10 @@
 		"invert": {
 			"display_name": "invert",
 			"category": "adjustment",
+			"available_in": [
+				"url",
+				"graph"
+			],
 			"expects": [
 				{
 					"type": "string",
@@ -660,6 +812,11 @@
 		"lossless": {
 			"display_name": "lossless",
 			"category": "format",
+			"available_in": [
+				"url",
+				"graph",
+				"output"
+			],
 			"expects": [
 				{
 					"type": "integer",
@@ -687,6 +844,9 @@
 		"mark": {
 			"display_name": "watermark image",
 			"category": "watermark",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "url"
@@ -701,6 +861,9 @@
 		"markalign": {
 			"display_name": "watermark alignment mode",
 			"category": "watermark",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "list",
@@ -726,6 +889,9 @@
 		"markalpha": {
 			"display_name": "watermark alpha",
 			"category": "watermark",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "integer",
@@ -743,6 +909,9 @@
 		"markbase": {
 			"display_name": "watermark url base",
 			"category": "watermark",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "url"
@@ -759,6 +928,9 @@
 		"markfit": {
 			"display_name": "watermark fit mode",
 			"category": "watermark",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "string",
@@ -786,6 +958,9 @@
 		"markh": {
 			"display_name": "watermark height",
 			"category": "watermark",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "number"
@@ -806,6 +981,9 @@
 		"markpad": {
 			"display_name": "watermark padding",
 			"category": "watermark",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "number"
@@ -824,6 +1002,9 @@
 		"markscale": {
 			"display_name": "watermark scale",
 			"category": "watermark",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "number",
@@ -843,6 +1024,9 @@
 		"markw": {
 			"display_name": "watermark width",
 			"category": "watermark",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "number"
@@ -863,6 +1047,9 @@
 		"markx": {
 			"display_name": "watermark x-position",
 			"category": "watermark",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "integer"
@@ -880,6 +1067,9 @@
 		"marky": {
 			"display_name": "watermark y-position",
 			"category": "watermark",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "integer"
@@ -897,6 +1087,10 @@
 		"mask": {
 			"display_name": "mask",
 			"category": "mask",
+			"available_in": [
+				"url",
+				"graph"
+			],
 			"expects": [
 				{
 					"type": "string",
@@ -914,6 +1108,10 @@
 		"mono": {
 			"display_name": "monochrome",
 			"category": "stylize",
+			"available_in": [
+				"url",
+				"graph"
+			],
 			"expects": [
 				{
 					"type": "hex_color"
@@ -928,6 +1126,10 @@
 		"nr": {
 			"display_name": "noise blur",
 			"category": "noise",
+			"available_in": [
+				"url",
+				"graph"
+			],
 			"expects": [
 				{
 					"type": "number",
@@ -942,6 +1144,10 @@
 		"nrs": {
 			"display_name": "noise sharpen",
 			"category": "noise",
+			"available_in": [
+				"url",
+				"graph"
+			],
 			"expects": [
 				{
 					"type": "number",
@@ -956,6 +1162,10 @@
 		"or": {
 			"display_name": "orientation",
 			"category": "rotation",
+			"available_in": [
+				"url",
+				"graph"
+			],
 			"expects": [
 				{
 					"type": "integer",
@@ -984,6 +1194,9 @@
 		"pad": {
 			"display_name": "padding",
 			"category": "border_and_padding",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "integer",
@@ -997,6 +1210,10 @@
 		"page": {
 			"display_name": "pdf page number",
 			"category": "pdf",
+			"available_in": [
+				"url",
+				"graph"
+			],
 			"expects": [
 				{
 					"type": "integer",
@@ -1010,6 +1227,10 @@
 		"palette": {
 			"display_name": "palette extraction",
 			"category": "palette",
+			"available_in": [
+				"url",
+				"output"
+			],
 			"expects": [
 				{
 					"type": "string",
@@ -1025,6 +1246,10 @@
 		"prefix": {
 			"display_name": "css prefix",
 			"category": "palette",
+			"available_in": [
+				"url",
+				"output"
+			],
 			"expects": [
 				{
 					"type": "string"
@@ -1040,6 +1265,10 @@
 		"px": {
 			"display_name": "pixellate",
 			"category": "stylize",
+			"available_in": [
+				"url",
+				"graph"
+			],
 			"expects": [
 				{
 					"type": "number",
@@ -1054,6 +1283,11 @@
 		"q": {
 			"display_name": "output quality",
 			"category": "format",
+			"available_in": [
+				"url",
+				"graph",
+				"output"
+			],
 			"expects": [
 				{
 					"type": "number",
@@ -1074,6 +1308,10 @@
 		"rect": {
 			"display_name": "crop rectangle",
 			"category": "size",
+			"available_in": [
+				"url",
+				"graph"
+			],
 			"expects": [
 				{
 					"0": {
@@ -1101,6 +1339,10 @@
 		"rot": {
 			"display_name": "rotation angle",
 			"category": "rotation",
+			"available_in": [
+				"url",
+				"graph"
+			],
 			"expects": [
 				{
 					"type": "number",
@@ -1115,6 +1357,10 @@
 		"sat": {
 			"display_name": "saturation",
 			"category": "adjustment",
+			"available_in": [
+				"url",
+				"graph"
+			],
 			"expects": [
 				{
 					"type": "number",
@@ -1129,6 +1375,10 @@
 		"sepia": {
 			"display_name": "sepia",
 			"category": "stylize",
+			"available_in": [
+				"url",
+				"graph"
+			],
 			"expects": [
 				{
 					"type": "number",
@@ -1143,6 +1393,10 @@
 		"shad": {
 			"display_name": "shadow",
 			"category": "adjustment",
+			"available_in": [
+				"url",
+				"graph"
+			],
 			"expects": [
 				{
 					"type": "number",
@@ -1157,6 +1411,10 @@
 		"sharp": {
 			"display_name": "sharpen",
 			"category": "adjustment",
+			"available_in": [
+				"url",
+				"graph"
+			],
 			"expects": [
 				{
 					"type": "number",
@@ -1171,6 +1429,10 @@
 		"trim": {
 			"display_name": "trim mode",
 			"category": "trim",
+			"available_in": [
+				"url",
+				"graph"
+			],
 			"expects": [
 				{
 					"type": "string",
@@ -1186,6 +1448,10 @@
 		"trimcolor": {
 			"display_name": "trim color",
 			"category": "trim",
+			"available_in": [
+				"url",
+				"graph"
+			],
 			"expects": [
 				{
 					"type": "hex_color"
@@ -1200,6 +1466,10 @@
 		"trimmd": {
 			"display_name": "trim mean difference",
 			"category": "trim",
+			"available_in": [
+				"url",
+				"graph"
+			],
 			"expects": [
 				{
 					"type": "number"
@@ -1215,6 +1485,10 @@
 		"trimsd": {
 			"display_name": "trim standard deviation",
 			"category": "trim",
+			"available_in": [
+				"url",
+				"graph"
+			],
 			"expects": [
 				{
 					"type": "number"
@@ -1230,6 +1504,10 @@
 		"trimtol": {
 			"display_name": "trim tolerance",
 			"category": "trim",
+			"available_in": [
+				"url",
+				"graph"
+			],
 			"expects": [
 				{
 					"type": "number",
@@ -1246,6 +1524,9 @@
 		"txt": {
 			"display_name": "text",
 			"category": "text",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "string"
@@ -1260,6 +1541,9 @@
 		"txtalign": {
 			"display_name": "text align",
 			"category": "text",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "list",
@@ -1285,6 +1569,9 @@
 		"txtclip": {
 			"display_name": "text clipping",
 			"category": "text",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "string",
@@ -1309,6 +1596,9 @@
 		"txtclr": {
 			"display_name": "text color",
 			"category": "text",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "hex_color"
@@ -1327,6 +1617,9 @@
 		"txtfit": {
 			"display_name": "text fit mode",
 			"category": "text",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "string",
@@ -1344,6 +1637,9 @@
 		"txtfont": {
 			"display_name": "text font",
 			"category": "text",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "list"
@@ -1358,9 +1654,30 @@
 			"url": "https://www.imgix.com/docs/reference/text#param-txtfont",
 			"short_description": "Selects a font for rendered text."
 		},
+		"txtlead": {
+			"display_name": "text leading",
+			"category": "text",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "number",
+					"min": 0
+				}
+			],
+			"default": 0,
+			"depends": [
+				"txt"
+			],
+			"short_description": "Sets the leading for rendered text. Only works on the multi-line text endpoint."
+		},
 		"txtline": {
 			"display_name": "text outline",
 			"category": "text",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "number",
@@ -1380,6 +1697,9 @@
 		"txtlineclr": {
 			"display_name": "text outline color",
 			"category": "text",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "hex_color"
@@ -1399,6 +1719,9 @@
 		"txtpad": {
 			"display_name": "text padding",
 			"category": "text",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "number"
@@ -1417,6 +1740,9 @@
 		"txtshad": {
 			"display_name": "text shadow",
 			"category": "text",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "number"
@@ -1435,6 +1761,9 @@
 		"txtsize": {
 			"display_name": "text font size",
 			"category": "text",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "number",
@@ -1451,9 +1780,33 @@
 			"url": "https://www.imgix.com/docs/reference/text#param-txtsize",
 			"short_description": "Sets the size of rendered text."
 		},
+		"txttrack": {
+			"display_name": "text tracking",
+			"category": "text",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "number",
+					"min": -4
+				}
+			],
+			"default": 0,
+			"aliases": [
+				"tt"
+			],
+			"depends": [
+				"txt"
+			],
+			"short_description": "Sets the tracking for rendered text. Only works on the multi-line text endpoint."
+		},
 		"txtwidth": {
 			"display_name": "text width",
 			"category": "text",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "number",
@@ -1469,6 +1822,10 @@
 		"usm": {
 			"display_name": "unsharp mask",
 			"category": "adjustment",
+			"available_in": [
+				"url",
+				"graph"
+			],
 			"expects": [
 				{
 					"type": "number",
@@ -1483,6 +1840,10 @@
 		"usmrad": {
 			"display_name": "unsharp mask radius",
 			"category": "adjustment",
+			"available_in": [
+				"url",
+				"graph"
+			],
 			"expects": [
 				{
 					"type": "number",
@@ -1499,6 +1860,10 @@
 		"vib": {
 			"display_name": "vibrance",
 			"category": "adjustment",
+			"available_in": [
+				"url",
+				"graph"
+			],
 			"expects": [
 				{
 					"type": "number",
@@ -1513,6 +1878,10 @@
 		"w": {
 			"display_name": "width",
 			"category": "size",
+			"available_in": [
+				"url",
+				"graph"
+			],
 			"expects": [
 				{
 					"type": "number"
@@ -1529,6 +1898,10 @@
 		"class": {
 			"display_name": "css class",
 			"category": "palette",
+			"available_in": [
+				"url",
+				"output"
+			],
 			"expects": [
 				{
 					"type": "string"
@@ -1544,6 +1917,9 @@
 		"skin": {
 			"display_name": "skin detection",
 			"category": "misc",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "string",
@@ -1560,6 +1936,11 @@
 		"fps": {
 			"display_name": "frames per second",
 			"category": "animation",
+			"available_in": [
+				"url",
+				"graph",
+				"output"
+			],
 			"expects": [
 				{
 					"type": "number"
@@ -1571,6 +1952,10 @@
 		"frame": {
 			"display_name": "frame number",
 			"category": "animation",
+			"available_in": [
+				"url",
+				"graph"
+			],
 			"expects": [
 				{
 					"type": "integer",
@@ -1583,6 +1968,11 @@
 		"loop": {
 			"display_name": "animation loop count",
 			"category": "animation",
+			"available_in": [
+				"url",
+				"graph",
+				"output"
+			],
 			"expects": [
 				{
 					"type": "integer",
@@ -1596,6 +1986,11 @@
 		"reverse": {
 			"display_name": "frame number",
 			"category": "animation",
+			"available_in": [
+				"url",
+				"graph",
+				"output"
+			],
 			"expects": [
 				{
 					"type": "integer",
@@ -1619,6 +2014,10 @@
 		"rott": {
 			"display_name": "rotation type",
 			"category": "rotation",
+			"available_in": [
+				"url",
+				"graph"
+			],
 			"expects": [
 				{
 					"type": "string",
@@ -1634,6 +2033,9 @@
 		"skin": {
 			"display_name": "skin detection",
 			"category": "misc",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "string",
@@ -1644,41 +2046,6 @@
 			],
 			"experimental": true,
 			"deprecated": true
-		},
-		"txtlead": {
-			"display_name": "text leading",
-			"category": "text",
-			"expects": [
-				{
-					"type": "number",
-					"min": 0
-				}
-			],
-			"default": 0,
-			"depends": [
-				"txt"
-			],
-			"experimental": true,
-			"short_description": "Sets the leading for rendered text. Only works on the multi-line text endpoint."
-		},
-		"txttrack": {
-			"display_name": "text tracking",
-			"category": "text",
-			"expects": [
-				{
-					"type": "number",
-					"min": -4
-				}
-			],
-			"default": 0,
-			"aliases": [
-				"tt"
-			],
-			"depends": [
-				"txt"
-			],
-			"experimental": true,
-			"short_description": "Sets the tracking for rendered text. Only works on the multi-line text endpoint."
 		}
 	},
 	"aliases": {
@@ -1708,5 +2075,5 @@
 		"tsz": "txtsize",
 		"tt": "txttrack"
 	},
-	"version": "2.3.1"
+	"version": "2.5.0"
 }
