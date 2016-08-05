@@ -703,6 +703,7 @@ return {
 						"crop",
 						"facearea",
 						"fill",
+						"fillmax",
 						"max",
 						"min",
 						"scale"
@@ -2376,7 +2377,7 @@ return {
 		"tsz": "txtsize",
 		"tt": "txttrack"
 	},
-	"version": "4.1.0"
+	"version": "4.1.1"
 };
 
 }));
