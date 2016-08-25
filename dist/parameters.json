@@ -750,6 +750,108 @@
 			"url": "https://docs.imgix.com/apis/url/format/fm",
 			"short_description": "Changes the format of the output image."
 		},
+		"fp-debug": {
+			"display_name": "focal point crosshairs",
+			"category": "focal_point_crop",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "integer",
+					"possible_values": [
+						0,
+						1
+					]
+				},
+				{
+					"type": "string",
+					"possible_values": [
+						"false",
+						"true"
+					]
+				}
+			],
+			"depends": [
+				"fit=crop",
+				"crop=focalpoint"
+			],
+			"url": "https://www.imgix.com/docs/reference/focalpoint-crop#param-fp-debug",
+			"short_description": "Displays crosshairs identifying the location of the set focal point"
+		},
+		"fp-x": {
+			"display_name": "focal point x value",
+			"category": "focal_point_crop",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "unit_scalar",
+					"default": 0.5,
+					"strict_range": {
+						"min": 0,
+						"max": 1
+					}
+				}
+			],
+			"depends": [
+				"fit=crop",
+				"crop=focalpoint"
+			],
+			"url": "https://www.imgix.com/docs/reference/focalpoint-crop#param-fp-x",
+			"short_description": "Sets the relative horizontal value for the focal point of an image"
+		},
+		"fp-y": {
+			"display_name": "focal point y value",
+			"category": "focal_point_crop",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "unit_scalar",
+					"default": 0.5,
+					"strict_range": {
+						"min": 0,
+						"max": 1
+					}
+				}
+			],
+			"depends": [
+				"fit=crop",
+				"crop=focalpoint"
+			],
+			"url": "https://www.imgix.com/docs/reference/focalpoint-crop#param-fp-y",
+			"short_description": "Sets the relative vertical value for the focal point of an image"
+		},
+		"fp-z": {
+			"display_name": "focal point zoom value",
+			"category": "focal_point_crop",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "number",
+					"default": 1,
+					"suggested_range": {
+						"min": 1,
+						"max": 10
+					},
+					"strict_range": {
+						"min": 1,
+						"max": 100
+					}
+				}
+			],
+			"depends": [
+				"fit=crop",
+				"crop=focalpoint"
+			],
+			"url": "https://www.imgix.com/docs/reference/focalpoint-crop#param-fp-z",
+			"short_description": "Sets the relative zoom value for the focal point of an image"
+		},
 		"gam": {
 			"display_name": "gamma",
 			"category": "adjustment",
@@ -2380,112 +2482,6 @@
 		}
 	},
 	"experimentalParameters": {
-		"fp-debug": {
-			"display_name": "focal point crosshairs",
-			"category": "focal_point_crop",
-			"available_in": [
-				"url"
-			],
-			"expects": [
-				{
-					"type": "integer",
-					"possible_values": [
-						0,
-						1
-					]
-				},
-				{
-					"type": "string",
-					"possible_values": [
-						"false",
-						"true"
-					]
-				}
-			],
-			"depends": [
-				"fit=crop",
-				"crop=focalpoint"
-			],
-			"experimental": true,
-			"url": "https://www.imgix.com/docs/reference/focalpoint-crop#param-fp-debug",
-			"short_description": "Displays crosshairs identifying the location of the set focal point"
-		},
-		"fp-x": {
-			"display_name": "focal point x value",
-			"category": "focal_point_crop",
-			"available_in": [
-				"url"
-			],
-			"expects": [
-				{
-					"type": "unit_scalar",
-					"default": 0.5,
-					"strict_range": {
-						"min": 0,
-						"max": 1
-					}
-				}
-			],
-			"depends": [
-				"fit=crop",
-				"crop=focalpoint"
-			],
-			"experimental": true,
-			"url": "https://www.imgix.com/docs/reference/focalpoint-crop#param-fp-x",
-			"short_description": "Sets the relative horizontal value for the focal point of an image"
-		},
-		"fp-y": {
-			"display_name": "focal point y value",
-			"category": "focal_point_crop",
-			"available_in": [
-				"url"
-			],
-			"expects": [
-				{
-					"type": "unit_scalar",
-					"default": 0.5,
-					"strict_range": {
-						"min": 0,
-						"max": 1
-					}
-				}
-			],
-			"depends": [
-				"fit=crop",
-				"crop=focalpoint"
-			],
-			"experimental": true,
-			"url": "https://www.imgix.com/docs/reference/focalpoint-crop#param-fp-y",
-			"short_description": "Sets the relative vertical value for the focal point of an image"
-		},
-		"fp-z": {
-			"display_name": "focal point zoom value",
-			"category": "focal_point_crop",
-			"available_in": [
-				"url"
-			],
-			"expects": [
-				{
-					"type": "number",
-					"default": 1,
-					"suggested_range": {
-						"min": 1,
-						"max": 10
-					},
-					"strict_range": {
-						"min": 1,
-						"max": 100
-					}
-				}
-			],
-			"depends": [
-				"fit=crop",
-				"crop=focalpoint"
-			],
-			"experimental": true,
-			"url": "https://www.imgix.com/docs/reference/focalpoint-crop#param-fp-z",
-			"short_description": "Sets the relative zoom value for the focal point of an image"
-		},
 		"fps": {
 			"display_name": "frames per second",
 			"category": "animation",
@@ -2632,5 +2628,5 @@
 		"tsz": "txtsize",
 		"tt": "txttrack"
 	},
-	"version": "4.2.0"
+	"version": "4.3.0"
 }
