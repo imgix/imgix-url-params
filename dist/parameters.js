@@ -1312,6 +1312,74 @@ return {
 			"url": "https://docs.imgix.com/apis/url/mask",
 			"short_description": "Specifies the location of the mask image."
 		},
+		"max-h": {
+			"display_name": "maximum height",
+			"category": "size",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "number"
+				}
+			],
+			"depends": [
+				"fit=crop"
+			],
+			"url": "https://docs.imgix.com/apis/url/size/max-h",
+			"short_description": "Specifies the maximum height of the output image in pixels."
+		},
+		"max-w": {
+			"display_name": "maximum width",
+			"category": "size",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "number"
+				}
+			],
+			"depends": [
+				"fit=crop"
+			],
+			"url": "https://docs.imgix.com/apis/url/size/max-w",
+			"short_description": "Specifies the maximum width of the output image in pixels."
+		},
+		"min-h": {
+			"display_name": "minimum height",
+			"category": "size",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "number"
+				}
+			],
+			"depends": [
+				"fit=crop"
+			],
+			"url": "https://docs.imgix.com/apis/url/size/min-h",
+			"short_description": "Specifies the minimum height of the output image in pixels."
+		},
+		"min-w": {
+			"display_name": "minimum width",
+			"category": "size",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "number"
+				}
+			],
+			"depends": [
+				"fit=crop"
+			],
+			"url": "https://docs.imgix.com/apis/url/size/min-w",
+			"short_description": "Specifies the minimum width of the output image in pixels."
+		},
 		"mono": {
 			"display_name": "monochrome",
 			"category": "stylize",
@@ -2644,7 +2712,7 @@ return {
 		"tsz": "txtsize",
 		"tt": "txttrack"
 	},
-	"version": "4.3.0"
+	"version": "4.4.0"
 };
 
 }));
