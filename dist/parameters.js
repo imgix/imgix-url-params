@@ -655,7 +655,8 @@ return {
 				{
 					"type": "number",
 					"suggested_range": {
-						"min": 0
+						"min": 1,
+						"max": 10
 					}
 				}
 			],
@@ -774,20 +775,10 @@ return {
 			],
 			"expects": [
 				{
-					"type": "integer",
-					"possible_values": [
-						0,
-						1
-					]
-				},
-				{
-					"type": "string",
-					"possible_values": [
-						"false",
-						"true"
-					]
+					"type": "boolean"
 				}
 			],
+			"default": false,
 			"depends": [
 				"fit=crop",
 				"crop=focalpoint"
@@ -978,12 +969,10 @@ return {
 			],
 			"expects": [
 				{
-					"type": "string",
-					"possible_values": [
-						"true"
-					]
+					"type": "boolean"
 				}
 			],
+			"default": false,
 			"url": "https://docs.imgix.com/apis/url/adjustment/invert",
 			"short_description": "Inverts the colors on the source image."
 		},
@@ -997,21 +986,10 @@ return {
 			],
 			"expects": [
 				{
-					"type": "integer",
-					"possible_values": [
-						0,
-						1
-					]
-				},
-				{
-					"type": "string",
-					"possible_values": [
-						"false",
-						"true"
-					]
+					"type": "boolean"
 				}
 			],
-			"default": "false",
+			"default": false,
 			"depends": [
 				"fm=webp",
 				"fm=jxr"
@@ -2630,21 +2608,10 @@ return {
 			],
 			"expects": [
 				{
-					"type": "integer",
-					"possible_values": [
-						0,
-						1
-					]
-				},
-				{
-					"type": "string",
-					"possible_values": [
-						"false",
-						"true"
-					]
+					"type": "boolean"
 				}
 			],
-			"default": "false",
+			"default": false,
 			"experimental": true,
 			"short_description": "Reverses the frame order on the source animation."
 		},
@@ -2712,7 +2679,7 @@ return {
 		"tsz": "txtsize",
 		"tt": "txttrack"
 	},
-	"version": "4.4.0"
+	"version": "5.0.0"
 };
 
 }));
