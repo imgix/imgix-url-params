@@ -1865,7 +1865,7 @@ return {
 			],
 			"expects": [
 				{
-					"type": "string",
+					"type": "list",
 					"possible_values": [
 						"start",
 						"middle",
@@ -2679,7 +2679,7 @@ return {
 		"tsz": "txtsize",
 		"tt": "txttrack"
 	},
-	"version": "5.0.0"
+	"version": "5.0.1"
 };
 
 }));
