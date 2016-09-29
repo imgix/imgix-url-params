@@ -1,6 +1,6 @@
 {
   "name": "image-api-spec",
-  "version": "5.0.1",
+  "version": "5.0.2",
   "description": "A single source of truth for the imgix URL API.",
   "main": "dist/manifest.json",
   "scripts": {

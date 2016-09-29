@@ -156,9 +156,17 @@ return {
 			],
 			"expects": [
 				{
-					"type": "number",
+					"type": "integer",
 					"strict_range": {
-						"min": 0
+						"min": 2,
+						"max": 8192
+					}
+				},
+				{
+					"type": "unit_scalar",
+					"strict_range": {
+						"min": 0,
+						"max": 1
 					}
 				}
 			],
@@ -256,7 +264,8 @@ return {
 					"0": {
 						"type": "integer",
 						"suggested_range": {
-							"min": 0
+							"min": 1,
+							"max": 100
 						}
 					},
 					"1": {
@@ -338,9 +347,17 @@ return {
 			],
 			"expects": [
 				{
-					"type": "number",
+					"type": "integer",
 					"strict_range": {
-						"min": 0
+						"min": 2,
+						"max": 8192
+					}
+				},
+				{
+					"type": "unit_scalar",
+					"strict_range": {
+						"min": 0,
+						"max": 1
 					}
 				}
 			],
@@ -888,12 +905,17 @@ return {
 			],
 			"expects": [
 				{
-					"type": "number"
+					"type": "integer",
+					"strict_range": {
+						"min": 2,
+						"max": 8192
+					}
 				},
 				{
 					"type": "unit_scalar",
 					"strict_range": {
-						"min": 0
+						"min": 0,
+						"max": 1
 					}
 				}
 			],
@@ -1128,12 +1150,17 @@ return {
 			],
 			"expects": [
 				{
-					"type": "number"
+					"type": "integer",
+					"strict_range": {
+						"min": 2,
+						"max": 8192
+					}
 				},
 				{
 					"type": "unit_scalar",
 					"strict_range": {
-						"min": 0
+						"min": 0,
+						"max": 1
 					}
 				}
 			],
@@ -1202,12 +1229,17 @@ return {
 			],
 			"expects": [
 				{
-					"type": "number"
+					"type": "integer",
+					"strict_range": {
+						"min": 2,
+						"max": 8192
+					}
 				},
 				{
 					"type": "unit_scalar",
 					"strict_range": {
-						"min": 0
+						"min": 0,
+						"max": 1
 					}
 				}
 			],
@@ -1298,7 +1330,11 @@ return {
 			],
 			"expects": [
 				{
-					"type": "number"
+					"type": "integer",
+					"strict_range": {
+						"min": 1,
+						"max": 8192
+					}
 				}
 			],
 			"depends": [
@@ -1315,7 +1351,11 @@ return {
 			],
 			"expects": [
 				{
-					"type": "number"
+					"type": "integer",
+					"strict_range": {
+						"min": 1,
+						"max": 8192
+					}
 				}
 			],
 			"depends": [
@@ -1332,7 +1372,11 @@ return {
 			],
 			"expects": [
 				{
-					"type": "number"
+					"type": "integer",
+					"strict_range": {
+						"min": 1,
+						"max": 8192
+					}
 				}
 			],
 			"depends": [
@@ -1349,7 +1393,11 @@ return {
 			],
 			"expects": [
 				{
-					"type": "number"
+					"type": "integer",
+					"strict_range": {
+						"min": 1,
+						"max": 8192
+					}
 				}
 			],
 			"depends": [
@@ -1580,27 +1628,27 @@ return {
 			"expects": [
 				{
 					"0": {
-						"type": "number",
-						"suggested_range": {
+						"type": "integer",
+						"strict_range": {
 							"min": 0
 						}
 					},
 					"1": {
-						"type": "number",
-						"suggested_range": {
+						"type": "integer",
+						"strict_range": {
 							"min": 0
 						}
 					},
 					"2": {
-						"type": "number",
-						"suggested_range": {
-							"min": 0
+						"type": "integer",
+						"strict_range": {
+							"min": 1
 						}
 					},
 					"3": {
-						"type": "number",
-						"suggested_range": {
-							"min": 0
+						"type": "integer",
+						"strict_range": {
+							"min": 1
 						}
 					},
 					"type": "list"
@@ -2493,12 +2541,17 @@ return {
 			],
 			"expects": [
 				{
-					"type": "number"
+					"type": "integer",
+					"strict_range": {
+						"min": 2,
+						"max": 8192
+					}
 				},
 				{
 					"type": "unit_scalar",
 					"strict_range": {
-						"min": 0
+						"min": 0,
+						"max": 1
 					}
 				}
 			],
@@ -2554,7 +2607,11 @@ return {
 			],
 			"expects": [
 				{
-					"type": "number"
+					"type": "number",
+					"suggested_range": {
+						"min": 1,
+						"max": 60
+					}
 				}
 			],
 			"experimental": true,
@@ -2679,7 +2736,7 @@ return {
 		"tsz": "txtsize",
 		"tt": "txttrack"
 	},
-	"version": "5.0.1"
+	"version": "5.0.2"
 };
 
 }));
