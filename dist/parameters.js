@@ -261,16 +261,20 @@ return {
 			],
 			"expects": [
 				{
-					"0": {
-						"type": "integer",
-						"suggested_range": {
-							"min": 1,
-							"max": 100
+					"0": [
+						{
+							"type": "integer",
+							"suggested_range": {
+								"min": 1,
+								"max": 100
+							}
 						}
-					},
-					"1": {
-						"type": "hex_color"
-					},
+					],
+					"1": [
+						{
+							"type": "hex_color"
+						}
+					],
 					"type": "list",
 					"length": 2
 				}
@@ -639,6 +643,20 @@ return {
 			"default": 0,
 			"url": "https://docs.imgix.com/apis/url/adjustment/exp",
 			"short_description": "Adjusts the exposure of the output image."
+		},
+		"expires": {
+			"display_name": "URL expiration timestamp",
+			"category": "expiration",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "timestamp"
+				}
+			],
+			"url": "https://docs.imgix.com/apis/url/expires",
+			"short_description": "A Unix timestamp specifying a UTC time. Requests made to this URL after that time will output a 404 status code."
 		},
 		"faceindex": {
 			"display_name": "face index",
@@ -1627,30 +1645,54 @@ return {
 			],
 			"expects": [
 				{
-					"0": {
-						"type": "integer",
-						"strict_range": {
-							"min": 0
+					"0": [
+						{
+							"type": "integer",
+							"strict_range": {
+								"min": 0
+							}
+						},
+						{
+							"type": "string",
+							"possible_values": [
+								"left",
+								"center",
+								"right"
+							]
 						}
-					},
-					"1": {
-						"type": "integer",
-						"strict_range": {
-							"min": 0
+					],
+					"1": [
+						{
+							"type": "integer",
+							"strict_range": {
+								"min": 0
+							}
+						},
+						{
+							"type": "string",
+							"possible_values": [
+								"top",
+								"middle",
+								"bottom"
+							]
 						}
-					},
-					"2": {
-						"type": "integer",
-						"strict_range": {
-							"min": 1
+					],
+					"2": [
+						{
+							"type": "integer",
+							"strict_range": {
+								"min": 1
+							}
 						}
-					},
-					"3": {
-						"type": "integer",
-						"strict_range": {
-							"min": 1
+					],
+					"3": [
+						{
+							"type": "integer",
+							"strict_range": {
+								"min": 1
+							}
 						}
-					},
+					],
 					"type": "list"
 				}
 			],
@@ -2736,7 +2778,7 @@ return {
 		"tsz": "txtsize",
 		"tt": "txttrack"
 	},
-	"version": "5.0.2"
+	"version": "7.0.0"
 };
 
 }));
