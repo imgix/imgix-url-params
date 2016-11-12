@@ -236,6 +236,120 @@
 			"url": "https://docs.imgix.com/apis/url/blending/bm",
 			"short_description": "Sets the blend mode for a blend image."
 		},
+		"border-radius-inner": {
+			"display_name": "border-radius-inner",
+			"category": "border_and_padding",
+			"available_in": [
+				"url",
+				"graph"
+			],
+			"expects": [
+				{
+					"type": "integer",
+					"strict_range": {
+						"min": 0
+					}
+				},
+				{
+					"0": [
+						{
+							"type": "integer",
+							"strict_range": {
+								"min": 0
+							}
+						}
+					],
+					"1": [
+						{
+							"type": "integer",
+							"strict_range": {
+								"min": 0
+							}
+						}
+					],
+					"2": [
+						{
+							"type": "integer",
+							"strict_range": {
+								"min": 0
+							}
+						}
+					],
+					"3": [
+						{
+							"type": "integer",
+							"strict_range": {
+								"min": 0
+							}
+						}
+					],
+					"type": "list",
+					"length": 4
+				}
+			],
+			"depends": [
+				"border"
+			],
+			"url": "https://docs.imgix.com/apis/url/border-and-padding/border-radius-inner",
+			"short_description": "Sets the inner radius of the image's border in pixels."
+		},
+		"border-radius": {
+			"display_name": "border-radius",
+			"category": "border_and_padding",
+			"available_in": [
+				"url",
+				"graph"
+			],
+			"expects": [
+				{
+					"type": "integer",
+					"strict_range": {
+						"min": 0
+					}
+				},
+				{
+					"0": [
+						{
+							"type": "integer",
+							"strict_range": {
+								"min": 0
+							}
+						}
+					],
+					"1": [
+						{
+							"type": "integer",
+							"strict_range": {
+								"min": 0
+							}
+						}
+					],
+					"2": [
+						{
+							"type": "integer",
+							"strict_range": {
+								"min": 0
+							}
+						}
+					],
+					"3": [
+						{
+							"type": "integer",
+							"strict_range": {
+								"min": 0
+							}
+						}
+					],
+					"type": "list",
+					"length": 4
+				}
+			],
+			"depends": [
+				"border"
+			],
+			"url": "https://docs.imgix.com/apis/url/border-and-padding/border-radius",
+			"short_description": "Sets the outer radius of the image's border in pixels."
+		},
 		"border": {
 			"display_name": "border",
 			"category": "border_and_padding",
@@ -499,6 +613,63 @@
 			"default": 0,
 			"url": "https://docs.imgix.com/apis/url/adjustment/con",
 			"short_description": "Adjusts the contrast of the source image."
+		},
+		"corner-radius": {
+			"display_name": "corner radius",
+			"category": "mask",
+			"available_in": [
+				"url",
+				"graph"
+			],
+			"expects": [
+				{
+					"type": "integer",
+					"strict_range": {
+						"min": 0
+					}
+				},
+				{
+					"0": [
+						{
+							"type": "integer",
+							"strict_range": {
+								"min": 0
+							}
+						}
+					],
+					"1": [
+						{
+							"type": "integer",
+							"strict_range": {
+								"min": 0
+							}
+						}
+					],
+					"2": [
+						{
+							"type": "integer",
+							"strict_range": {
+								"min": 0
+							}
+						}
+					],
+					"3": [
+						{
+							"type": "integer",
+							"strict_range": {
+								"min": 0
+							}
+						}
+					],
+					"type": "list",
+					"length": 4
+				}
+			],
+			"depends": [
+				"mask=corners"
+			],
+			"url": "https://docs.imgix.com/apis/url/mask/corner-radius",
+			"short_description": "Specifies the radius value for a rounded corner mask."
 		},
 		"crop": {
 			"display_name": "crop mode",
@@ -1311,7 +1482,8 @@
 				{
 					"type": "string",
 					"possible_values": [
-						"ellipse"
+						"ellipse",
+						"corners"
 					]
 				},
 				{
@@ -1322,7 +1494,26 @@
 				}
 			],
 			"url": "https://docs.imgix.com/apis/url/mask",
-			"short_description": "Specifies the location of the mask image."
+			"short_description": "Defines the type of mask and specifies the URL if that type is selected."
+		},
+		"maskbg": {
+			"display_name": "mask background color",
+			"category": "mask",
+			"available_in": [
+				"url",
+				"graph"
+			],
+			"expects": [
+				{
+					"type": "hex_color"
+				}
+			],
+			"default": "fff",
+			"depends": [
+				"mask"
+			],
+			"url": "https://docs.imgix.com/apis/url/mask/mask-bg",
+			"short_description": "Colors the background of the transparent mask area of images"
 		},
 		"max-h": {
 			"display_name": "maximum height",
@@ -2762,5 +2953,5 @@
 		"tsz": "txtsize",
 		"tt": "txttrack"
 	},
-	"version": "7.0.0"
+	"version": "7.1.0"
 }

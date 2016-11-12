@@ -1,6 +1,6 @@
 {
   "name": "image-api-spec",
-  "version": "7.0.0",
+  "version": "7.1.0",
   "homepage": "https://github.com/imgix/image-api-spec",
   "authors": [
     "Jason Eberle <jason@imgix.com>"
