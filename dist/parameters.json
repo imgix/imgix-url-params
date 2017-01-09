@@ -973,7 +973,7 @@
 				"fit=crop",
 				"crop=focalpoint"
 			],
-			"url": "https://www.imgix.com/docs/reference/focalpoint-crop#param-fp-debug",
+			"url": "https://docs.imgix.com/apis/url/focalpoint-crop/fp-debug",
 			"short_description": "Displays crosshairs identifying the location of the set focal point"
 		},
 		"fp-x": {
@@ -996,7 +996,7 @@
 				"fit=crop",
 				"crop=focalpoint"
 			],
-			"url": "https://www.imgix.com/docs/reference/focalpoint-crop#param-fp-x",
+			"url": "https://docs.imgix.com/apis/url/focalpoint-crop/fp-x",
 			"short_description": "Sets the relative horizontal value for the focal point of an image"
 		},
 		"fp-y": {
@@ -1019,7 +1019,7 @@
 				"fit=crop",
 				"crop=focalpoint"
 			],
-			"url": "https://www.imgix.com/docs/reference/focalpoint-crop#param-fp-y",
+			"url": "https://docs.imgix.com/apis/url/focalpoint-crop/fp-y",
 			"short_description": "Sets the relative vertical value for the focal point of an image"
 		},
 		"fp-z": {
@@ -1046,7 +1046,7 @@
 				"fit=crop",
 				"crop=focalpoint"
 			],
-			"url": "https://www.imgix.com/docs/reference/focalpoint-crop#param-fp-z",
+			"url": "https://docs.imgix.com/apis/url/focalpoint-crop/fp-z",
 			"short_description": "Sets the relative zoom value for the focal point of an image"
 		},
 		"gam": {
@@ -2953,5 +2953,5 @@
 		"tsz": "txtsize",
 		"tt": "txttrack"
 	},
-	"version": "7.1.0"
+	"version": "7.1.1"
 }
