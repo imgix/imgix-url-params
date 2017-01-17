@@ -1,11 +1,11 @@
 {
-  "name": "image-api-spec",
+  "name": "imgix-url-params",
   "version": "7.1.1",
-  "homepage": "https://github.com/imgix/image-api-spec",
+  "homepage": "https://github.com/imgix/imgix-url-params",
   "authors": [
     "Jason Eberle <jason@imgix.com>"
   ],
-  "description": "A single source of truth for the imgix URL API",
+  "description": "Organized, machine-friendly documentation of imgix's URL parameters",
   "main": [
     "dist/parameters.json",
     "dist/parameters.js"
