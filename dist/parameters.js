@@ -787,7 +787,8 @@ return {
 						"max": 8
 					},
 					"strict_range": {
-						"min": 0
+						"min": 0,
+						"max": 8
 					}
 				}
 			],
@@ -966,7 +967,8 @@ return {
 						"png",
 						"png8",
 						"png32",
-						"webp"
+						"webp",
+						"webm"
 					]
 				}
 			],
@@ -2819,7 +2821,7 @@ return {
 		"tsz": "txtsize",
 		"tt": "txttrack"
 	},
-	"version": "7.2.0"
+	"version": "7.4.0"
 };
 
 }));
