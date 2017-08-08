@@ -69,7 +69,7 @@ return {
 			],
 			"expects": [
 				{
-					"type": "number",
+					"type": "integer",
 					"strict_range": {
 						"min": 0,
 						"max": 100
@@ -205,7 +205,7 @@ return {
 			],
 			"expects": [
 				{
-					"type": "number",
+					"type": "integer",
 					"suggested_range": {
 						"min": 0,
 						"max": 2000
@@ -404,7 +404,7 @@ return {
 			],
 			"expects": [
 				{
-					"type": "number",
+					"type": "integer",
 					"suggested_range": {
 						"min": 0
 					}
@@ -426,7 +426,7 @@ return {
 			],
 			"expects": [
 				{
-					"type": "number",
+					"type": "integer",
 					"suggested_range": {
 						"min": -100,
 						"max": 100
@@ -493,7 +493,7 @@ return {
 			],
 			"expects": [
 				{
-					"type": "number",
+					"type": "integer",
 					"suggested_range": {
 						"min": 0
 					}
@@ -514,7 +514,7 @@ return {
 			],
 			"expects": [
 				{
-					"type": "number",
+					"type": "integer",
 					"suggested_range": {
 						"min": 0
 					}
@@ -538,7 +538,8 @@ return {
 					"type": "list",
 					"possible_values": [
 						"width",
-						"dpr"
+						"dpr",
+						"save-data"
 					]
 				}
 			],
@@ -619,7 +620,7 @@ return {
 			],
 			"expects": [
 				{
-					"type": "number",
+					"type": "integer",
 					"suggested_range": {
 						"min": -100,
 						"max": 100
@@ -762,7 +763,7 @@ return {
 			],
 			"expects": [
 				{
-					"type": "number",
+					"type": "integer",
 					"suggested_range": {
 						"min": 0
 					}
@@ -805,7 +806,7 @@ return {
 			],
 			"expects": [
 				{
-					"type": "number",
+					"type": "integer",
 					"suggested_range": {
 						"min": -100,
 						"max": 100
@@ -1048,7 +1049,7 @@ return {
 			],
 			"expects": [
 				{
-					"type": "number",
+					"type": "integer",
 					"default": 1,
 					"suggested_range": {
 						"min": 1,
@@ -1076,7 +1077,7 @@ return {
 			],
 			"expects": [
 				{
-					"type": "number",
+					"type": "integer",
 					"suggested_range": {
 						"min": -100,
 						"max": 100
@@ -1122,7 +1123,7 @@ return {
 			],
 			"expects": [
 				{
-					"type": "number",
+					"type": "integer",
 					"suggested_range": {
 						"min": -100,
 						"max": 100
@@ -1142,7 +1143,7 @@ return {
 			],
 			"expects": [
 				{
-					"type": "number",
+					"type": "integer",
 					"suggested_range": {
 						"min": 0,
 						"max": 100
@@ -1162,7 +1163,7 @@ return {
 			],
 			"expects": [
 				{
-					"type": "number",
+					"type": "integer",
 					"suggested_range": {
 						"min": 0,
 						"max": 360
@@ -1372,7 +1373,7 @@ return {
 			],
 			"expects": [
 				{
-					"type": "number",
+					"type": "integer",
 					"suggested_range": {
 						"min": 0
 					}
@@ -1396,7 +1397,7 @@ return {
 			],
 			"expects": [
 				{
-					"type": "number",
+					"type": "integer",
 					"suggested_range": {
 						"min": 0,
 						"max": 100
@@ -1644,7 +1645,7 @@ return {
 			],
 			"expects": [
 				{
-					"type": "number",
+					"type": "integer",
 					"suggested_range": {
 						"min": -100,
 						"max": 100
@@ -1664,7 +1665,7 @@ return {
 			],
 			"expects": [
 				{
-					"type": "number",
+					"type": "integer",
 					"suggested_range": {
 						"min": -100,
 						"max": 100
@@ -1791,7 +1792,7 @@ return {
 			],
 			"expects": [
 				{
-					"type": "number",
+					"type": "integer",
 					"suggested_range": {
 						"min": 0,
 						"max": 100
@@ -1812,7 +1813,7 @@ return {
 			],
 			"expects": [
 				{
-					"type": "number",
+					"type": "integer",
 					"suggested_range": {
 						"min": 0,
 						"max": 100
@@ -1921,7 +1922,7 @@ return {
 			],
 			"expects": [
 				{
-					"type": "number",
+					"type": "integer",
 					"suggested_range": {
 						"min": -100,
 						"max": 100
@@ -1941,7 +1942,7 @@ return {
 			],
 			"expects": [
 				{
-					"type": "number",
+					"type": "integer",
 					"suggested_range": {
 						"min": 0,
 						"max": 100
@@ -2096,7 +2097,7 @@ return {
 			"short_description": "Specifies the tolerance on a trim operation."
 		},
 		"txt": {
-			"display_name": "text",
+			"display_name": "text string",
 			"category": "text",
 			"available_in": [
 				"url"
@@ -2110,7 +2111,7 @@ return {
 				"t"
 			],
 			"url": "https://docs.imgix.com/apis/url/text/txt",
-			"short_description": "Sets the text to render."
+			"short_description": "Sets the text string to render."
 		},
 		"txtalign": {
 			"display_name": "text align",
@@ -2138,7 +2139,7 @@ return {
 				"txt"
 			],
 			"url": "https://docs.imgix.com/apis/url/text/txtalign",
-			"short_description": "Sets the alignment of rendered text."
+			"short_description": "Sets the vertical and horizontal alignment of rendered text relative to the base image."
 		},
 		"txtclip": {
 			"display_name": "text clipping",
@@ -2186,7 +2187,7 @@ return {
 				"txt"
 			],
 			"url": "https://docs.imgix.com/apis/url/text/txtclr",
-			"short_description": "Specifies the color of rendered text"
+			"short_description": "Specifies the color of rendered text."
 		},
 		"txtfit": {
 			"display_name": "text fit mode",
@@ -2507,7 +2508,7 @@ return {
 			],
 			"expects": [
 				{
-					"type": "number",
+					"type": "integer",
 					"suggested_range": {
 						"min": 0
 					}
@@ -2518,7 +2519,7 @@ return {
 				"txt"
 			],
 			"url": "https://docs.imgix.com/apis/url/text/txtlead",
-			"short_description": "Sets the leading for rendered text. Only works on the multi-line text endpoint."
+			"short_description": "Sets the leading (line spacing) for rendered text. Only works on the multi-line text endpoint."
 		},
 		"txtlig": {
 			"display_name": "text ligatures",
@@ -2550,7 +2551,7 @@ return {
 			],
 			"expects": [
 				{
-					"type": "number",
+					"type": "integer",
 					"suggested_range": {
 						"min": 0
 					}
@@ -2596,7 +2597,7 @@ return {
 			],
 			"expects": [
 				{
-					"type": "number",
+					"type": "integer",
 					"default": 10,
 					"suggested_range": {
 						"min": 0
@@ -2610,7 +2611,7 @@ return {
 				"txt"
 			],
 			"url": "https://docs.imgix.com/apis/url/text/txtpad",
-			"short_description": "Specifies padding for rendered text."
+			"short_description": "Specifies the padding (in device-independent pixels) between a textbox and the edges of the base image."
 		},
 		"txtshad": {
 			"display_name": "text shadow",
@@ -2645,7 +2646,7 @@ return {
 			],
 			"expects": [
 				{
-					"type": "number",
+					"type": "integer",
 					"suggested_range": {
 						"min": 0
 					}
@@ -2659,7 +2660,7 @@ return {
 				"txt"
 			],
 			"url": "https://docs.imgix.com/apis/url/text/txtsize",
-			"short_description": "Sets the size of rendered text."
+			"short_description": "Sets the font size of rendered text."
 		},
 		"txttrack": {
 			"display_name": "text tracking",
@@ -2669,7 +2670,7 @@ return {
 			],
 			"expects": [
 				{
-					"type": "number",
+					"type": "integer",
 					"suggested_range": {
 						"min": -4
 					}
@@ -2683,7 +2684,7 @@ return {
 				"txt"
 			],
 			"url": "https://docs.imgix.com/apis/url/text/txtlead",
-			"short_description": "Sets the tracking for rendered text. Only works on the multi-line text endpoint."
+			"short_description": "Sets the tracking (letter spacing) for rendered text. Only works on the multi-line text endpoint."
 		},
 		"txtwidth": {
 			"display_name": "text width",
@@ -2693,7 +2694,7 @@ return {
 			],
 			"expects": [
 				{
-					"type": "number",
+					"type": "integer",
 					"suggested_range": {
 						"min": 0
 					}
@@ -2714,7 +2715,7 @@ return {
 			],
 			"expects": [
 				{
-					"type": "number",
+					"type": "integer",
 					"suggested_range": {
 						"min": -100,
 						"max": 100
@@ -2756,7 +2757,7 @@ return {
 			],
 			"expects": [
 				{
-					"type": "number",
+					"type": "integer",
 					"suggested_range": {
 						"min": -100,
 						"max": 100
@@ -2765,7 +2766,7 @@ return {
 			],
 			"default": 0,
 			"url": "https://docs.imgix.com/apis/url/adjustment/vib",
-			"short_description": "Adjusts the vibrance an image."
+			"short_description": "Adjusts the vibrance of an image."
 		},
 		"w": {
 			"display_name": "width",
@@ -2821,7 +2822,7 @@ return {
 		"tsz": "txtsize",
 		"tt": "txttrack"
 	},
-	"version": "7.4.0"
+	"version": "8.1.0"
 };
 
 }));
