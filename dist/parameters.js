@@ -785,11 +785,11 @@ return {
 					"type": "number",
 					"suggested_range": {
 						"min": 0.75,
-						"max": 8
+						"max": 5
 					},
 					"strict_range": {
 						"min": 0,
-						"max": 8
+						"max": 5
 					}
 				}
 			],
@@ -1126,7 +1126,7 @@ return {
 					"type": "integer",
 					"suggested_range": {
 						"min": -100,
-						"max": 100
+						"max": 0
 					}
 				}
 			],
@@ -1964,7 +1964,7 @@ return {
 				{
 					"type": "number",
 					"suggested_range": {
-						"min": -100,
+						"min": 0,
 						"max": 100
 					}
 				}
@@ -2822,7 +2822,7 @@ return {
 		"tsz": "txtsize",
 		"tt": "txttrack"
 	},
-	"version": "8.1.0"
+	"version": "9.1.1"
 };
 
 }));
