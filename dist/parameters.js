@@ -914,7 +914,7 @@ return {
 					"type": "unit_scalar",
 					"strict_range": {
 						"min": 0,
-						"max": 1
+						"max": 0.5
 					}
 				}
 			],
@@ -2891,7 +2891,7 @@ return {
 		"tsz": "txtsize",
 		"tt": "txttrack"
 	},
-	"version": "9.2.0"
+	"version": "9.2.1"
 };
 
 }));
