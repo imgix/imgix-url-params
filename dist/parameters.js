@@ -896,35 +896,6 @@ return {
 			"url": "https://docs.imgix.com/apis/url/face-detection/faces",
 			"short_description": "Specifies that face data should be included in output when combined with `fm=json`."
 		},
-		"fill-blur": {
-			"display_name": "fill blur",
-			"category": "fill",
-			"available_in": [
-				"url"
-			],
-			"expects": [
-				{
-					"type": "integer",
-					"suggested_range": {
-						"min": 0,
-						"max": 2000
-					}
-				},
-				{
-					"type": "unit_scalar",
-					"strict_range": {
-						"min": 0,
-						"max": 0.5
-					}
-				}
-			],
-			"default": 0.1,
-			"depends": [
-				"fill=blur"
-			],
-			"url": "https://docs.imgix.com/apis/url/fill-blur",
-			"short_description": "Sets the blur factor for images with additional space created by the fit setting"
-		},
 		"fill-color": {
 			"display_name": "fill color",
 			"category": "fill",
@@ -940,7 +911,7 @@ return {
 			"depends": [
 				"fill=solid"
 			],
-			"url": "https://docs.imgix.com/apis/url/fill-color",
+			"url": "https://docs.imgix.com/apis/url/fill/fill-color",
 			"short_description": "Sets the fill color for images with additional space created by the fit setting"
 		},
 		"fill": {
@@ -962,7 +933,7 @@ return {
 			"depends": [
 				"fit"
 			],
-			"url": "https://docs.imgix.com/apis/url/fill",
+			"url": "https://docs.imgix.com/apis/url/fill/fill",
 			"short_description": "Determines how to fill in additional space created by the fit setting"
 		},
 		"fit": {
@@ -2891,7 +2862,7 @@ return {
 		"tsz": "txtsize",
 		"tt": "txttrack"
 	},
-	"version": "9.2.1"
+	"version": "9.3.0"
 };
 
 }));
