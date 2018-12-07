@@ -17,8 +17,8 @@
 return {
 	"parameters": {
 		"auto": {
-			"display_name": "auto features",
-			"category": "automatic",
+			"display_name": "automatic",
+			"category": "auto",
 			"available_in": [
 				"url"
 			],
@@ -29,7 +29,8 @@ return {
 						"enhance",
 						"format",
 						"redeye",
-						"compress"
+						"compress",
+						"true"
 					]
 				}
 			],
@@ -38,7 +39,7 @@ return {
 		},
 		"ba": {
 			"display_name": "blend align",
-			"category": "blend",
+			"category": "blending",
 			"available_in": [
 				"url"
 			],
@@ -63,7 +64,7 @@ return {
 		},
 		"balph": {
 			"display_name": "blend alpha",
-			"category": "blend",
+			"category": "blending",
 			"available_in": [
 				"url"
 			],
@@ -85,7 +86,7 @@ return {
 		},
 		"bc": {
 			"display_name": "blend crop",
-			"category": "blend",
+			"category": "blending",
 			"available_in": [
 				"url"
 			],
@@ -109,7 +110,7 @@ return {
 		},
 		"bf": {
 			"display_name": "blend fit",
-			"category": "blend",
+			"category": "blending",
 			"available_in": [
 				"url"
 			],
@@ -150,7 +151,7 @@ return {
 		},
 		"bh": {
 			"display_name": "blend height",
-			"category": "blend",
+			"category": "blending",
 			"available_in": [
 				"url"
 			],
@@ -178,7 +179,7 @@ return {
 		},
 		"blend": {
 			"display_name": "blend",
-			"category": "blend",
+			"category": "blending",
 			"available_in": [
 				"url"
 			],
@@ -197,7 +198,7 @@ return {
 			"short_description": "Specifies the location of the blend image."
 		},
 		"blur": {
-			"display_name": "blur",
+			"display_name": "gaussian blur",
 			"category": "stylize",
 			"available_in": [
 				"url",
@@ -218,7 +219,7 @@ return {
 		},
 		"bm": {
 			"display_name": "blend mode",
-			"category": "blend",
+			"category": "blending",
 			"available_in": [
 				"url"
 			],
@@ -253,8 +254,8 @@ return {
 			"short_description": "Sets the blend mode for a blend image."
 		},
 		"border-radius-inner": {
-			"display_name": "border-radius-inner",
-			"category": "border_and_padding",
+			"display_name": "inner border radius",
+			"category": "border-and-padding",
 			"available_in": [
 				"url",
 				"graph"
@@ -310,8 +311,8 @@ return {
 			"short_description": "Sets the inner radius of the image's border in pixels."
 		},
 		"border-radius": {
-			"display_name": "border-radius",
-			"category": "border_and_padding",
+			"display_name": "outer border radius",
+			"category": "border-and-padding",
 			"available_in": [
 				"url",
 				"graph"
@@ -367,8 +368,8 @@ return {
 			"short_description": "Sets the outer radius of the image's border in pixels."
 		},
 		"border": {
-			"display_name": "border",
-			"category": "border_and_padding",
+			"display_name": "border size & color",
+			"category": "border-and-padding",
 			"available_in": [
 				"url",
 				"graph"
@@ -398,7 +399,7 @@ return {
 		},
 		"bp": {
 			"display_name": "blend padding",
-			"category": "blend",
+			"category": "blending",
 			"available_in": [
 				"url"
 			],
@@ -439,7 +440,7 @@ return {
 		},
 		"bs": {
 			"display_name": "blend size",
-			"category": "blend",
+			"category": "blending",
 			"available_in": [
 				"url"
 			],
@@ -459,7 +460,7 @@ return {
 		},
 		"bw": {
 			"display_name": "blend width",
-			"category": "blend",
+			"category": "blending",
 			"available_in": [
 				"url"
 			],
@@ -486,8 +487,8 @@ return {
 			"short_description": "Adjusts the width of the blend image."
 		},
 		"bx": {
-			"display_name": "blend x",
-			"category": "blend",
+			"display_name": "blend x position",
+			"category": "blending",
 			"available_in": [
 				"url"
 			],
@@ -507,8 +508,8 @@ return {
 			"short_description": "Adjusts the x-offset of the blend image relative to its parent."
 		},
 		"by": {
-			"display_name": "blend y",
-			"category": "blend",
+			"display_name": "blend y position",
+			"category": "blending",
 			"available_in": [
 				"url"
 			],
@@ -528,7 +529,7 @@ return {
 			"short_description": "Adjusts the y-offset of the blend image relative to its parent."
 		},
 		"ch": {
-			"display_name": "client-hints",
+			"display_name": "client hints",
 			"category": "format",
 			"available_in": [
 				"url"
@@ -589,8 +590,8 @@ return {
 			"short_description": "Limits the number of unique colors in an image."
 		},
 		"colors": {
-			"display_name": "color count",
-			"category": "palette",
+			"display_name": "palette color count",
+			"category": "color-palette",
 			"available_in": [
 				"url",
 				"output"
@@ -632,7 +633,7 @@ return {
 			"short_description": "Adjusts the contrast of the source image."
 		},
 		"corner-radius": {
-			"display_name": "corner radius",
+			"display_name": "mask corner radius",
 			"category": "mask",
 			"available_in": [
 				"url",
@@ -717,7 +718,7 @@ return {
 			"short_description": "Specifies how to crop an image."
 		},
 		"cs": {
-			"display_name": "colorspace",
+			"display_name": "color space",
 			"category": "format",
 			"available_in": [
 				"url",
@@ -774,7 +775,7 @@ return {
 		},
 		"dpr": {
 			"display_name": "device pixel ratio",
-			"category": "pixel_density",
+			"category": "pixel-density",
 			"available_in": [
 				"url",
 				"graph",
@@ -833,7 +834,7 @@ return {
 		},
 		"faceindex": {
 			"display_name": "face index",
-			"category": "face_detection",
+			"category": "face-detection",
 			"available_in": [
 				"url",
 				"graph"
@@ -854,7 +855,7 @@ return {
 		},
 		"facepad": {
 			"display_name": "face padding",
-			"category": "face_detection",
+			"category": "face-detection",
 			"available_in": [
 				"url",
 				"graph"
@@ -876,8 +877,8 @@ return {
 			"short_description": "Adjusts padding around a selected face."
 		},
 		"faces": {
-			"display_name": "faces",
-			"category": "face_detection",
+			"display_name": "json face data",
+			"category": "face-detection",
 			"available_in": [
 				"url",
 				"graph"
@@ -937,7 +938,7 @@ return {
 			"short_description": "Determines how to fill in additional space created by the fit setting"
 		},
 		"fit": {
-			"display_name": "fit mode",
+			"display_name": "resize fit mode",
 			"category": "size",
 			"available_in": [
 				"url",
@@ -967,7 +968,7 @@ return {
 			"short_description": "Specifies how to map the source image to the output image dimensions."
 		},
 		"flip": {
-			"display_name": "flip direction",
+			"display_name": "flip axis",
 			"category": "rotation",
 			"available_in": [
 				"url",
@@ -1017,8 +1018,8 @@ return {
 			"short_description": "Changes the format of the output image."
 		},
 		"fp-debug": {
-			"display_name": "focal point crosshairs",
-			"category": "focal_point_crop",
+			"display_name": "focal point debug",
+			"category": "focalpoint-crop",
 			"available_in": [
 				"url"
 			],
@@ -1036,8 +1037,8 @@ return {
 			"short_description": "Displays crosshairs identifying the location of the set focal point"
 		},
 		"fp-x": {
-			"display_name": "focal point x value",
-			"category": "focal_point_crop",
+			"display_name": "focal point x position",
+			"category": "focalpoint-crop",
 			"available_in": [
 				"url"
 			],
@@ -1059,8 +1060,8 @@ return {
 			"short_description": "Sets the relative horizontal value for the focal point of an image"
 		},
 		"fp-y": {
-			"display_name": "focal point y value",
-			"category": "focal_point_crop",
+			"display_name": "focal point y position",
+			"category": "focalpoint-crop",
 			"available_in": [
 				"url"
 			],
@@ -1082,8 +1083,8 @@ return {
 			"short_description": "Sets the relative vertical value for the focal point of an image"
 		},
 		"fp-z": {
-			"display_name": "focal point zoom value",
-			"category": "focal_point_crop",
+			"display_name": "focal point zoom",
+			"category": "focalpoint-crop",
 			"available_in": [
 				"url"
 			],
@@ -1129,7 +1130,7 @@ return {
 			"short_description": "Adjusts the gamma of the source image."
 		},
 		"h": {
-			"display_name": "height",
+			"display_name": "image height",
 			"category": "size",
 			"available_in": [
 				"url",
@@ -1155,7 +1156,7 @@ return {
 			"short_description": "Adjusts the height of the output image."
 		},
 		"high": {
-			"display_name": "high",
+			"display_name": "highlight",
 			"category": "adjustment",
 			"available_in": [
 				"url",
@@ -1231,7 +1232,7 @@ return {
 			"short_description": "Inverts the colors on the source image."
 		},
 		"lossless": {
-			"display_name": "lossless",
+			"display_name": "lossless compression",
 			"category": "format",
 			"available_in": [
 				"url",
@@ -1252,7 +1253,7 @@ return {
 			"short_description": "Specifies that the output image should be a lossless variant."
 		},
 		"mark": {
-			"display_name": "watermark image",
+			"display_name": "watermark image url",
 			"category": "watermark",
 			"available_in": [
 				"url"
@@ -1322,7 +1323,7 @@ return {
 			"short_description": "Changes the alpha of the watermark image."
 		},
 		"markbase": {
-			"display_name": "watermark url base",
+			"display_name": "watermark base url",
 			"category": "watermark",
 			"available_in": [
 				"url"
@@ -1485,7 +1486,7 @@ return {
 			"short_description": "Adjusts the width of the watermark image."
 		},
 		"markx": {
-			"display_name": "watermark x-position",
+			"display_name": "watermark x position",
 			"category": "watermark",
 			"available_in": [
 				"url"
@@ -1508,7 +1509,7 @@ return {
 			"short_description": "Adjusts the x-offset of the watermark image relative to its parent."
 		},
 		"marky": {
-			"display_name": "watermark y-position",
+			"display_name": "watermark y position",
 			"category": "watermark",
 			"available_in": [
 				"url"
@@ -1531,7 +1532,7 @@ return {
 			"short_description": "Adjusts the y-offset of the watermark image relative to its parent."
 		},
 		"mask": {
-			"display_name": "mask",
+			"display_name": "mask type",
 			"category": "mask",
 			"available_in": [
 				"url",
@@ -1677,8 +1678,8 @@ return {
 			"short_description": "Applies a monochrome effect to the source image."
 		},
 		"nr": {
-			"display_name": "noise blur",
-			"category": "noise",
+			"display_name": "noise reduction bound",
+			"category": "noise-reduction",
 			"available_in": [
 				"url",
 				"graph"
@@ -1697,8 +1698,8 @@ return {
 			"short_description": "Reduces the noise in an image."
 		},
 		"nrs": {
-			"display_name": "noise sharpen",
-			"category": "noise",
+			"display_name": "noise reduction sharpen",
+			"category": "noise-reduction",
 			"available_in": [
 				"url",
 				"graph"
@@ -1750,7 +1751,7 @@ return {
 		},
 		"pad": {
 			"display_name": "padding",
-			"category": "border_and_padding",
+			"category": "border-and-padding",
 			"available_in": [
 				"url"
 			],
@@ -1786,8 +1787,8 @@ return {
 			"short_description": "Selects a page from a PDF for display."
 		},
 		"palette": {
-			"display_name": "palette extraction",
-			"category": "palette",
+			"display_name": "color palette extraction",
+			"category": "color-palette",
 			"available_in": [
 				"url",
 				"output"
@@ -1806,7 +1807,7 @@ return {
 		},
 		"prefix": {
 			"display_name": "css prefix",
-			"category": "palette",
+			"category": "color-palette",
 			"available_in": [
 				"url",
 				"output"
@@ -1871,7 +1872,7 @@ return {
 			"short_description": "Adjusts the quality of an output image."
 		},
 		"rect": {
-			"display_name": "crop rectangle",
+			"display_name": "source rectangle region",
 			"category": "size",
 			"available_in": [
 				"url",
@@ -1934,7 +1935,7 @@ return {
 			"short_description": "Crops an image to a specified rectangle."
 		},
 		"rot": {
-			"display_name": "rotation angle",
+			"display_name": "rotation",
 			"category": "rotation",
 			"available_in": [
 				"url",
@@ -1974,7 +1975,7 @@ return {
 			"short_description": "Adjusts the saturation of an image."
 		},
 		"sepia": {
-			"display_name": "sepia",
+			"display_name": "sepia tone",
 			"category": "stylize",
 			"available_in": [
 				"url",
@@ -2034,7 +2035,7 @@ return {
 			"short_description": "Adjusts the sharpness of the source image."
 		},
 		"trim": {
-			"display_name": "trim mode",
+			"display_name": "trim image",
 			"category": "trim",
 			"available_in": [
 				"url",
@@ -2182,7 +2183,7 @@ return {
 			"short_description": "Sets the vertical and horizontal alignment of rendered text relative to the base image."
 		},
 		"txtclip": {
-			"display_name": "text clipping",
+			"display_name": "text clipping mode",
 			"category": "text",
 			"available_in": [
 				"url"
@@ -2542,7 +2543,7 @@ return {
 		},
 		"txtlead": {
 			"display_name": "text leading",
-			"category": "text",
+			"category": "typesetting",
 			"available_in": [
 				"url"
 			],
@@ -2558,7 +2559,7 @@ return {
 			"depends": [
 				"txt"
 			],
-			"url": "https://docs.imgix.com/apis/url/text/txtlead",
+			"url": "https://docs.imgix.com/apis/url/typesetting/txtlead",
 			"short_description": "Sets the leading (line spacing) for rendered text. Only works on the multi-line text endpoint."
 		},
 		"txtlig": {
@@ -2704,7 +2705,7 @@ return {
 		},
 		"txttrack": {
 			"display_name": "text tracking",
-			"category": "text",
+			"category": "typesetting",
 			"available_in": [
 				"url"
 			],
@@ -2723,7 +2724,7 @@ return {
 			"depends": [
 				"txt"
 			],
-			"url": "https://docs.imgix.com/apis/url/text/txtlead",
+			"url": "https://docs.imgix.com/apis/url/typesetting/txttrack",
 			"short_description": "Sets the tracking (letter spacing) for rendered text. Only works on the multi-line text endpoint."
 		},
 		"txtwidth": {
@@ -2809,7 +2810,7 @@ return {
 			"short_description": "Adjusts the vibrance of an image."
 		},
 		"w": {
-			"display_name": "width",
+			"display_name": "image width",
 			"category": "size",
 			"available_in": [
 				"url",
@@ -2862,7 +2863,7 @@ return {
 		"tsz": "txtsize",
 		"tt": "txttrack"
 	},
-	"version": "9.3.0"
+	"version": "9.6.1"
 };
 
 }));
