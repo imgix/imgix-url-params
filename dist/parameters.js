@@ -34,6 +34,7 @@ return {
 					]
 				}
 			],
+			"disallow_base64": true,
 			"url": "https://docs.imgix.com/apis/url/auto",
 			"short_description": "Applies automatic enhancements to images."
 		},
@@ -544,6 +545,7 @@ return {
 					]
 				}
 			],
+			"disallow_base64": true,
 			"url": "https://docs.imgix.com/apis/url/format/ch",
 			"short_description": "Sets one or more Client-Hints headers"
 		},
@@ -2863,7 +2865,7 @@ return {
 		"tsz": "txtsize",
 		"tt": "txttrack"
 	},
-	"version": "9.6.1"
+	"version": "10.0.0"
 };
 
 }));
