@@ -800,6 +800,55 @@ return {
 			"url": "https://docs.imgix.com/apis/url/dpr",
 			"short_description": "Adjusts the device-pixel ratio of the output image."
 		},
+		"duotone-alpha": {
+			"display_name": "duotone alpha",
+			"category": "adjustment",
+			"available_in": [
+				"url",
+				"graph"
+			],
+			"expects": [
+				{
+					"type": "integer",
+					"strict_range": {
+						"min": 0,
+						"max": 100
+					}
+				}
+			],
+			"default": 100,
+			"depends": [
+				"duotone"
+			],
+			"url": "https://docs.imgix.com/apis/url/adjustment/duotone-alpha",
+			"short_description": "Changes the alpha of the duotone effect atop the source image."
+		},
+		"duotone": {
+			"display_name": "duotone",
+			"category": "adjustment",
+			"available_in": [
+				"url",
+				"graph"
+			],
+			"expects": [
+				{
+					"0": [
+						{
+							"type": "hex_color"
+						}
+					],
+					"1": [
+						{
+							"type": "hex_color"
+						}
+					],
+					"type": "list",
+					"length": 2
+				}
+			],
+			"url": "https://docs.imgix.com/apis/url/adjustment/duotone",
+			"short_description": "Applies a duotone effect to the source image."
+		},
 		"exp": {
 			"display_name": "exposure",
 			"category": "adjustment",
@@ -2865,7 +2914,7 @@ return {
 		"tsz": "txtsize",
 		"tt": "txttrack"
 	},
-	"version": "10.0.0"
+	"version": "10.2.0"
 };
 
 }));
