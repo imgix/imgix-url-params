@@ -1,6 +1,6 @@
 {
   "name": "imgix-url-params",
-  "version": "10.2.0",
+  "version": "10.2.1",
   "description": "Organized, machine-friendly documentation of imgix's URL parameters",
   "main": "dist/manifest.json",
   "scripts": {

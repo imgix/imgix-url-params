@@ -802,7 +802,7 @@ return {
 		},
 		"duotone-alpha": {
 			"display_name": "duotone alpha",
-			"category": "adjustment",
+			"category": "stylize",
 			"available_in": [
 				"url",
 				"graph"
@@ -820,12 +820,12 @@ return {
 			"depends": [
 				"duotone"
 			],
-			"url": "https://docs.imgix.com/apis/url/adjustment/duotone-alpha",
+			"url": "https://docs.imgix.com/apis/url/stylize/duotone-alpha",
 			"short_description": "Changes the alpha of the duotone effect atop the source image."
 		},
 		"duotone": {
 			"display_name": "duotone",
-			"category": "adjustment",
+			"category": "stylize",
 			"available_in": [
 				"url",
 				"graph"
@@ -846,7 +846,7 @@ return {
 					"length": 2
 				}
 			],
-			"url": "https://docs.imgix.com/apis/url/adjustment/duotone",
+			"url": "https://docs.imgix.com/apis/url/stylize/duotone",
 			"short_description": "Applies a duotone effect to the source image."
 		},
 		"exp": {
@@ -2914,7 +2914,7 @@ return {
 		"tsz": "txtsize",
 		"tt": "txttrack"
 	},
-	"version": "10.2.0"
+	"version": "10.2.1"
 };
 
 }));
