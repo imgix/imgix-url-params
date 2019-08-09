@@ -15,7 +15,7 @@
 }(this, function () {
 
 return {
-	"version": "11.0.0",
+	"version": "11.1.1",
 	"parameters": {
 		"ar": {
 			"display_name": "aspect ratio",
@@ -58,102 +58,6 @@ return {
 			"url": "https://docs.imgix.com/apis/url/auto",
 			"short_description": "Applies automatic enhancements to images."
 		},
-		"ba": {
-			"display_name": "blend align",
-			"category": "blending",
-			"available_in": [
-				"url"
-			],
-			"expects": [
-				{
-					"type": "list",
-					"possible_values": [
-						"top",
-						"bottom",
-						"middle",
-						"left",
-						"right",
-						"center"
-					]
-				}
-			],
-			"depends": [
-				"blend"
-			],
-			"url": "https://docs.imgix.com/apis/url/blending/ba",
-			"short_description": "Changes the blend alignment relative to the parent image."
-		},
-		"balph": {
-			"display_name": "blend alpha",
-			"category": "blending",
-			"available_in": [
-				"url"
-			],
-			"expects": [
-				{
-					"type": "integer",
-					"strict_range": {
-						"min": 0,
-						"max": 100
-					}
-				}
-			],
-			"default": 100,
-			"depends": [
-				"blend"
-			],
-			"url": "https://docs.imgix.com/apis/url/blending/balph",
-			"short_description": "Changes the alpha of the blend image."
-		},
-		"bc": {
-			"display_name": "blend crop",
-			"category": "blending",
-			"available_in": [
-				"url"
-			],
-			"expects": [
-				{
-					"type": "list",
-					"possible_values": [
-						"top",
-						"bottom",
-						"left",
-						"right",
-						"faces"
-					]
-				}
-			],
-			"depends": [
-				"blend"
-			],
-			"url": "https://docs.imgix.com/apis/url/blending/bc",
-			"short_description": "Specifies the type of crop for blend images."
-		},
-		"bf": {
-			"display_name": "blend fit",
-			"category": "blending",
-			"available_in": [
-				"url"
-			],
-			"expects": [
-				{
-					"type": "string",
-					"possible_values": [
-						"clamp",
-						"clip",
-						"crop",
-						"scale",
-						"max"
-					]
-				}
-			],
-			"default": "clip",
-			"depends": [
-				"blend"
-			],
-			"url": "https://docs.imgix.com/apis/url/blending/bf",
-			"short_description": "Specifies the fit mode for blend images."
-		},
 		"bg": {
 			"display_name": "background color",
 			"category": "fill",
@@ -173,7 +77,119 @@ return {
 			"url": "https://docs.imgix.com/apis/url/bg",
 			"short_description": "Colors the background of padded and partially-transparent images."
 		},
-		"bh": {
+		"blend-align": {
+			"display_name": "blend align",
+			"category": "blending",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "list",
+					"possible_values": [
+						"top",
+						"bottom",
+						"middle",
+						"left",
+						"right",
+						"center"
+					]
+				}
+			],
+			"aliases": [
+				"blendalign",
+				"ba"
+			],
+			"depends": [
+				"blend"
+			],
+			"url": "https://docs.imgix.com/apis/url/blending/blend-align",
+			"short_description": "Changes the blend alignment relative to the parent image."
+		},
+		"blend-alpha": {
+			"display_name": "blend alpha",
+			"category": "blending",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "integer",
+					"strict_range": {
+						"min": 0,
+						"max": 100
+					}
+				}
+			],
+			"aliases": [
+				"blendalpha",
+				"balph"
+			],
+			"default": 100,
+			"depends": [
+				"blend"
+			],
+			"url": "https://docs.imgix.com/apis/url/blending/blend-alpha",
+			"short_description": "Changes the alpha of the blend image."
+		},
+		"blend-crop": {
+			"display_name": "blend crop",
+			"category": "blending",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "list",
+					"possible_values": [
+						"top",
+						"bottom",
+						"left",
+						"right",
+						"faces"
+					]
+				}
+			],
+			"aliases": [
+				"blendcrop",
+				"bc"
+			],
+			"depends": [
+				"blend"
+			],
+			"url": "https://docs.imgix.com/apis/url/blending/blend-crop",
+			"short_description": "Specifies the type of crop for blend images."
+		},
+		"blend-fit": {
+			"display_name": "blend fit",
+			"category": "blending",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "string",
+					"possible_values": [
+						"clamp",
+						"clip",
+						"crop",
+						"scale",
+						"max"
+					]
+				}
+			],
+			"aliases": [
+				"blendfit",
+				"bf"
+			],
+			"default": "clip",
+			"depends": [
+				"blend"
+			],
+			"url": "https://docs.imgix.com/apis/url/blending/blend-fit",
+			"short_description": "Specifies the fit mode for blend images."
+		},
+		"blend-h": {
 			"display_name": "blend height",
 			"category": "blending",
 			"available_in": [
@@ -195,56 +211,17 @@ return {
 					}
 				}
 			],
+			"aliases": [
+				"blendh",
+				"bh"
+			],
 			"depends": [
 				"blend"
 			],
-			"url": "https://docs.imgix.com/apis/url/blending/bh",
+			"url": "https://docs.imgix.com/apis/url/blending/blend-h",
 			"short_description": "Adjusts the height of the blend image."
 		},
-		"blend": {
-			"display_name": "blend",
-			"category": "blending",
-			"available_in": [
-				"url"
-			],
-			"expects": [
-				{
-					"type": "hex_color"
-				},
-				{
-					"type": "color_keyword"
-				},
-				{
-					"type": "url"
-				},
-				{
-					"type": "path"
-				}
-			],
-			"url": "https://docs.imgix.com/apis/url/blending/blend",
-			"short_description": "Specifies the location of the blend image."
-		},
-		"blur": {
-			"display_name": "gaussian blur",
-			"category": "stylize",
-			"available_in": [
-				"url",
-				"graph"
-			],
-			"expects": [
-				{
-					"type": "integer",
-					"suggested_range": {
-						"min": 0,
-						"max": 2000
-					}
-				}
-			],
-			"default": 0,
-			"url": "https://docs.imgix.com/apis/url/stylize/blur",
-			"short_description": "Applies a gaussian blur to an image."
-		},
-		"bm": {
+		"blend-mode": {
 			"display_name": "blend mode",
 			"category": "blending",
 			"available_in": [
@@ -273,12 +250,193 @@ return {
 					]
 				}
 			],
+			"aliases": [
+				"blendmode",
+				"bm"
+			],
 			"default": "overlay",
 			"depends": [
 				"blend"
 			],
-			"url": "https://docs.imgix.com/apis/url/blending/bm",
+			"url": "https://docs.imgix.com/apis/url/blending/blend-mode",
 			"short_description": "Sets the blend mode for a blend image."
+		},
+		"blend-pad": {
+			"display_name": "blend padding",
+			"category": "blending",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "integer",
+					"suggested_range": {
+						"min": 0
+					}
+				}
+			],
+			"aliases": [
+				"blendpad",
+				"bp"
+			],
+			"default": 0,
+			"depends": [
+				"blend"
+			],
+			"url": "https://docs.imgix.com/apis/url/blending/blend-pad",
+			"short_description": "Applies padding to the blend image."
+		},
+		"blend-size": {
+			"display_name": "blend size",
+			"category": "blending",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "string",
+					"possible_values": [
+						"inherit"
+					]
+				}
+			],
+			"aliases": [
+				"blendsize",
+				"bs"
+			],
+			"depends": [
+				"blend"
+			],
+			"url": "https://docs.imgix.com/apis/url/blending/blend-size",
+			"short_description": "Adjusts the size of the blend image."
+		},
+		"blend-w": {
+			"display_name": "blend width",
+			"category": "blending",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "integer",
+					"strict_range": {
+						"min": 2,
+						"max": 8192
+					}
+				},
+				{
+					"type": "unit_scalar",
+					"strict_range": {
+						"min": 0,
+						"max": 1
+					}
+				}
+			],
+			"aliases": [
+				"blendw",
+				"bw"
+			],
+			"depends": [
+				"blend"
+			],
+			"url": "https://docs.imgix.com/apis/url/blending/blend-w",
+			"short_description": "Adjusts the width of the blend image."
+		},
+		"blend-x": {
+			"display_name": "blend x position",
+			"category": "blending",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "integer",
+					"suggested_range": {
+						"min": 0
+					}
+				}
+			],
+			"aliases": [
+				"blendx",
+				"bx"
+			],
+			"default": 0,
+			"depends": [
+				"blend"
+			],
+			"url": "https://docs.imgix.com/apis/url/blending/blend-x",
+			"short_description": "Adjusts the x-offset of the blend image relative to its parent."
+		},
+		"blend-y": {
+			"display_name": "blend y position",
+			"category": "blending",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "integer",
+					"suggested_range": {
+						"min": 0
+					}
+				}
+			],
+			"aliases": [
+				"blendy",
+				"by"
+			],
+			"default": 0,
+			"depends": [
+				"blend"
+			],
+			"url": "https://docs.imgix.com/apis/url/blending/blend-y",
+			"short_description": "Adjusts the y-offset of the blend image relative to its parent."
+		},
+		"blend": {
+			"display_name": "blend",
+			"category": "blending",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "hex_color"
+				},
+				{
+					"type": "color_keyword"
+				},
+				{
+					"type": "url"
+				},
+				{
+					"type": "path"
+				}
+			],
+			"aliases": [
+				"b"
+			],
+			"url": "https://docs.imgix.com/apis/url/blending/blend",
+			"short_description": "Specifies the location of the blend image."
+		},
+		"blur": {
+			"display_name": "gaussian blur",
+			"category": "stylize",
+			"available_in": [
+				"url",
+				"graph"
+			],
+			"expects": [
+				{
+					"type": "integer",
+					"suggested_range": {
+						"min": 0,
+						"max": 2000
+					}
+				}
+			],
+			"default": 0,
+			"url": "https://docs.imgix.com/apis/url/stylize/blur",
+			"short_description": "Applies a gaussian blur to an image."
 		},
 		"border-radius-inner": {
 			"display_name": "inner border radius",
@@ -427,27 +585,6 @@ return {
 			"url": "https://docs.imgix.com/apis/url/border-and-padding/border",
 			"short_description": "Applies a border to an image."
 		},
-		"bp": {
-			"display_name": "blend padding",
-			"category": "blending",
-			"available_in": [
-				"url"
-			],
-			"expects": [
-				{
-					"type": "integer",
-					"suggested_range": {
-						"min": 0
-					}
-				}
-			],
-			"default": 0,
-			"depends": [
-				"blend"
-			],
-			"url": "https://docs.imgix.com/apis/url/blending/bp",
-			"short_description": "Applies padding to the blend image."
-		},
 		"bri": {
 			"display_name": "brightness",
 			"category": "adjustment",
@@ -467,96 +604,6 @@ return {
 			"default": 0,
 			"url": "https://docs.imgix.com/apis/url/adjustment/bri",
 			"short_description": "Adjusts the brightness of the source image."
-		},
-		"bs": {
-			"display_name": "blend size",
-			"category": "blending",
-			"available_in": [
-				"url"
-			],
-			"expects": [
-				{
-					"type": "string",
-					"possible_values": [
-						"inherit"
-					]
-				}
-			],
-			"depends": [
-				"blend"
-			],
-			"url": "https://docs.imgix.com/apis/url/blending/bs",
-			"short_description": "Adjusts the size of the blend image."
-		},
-		"bw": {
-			"display_name": "blend width",
-			"category": "blending",
-			"available_in": [
-				"url"
-			],
-			"expects": [
-				{
-					"type": "integer",
-					"strict_range": {
-						"min": 2,
-						"max": 8192
-					}
-				},
-				{
-					"type": "unit_scalar",
-					"strict_range": {
-						"min": 0,
-						"max": 1
-					}
-				}
-			],
-			"depends": [
-				"blend"
-			],
-			"url": "https://docs.imgix.com/apis/url/blending/bw",
-			"short_description": "Adjusts the width of the blend image."
-		},
-		"bx": {
-			"display_name": "blend x position",
-			"category": "blending",
-			"available_in": [
-				"url"
-			],
-			"expects": [
-				{
-					"type": "integer",
-					"suggested_range": {
-						"min": 0
-					}
-				}
-			],
-			"default": 0,
-			"depends": [
-				"blend"
-			],
-			"url": "https://docs.imgix.com/apis/url/blending/bx",
-			"short_description": "Adjusts the x-offset of the blend image relative to its parent."
-		},
-		"by": {
-			"display_name": "blend y position",
-			"category": "blending",
-			"available_in": [
-				"url"
-			],
-			"expects": [
-				{
-					"type": "integer",
-					"suggested_range": {
-						"min": 0
-					}
-				}
-			],
-			"default": 0,
-			"depends": [
-				"blend"
-			],
-			"url": "https://docs.imgix.com/apis/url/blending/by",
-			"short_description": "Adjusts the y-offset of the blend image relative to its parent."
 		},
 		"ch": {
 			"display_name": "client hints",
@@ -997,6 +1044,9 @@ return {
 					"type": "color_keyword"
 				}
 			],
+			"aliases": [
+				"fillcolor"
+			],
 			"default": "fff",
 			"depends": [
 				"fill=solid"
@@ -1019,7 +1069,6 @@ return {
 					]
 				}
 			],
-			"default": "solid",
 			"depends": [
 				"fit"
 			],
@@ -1316,6 +1365,9 @@ return {
 					"type": "boolean"
 				}
 			],
+			"aliases": [
+				"inv"
+			],
 			"default": false,
 			"url": "https://docs.imgix.com/apis/url/adjustment/invert",
 			"short_description": "Inverts the colors on the source image."
@@ -1341,27 +1393,7 @@ return {
 			"url": "https://docs.imgix.com/apis/url/format/lossless",
 			"short_description": "Specifies that the output image should be a lossless variant."
 		},
-		"mark": {
-			"display_name": "watermark image url",
-			"category": "watermark",
-			"available_in": [
-				"url"
-			],
-			"expects": [
-				{
-					"type": "url"
-				},
-				{
-					"type": "path"
-				}
-			],
-			"aliases": [
-				"m"
-			],
-			"url": "https://docs.imgix.com/apis/url/watermark/mark",
-			"short_description": "Specifies the location of the watermark image."
-		},
-		"markalign": {
+		"mark-align": {
 			"display_name": "watermark alignment mode",
 			"category": "watermark",
 			"available_in": [
@@ -1381,15 +1413,16 @@ return {
 				}
 			],
 			"aliases": [
-				"ma"
+				"ma",
+				"markalign"
 			],
 			"depends": [
 				"mark"
 			],
-			"url": "https://docs.imgix.com/apis/url/watermark/markalign",
+			"url": "https://docs.imgix.com/apis/url/watermark/mark-align",
 			"short_description": "Changes the watermark alignment relative to the parent image."
 		},
-		"markalpha": {
+		"mark-alpha": {
 			"display_name": "watermark alpha",
 			"category": "watermark",
 			"available_in": [
@@ -1405,13 +1438,17 @@ return {
 				}
 			],
 			"default": 100,
+			"aliases": [
+				"markalpha",
+				"malph"
+			],
 			"depends": [
 				"mark"
 			],
-			"url": "https://docs.imgix.com/apis/url/watermark/markalpha",
+			"url": "https://docs.imgix.com/apis/url/watermark/mark-alpha",
 			"short_description": "Changes the alpha of the watermark image."
 		},
-		"markbase": {
+		"mark-base": {
 			"display_name": "watermark base url",
 			"category": "watermark",
 			"available_in": [
@@ -1426,15 +1463,16 @@ return {
 				}
 			],
 			"aliases": [
-				"mb"
+				"mb",
+				"markbase"
 			],
 			"depends": [
 				"mark"
 			],
-			"url": "https://docs.imgix.com/apis/url/watermark/markbase",
+			"url": "https://docs.imgix.com/apis/url/watermark/mark-base",
 			"short_description": "Changes base URL of the watermark image."
 		},
-		"markfit": {
+		"mark-fit": {
 			"display_name": "watermark fit mode",
 			"category": "watermark",
 			"available_in": [
@@ -1454,17 +1492,18 @@ return {
 			],
 			"default": "clip",
 			"aliases": [
-				"mf"
+				"mf",
+				"markfit"
 			],
 			"depends": [
 				"mark",
 				"markw",
 				"markh"
 			],
-			"url": "https://docs.imgix.com/apis/url/watermark/markfit",
+			"url": "https://docs.imgix.com/apis/url/watermark/mark-fit",
 			"short_description": "Specifies the fit mode for watermark images."
 		},
-		"markh": {
+		"mark-h": {
 			"display_name": "watermark height",
 			"category": "watermark",
 			"available_in": [
@@ -1487,15 +1526,16 @@ return {
 				}
 			],
 			"aliases": [
-				"mh"
+				"mh",
+				"markh"
 			],
 			"depends": [
 				"mark"
 			],
-			"url": "https://docs.imgix.com/apis/url/watermark/markh",
+			"url": "https://docs.imgix.com/apis/url/watermark/mark-h",
 			"short_description": "Adjusts the height of the watermark image."
 		},
-		"markpad": {
+		"mark-pad": {
 			"display_name": "watermark padding",
 			"category": "watermark",
 			"available_in": [
@@ -1511,15 +1551,16 @@ return {
 			],
 			"default": 10,
 			"aliases": [
-				"mp"
+				"mp",
+				"markpad"
 			],
 			"depends": [
 				"mark"
 			],
-			"url": "https://docs.imgix.com/apis/url/watermark/markpad",
+			"url": "https://docs.imgix.com/apis/url/watermark/mark-pad",
 			"short_description": "Applies padding to the watermark image."
 		},
-		"markscale": {
+		"mark-scale": {
 			"display_name": "watermark scale",
 			"category": "watermark",
 			"available_in": [
@@ -1535,15 +1576,16 @@ return {
 				}
 			],
 			"aliases": [
-				"ms"
+				"ms",
+				"markscale"
 			],
 			"depends": [
 				"mark"
 			],
-			"url": "https://docs.imgix.com/apis/url/watermark/markscale",
+			"url": "https://docs.imgix.com/apis/url/watermark/mark-scale",
 			"short_description": "Adjusts the scale of the watermark image."
 		},
-		"markw": {
+		"mark-w": {
 			"display_name": "watermark width",
 			"category": "watermark",
 			"available_in": [
@@ -1566,15 +1608,16 @@ return {
 				}
 			],
 			"aliases": [
-				"mw"
+				"mw",
+				"markw"
 			],
 			"depends": [
 				"mark"
 			],
-			"url": "https://docs.imgix.com/apis/url/watermark/markw",
+			"url": "https://docs.imgix.com/apis/url/watermark/mark-w",
 			"short_description": "Adjusts the width of the watermark image."
 		},
-		"markx": {
+		"mark-x": {
 			"display_name": "watermark x position",
 			"category": "watermark",
 			"available_in": [
@@ -1589,15 +1632,16 @@ return {
 				}
 			],
 			"aliases": [
-				"mx"
+				"mx",
+				"markx"
 			],
 			"depends": [
 				"mark"
 			],
-			"url": "https://docs.imgix.com/apis/url/watermark/markx",
+			"url": "https://docs.imgix.com/apis/url/watermark/mark-x",
 			"short_description": "Adjusts the x-offset of the watermark image relative to its parent."
 		},
-		"marky": {
+		"mark-y": {
 			"display_name": "watermark y position",
 			"category": "watermark",
 			"available_in": [
@@ -1612,13 +1656,34 @@ return {
 				}
 			],
 			"aliases": [
-				"my"
+				"my",
+				"marky"
 			],
 			"depends": [
 				"mark"
 			],
-			"url": "https://docs.imgix.com/apis/url/watermark/marky",
+			"url": "https://docs.imgix.com/apis/url/watermark/mark-y",
 			"short_description": "Adjusts the y-offset of the watermark image relative to its parent."
+		},
+		"mark": {
+			"display_name": "watermark image url",
+			"category": "watermark",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "url"
+				},
+				{
+					"type": "path"
+				}
+			],
+			"aliases": [
+				"m"
+			],
+			"url": "https://docs.imgix.com/apis/url/watermark/mark",
+			"short_description": "Specifies the location of the watermark image."
 		},
 		"mask": {
 			"display_name": "mask type",
@@ -1682,10 +1747,13 @@ return {
 					}
 				}
 			],
+			"aliases": [
+				"max-height"
+			],
 			"depends": [
 				"fit=crop"
 			],
-			"url": "https://docs.imgix.com/apis/url/size/max-h",
+			"url": "https://docs.imgix.com/apis/url/size/max-height",
 			"short_description": "Specifies the maximum height of the output image in pixels."
 		},
 		"max-w": {
@@ -1703,10 +1771,13 @@ return {
 					}
 				}
 			],
+			"aliases": [
+				"max-width"
+			],
 			"depends": [
 				"fit=crop"
 			],
-			"url": "https://docs.imgix.com/apis/url/size/max-w",
+			"url": "https://docs.imgix.com/apis/url/size/max-width",
 			"short_description": "Specifies the maximum width of the output image in pixels."
 		},
 		"min-h": {
@@ -1724,10 +1795,13 @@ return {
 					}
 				}
 			],
+			"aliases": [
+				"min-height"
+			],
 			"depends": [
 				"fit=crop"
 			],
-			"url": "https://docs.imgix.com/apis/url/size/min-h",
+			"url": "https://docs.imgix.com/apis/url/size/min-height",
 			"short_description": "Specifies the minimum height of the output image in pixels."
 		},
 		"min-w": {
@@ -1745,13 +1819,16 @@ return {
 					}
 				}
 			],
+			"aliases": [
+				"min-width"
+			],
 			"depends": [
 				"fit=crop"
 			],
-			"url": "https://docs.imgix.com/apis/url/size/min-w",
+			"url": "https://docs.imgix.com/apis/url/size/min-width",
 			"short_description": "Specifies the minimum width of the output image in pixels."
 		},
-		"mono": {
+		"monochrome": {
 			"display_name": "monochrome",
 			"category": "stylize",
 			"available_in": [
@@ -1767,9 +1844,9 @@ return {
 				}
 			],
 			"aliases": [
-				"monochrome"
+				"mono"
 			],
-			"url": "https://docs.imgix.com/apis/url/stylize/mono",
+			"url": "https://docs.imgix.com/apis/url/stylize/monochrome",
 			"short_description": "Applies a monochrome effect to the source image."
 		},
 		"nr": {
@@ -1812,7 +1889,7 @@ return {
 			"url": "https://docs.imgix.com/apis/url/noise-reduction/nrs",
 			"short_description": "Provides a threshold by which to sharpen an image."
 		},
-		"or": {
+		"orient": {
 			"display_name": "orientation",
 			"category": "rotation",
 			"available_in": [
@@ -1839,9 +1916,9 @@ return {
 				}
 			],
 			"aliases": [
-				"orient"
+				"or"
 			],
-			"url": "https://docs.imgix.com/apis/url/rotation/or",
+			"url": "https://docs.imgix.com/apis/url/rotation/orient",
 			"short_description": "Changes the image orientation."
 		},
 		"pad": {
@@ -2129,6 +2206,105 @@ return {
 			"url": "https://docs.imgix.com/apis/url/adjustment/sharp",
 			"short_description": "Adjusts the sharpness of the source image."
 		},
+		"trim-color": {
+			"display_name": "trim color",
+			"category": "trim",
+			"available_in": [
+				"url",
+				"graph"
+			],
+			"expects": [
+				{
+					"type": "hex_color"
+				},
+				{
+					"type": "color_keyword"
+				}
+			],
+			"aliases": [
+				"trimcolor"
+			],
+			"depends": [
+				"trim=color"
+			],
+			"url": "https://docs.imgix.com/apis/url/trim/trim-color",
+			"short_description": "Specifies a trim color on a trim operation."
+		},
+		"trim-md": {
+			"display_name": "trim mean difference",
+			"category": "trim",
+			"available_in": [
+				"url",
+				"graph"
+			],
+			"expects": [
+				{
+					"type": "number",
+					"suggested_range": {
+						"min": 0
+					}
+				}
+			],
+			"aliases": [
+				"trimmd"
+			],
+			"default": 11,
+			"depends": [
+				"trim=auto"
+			],
+			"url": "https://docs.imgix.com/apis/url/trim/trim-md",
+			"short_description": "Specifies the mean difference on a trim operation."
+		},
+		"trim-sd": {
+			"display_name": "trim standard deviation",
+			"category": "trim",
+			"available_in": [
+				"url",
+				"graph"
+			],
+			"expects": [
+				{
+					"type": "number",
+					"suggested_range": {
+						"min": 0
+					}
+				}
+			],
+			"aliases": [
+				"trimsd"
+			],
+			"default": 10,
+			"depends": [
+				"trim=auto"
+			],
+			"url": "https://docs.imgix.com/apis/url/trim/trim-sd",
+			"short_description": "Specifies the standard deviation on a trim operation."
+		},
+		"trim-tol": {
+			"display_name": "trim tolerance",
+			"category": "trim",
+			"available_in": [
+				"url",
+				"graph"
+			],
+			"expects": [
+				{
+					"type": "number",
+					"suggested_range": {
+						"min": 0
+					}
+				}
+			],
+			"aliases": [
+				"trimtol"
+			],
+			"default": 0,
+			"depends": [
+				"trim=color"
+			],
+			"url": "https://docs.imgix.com/apis/url/trim/trim-tol",
+			"short_description": "Specifies the tolerance on a trim operation."
+		},
 		"trim": {
 			"display_name": "trim image",
 			"category": "trim",
@@ -2148,111 +2324,7 @@ return {
 			"url": "https://docs.imgix.com/apis/url/trim/trim",
 			"short_description": "Trims the source image."
 		},
-		"trimcolor": {
-			"display_name": "trim color",
-			"category": "trim",
-			"available_in": [
-				"url",
-				"graph"
-			],
-			"expects": [
-				{
-					"type": "hex_color"
-				},
-				{
-					"type": "color_keyword"
-				}
-			],
-			"depends": [
-				"trim=color"
-			],
-			"url": "https://docs.imgix.com/apis/url/trim/trimcolor",
-			"short_description": "Specifies a trim color on a trim operation."
-		},
-		"trimmd": {
-			"display_name": "trim mean difference",
-			"category": "trim",
-			"available_in": [
-				"url",
-				"graph"
-			],
-			"expects": [
-				{
-					"type": "number",
-					"suggested_range": {
-						"min": 0
-					}
-				}
-			],
-			"default": 11,
-			"depends": [
-				"trim=auto"
-			],
-			"url": "https://docs.imgix.com/apis/url/trim/trimmd",
-			"short_description": "Specifies the mean difference on a trim operation."
-		},
-		"trimsd": {
-			"display_name": "trim standard deviation",
-			"category": "trim",
-			"available_in": [
-				"url",
-				"graph"
-			],
-			"expects": [
-				{
-					"type": "number",
-					"suggested_range": {
-						"min": 0
-					}
-				}
-			],
-			"default": 10,
-			"depends": [
-				"trim=auto"
-			],
-			"url": "https://docs.imgix.com/apis/url/trim/trimsd",
-			"short_description": "Specifies the standard deviation on a trim operation."
-		},
-		"trimtol": {
-			"display_name": "trim tolerance",
-			"category": "trim",
-			"available_in": [
-				"url",
-				"graph"
-			],
-			"expects": [
-				{
-					"type": "number",
-					"suggested_range": {
-						"min": 0
-					}
-				}
-			],
-			"default": 0,
-			"depends": [
-				"trim=color"
-			],
-			"url": "https://docs.imgix.com/apis/url/trim/trimtol",
-			"short_description": "Specifies the tolerance on a trim operation."
-		},
-		"txt": {
-			"display_name": "text string",
-			"category": "text",
-			"available_in": [
-				"url"
-			],
-			"expects": [
-				{
-					"type": "string"
-				}
-			],
-			"aliases": [
-				"t"
-			],
-			"url": "https://docs.imgix.com/apis/url/text/txt",
-			"short_description": "Sets the text string to render."
-		},
-		"txtalign": {
+		"txt-align": {
 			"display_name": "text align",
 			"category": "text",
 			"available_in": [
@@ -2272,15 +2344,16 @@ return {
 				}
 			],
 			"aliases": [
+				"txtalign",
 				"ta"
 			],
 			"depends": [
 				"txt"
 			],
-			"url": "https://docs.imgix.com/apis/url/text/txtalign",
+			"url": "https://docs.imgix.com/apis/url/text/txt-align",
 			"short_description": "Sets the vertical and horizontal alignment of rendered text relative to the base image."
 		},
-		"txtclip": {
+		"txt-clip": {
 			"display_name": "text clipping mode",
 			"category": "text",
 			"available_in": [
@@ -2299,15 +2372,16 @@ return {
 			],
 			"default": "end",
 			"aliases": [
+				"txtclip",
 				"tcl"
 			],
 			"depends": [
 				"txt"
 			],
-			"url": "https://docs.imgix.com/apis/url/text/txtclip",
+			"url": "https://docs.imgix.com/apis/url/text/txt-clip",
 			"short_description": "Sets the clipping properties of rendered text."
 		},
-		"txtclr": {
+		"txt-color": {
 			"display_name": "text color",
 			"category": "text",
 			"available_in": [
@@ -2323,15 +2397,17 @@ return {
 			],
 			"aliases": [
 				"txtcolor",
+				"txt-clr",
+				"txtclr",
 				"tc"
 			],
 			"depends": [
 				"txt"
 			],
-			"url": "https://docs.imgix.com/apis/url/text/txtclr",
+			"url": "https://docs.imgix.com/apis/url/text/txt-color",
 			"short_description": "Specifies the color of rendered text."
 		},
-		"txtfit": {
+		"txt-fit": {
 			"display_name": "text fit mode",
 			"category": "text",
 			"available_in": [
@@ -2345,13 +2421,16 @@ return {
 					]
 				}
 			],
+			"aliases": [
+				"txtfit"
+			],
 			"depends": [
 				"txt"
 			],
-			"url": "https://docs.imgix.com/apis/url/text/txtfit",
+			"url": "https://docs.imgix.com/apis/url/text/txt-fit",
 			"short_description": "Specifies the fit approach for rendered text."
 		},
-		"txtfont": {
+		"txt-font": {
 			"display_name": "text font",
 			"category": "text",
 			"available_in": [
@@ -2363,15 +2442,16 @@ return {
 				}
 			],
 			"aliases": [
-				"tf"
+				"tf",
+				"txtfont"
 			],
 			"depends": [
 				"txt"
 			],
-			"url": "https://docs.imgix.com/apis/url/text/txtfont",
+			"url": "https://docs.imgix.com/apis/url/text/txt-font",
 			"short_description": "Selects a font for rendered text."
 		},
-		"txtlead": {
+		"txt-lead": {
 			"display_name": "text leading",
 			"category": "typesetting",
 			"available_in": [
@@ -2385,14 +2465,17 @@ return {
 					}
 				}
 			],
+			"aliases": [
+				"txtlead"
+			],
 			"default": 0,
 			"depends": [
 				"txt"
 			],
-			"url": "https://docs.imgix.com/apis/url/typesetting/txtlead",
+			"url": "https://docs.imgix.com/apis/url/typesetting/txt-lead",
 			"short_description": "Sets the leading (line spacing) for rendered text. Only works on the multi-line text endpoint."
 		},
-		"txtlig": {
+		"txt-lig": {
 			"display_name": "text ligatures",
 			"category": "text",
 			"available_in": [
@@ -2408,37 +2491,16 @@ return {
 					]
 				}
 			],
+			"aliases": [
+				"txtlig"
+			],
 			"depends": [
 				"txt"
 			],
-			"url": "https://docs.imgix.com/apis/url/text/txtlig",
+			"url": "https://docs.imgix.com/apis/url/text/txt-lig",
 			"short_description": "Controls the level of ligature substitution"
 		},
-		"txtline": {
-			"display_name": "text outline",
-			"category": "text",
-			"available_in": [
-				"url"
-			],
-			"expects": [
-				{
-					"type": "integer",
-					"suggested_range": {
-						"min": 0
-					}
-				}
-			],
-			"default": 0,
-			"aliases": [
-				"tl"
-			],
-			"depends": [
-				"txt"
-			],
-			"url": "https://docs.imgix.com/apis/url/text/txtline",
-			"short_description": "Outlines the rendered text with a specified color."
-		},
-		"txtlineclr": {
+		"txt-line-color": {
 			"display_name": "text outline color",
 			"category": "text",
 			"available_in": [
@@ -2454,16 +2516,43 @@ return {
 			],
 			"default": "fff",
 			"aliases": [
-				"txtlinecolor"
+				"txtlinecolor",
+				"txt-line-clr",
+				"txtlineclr"
 			],
 			"depends": [
 				"txt",
 				"txtline"
 			],
-			"url": "https://docs.imgix.com/apis/url/text/txtlineclr",
+			"url": "https://docs.imgix.com/apis/url/text/txt-line-color",
 			"short_description": "Specifies a text outline color."
 		},
-		"txtpad": {
+		"txt-line": {
+			"display_name": "text outline",
+			"category": "text",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "integer",
+					"suggested_range": {
+						"min": 0
+					}
+				}
+			],
+			"default": 0,
+			"aliases": [
+				"txtline",
+				"tl"
+			],
+			"depends": [
+				"txt"
+			],
+			"url": "https://docs.imgix.com/apis/url/text/txt-line",
+			"short_description": "Outlines the rendered text with a specified color."
+		},
+		"txt-pad": {
 			"display_name": "text padding",
 			"category": "text",
 			"available_in": [
@@ -2479,15 +2568,16 @@ return {
 				}
 			],
 			"aliases": [
+				"txtpad",
 				"tp"
 			],
 			"depends": [
 				"txt"
 			],
-			"url": "https://docs.imgix.com/apis/url/text/txtpad",
+			"url": "https://docs.imgix.com/apis/url/text/txt-pad",
 			"short_description": "Specifies the padding (in device-independent pixels) between a textbox and the edges of the base image."
 		},
-		"txtshad": {
+		"txt-shad": {
 			"display_name": "text shadow",
 			"category": "text",
 			"available_in": [
@@ -2504,15 +2594,16 @@ return {
 			],
 			"default": 0,
 			"aliases": [
+				"txtshad",
 				"tsh"
 			],
 			"depends": [
 				"txt"
 			],
-			"url": "https://docs.imgix.com/apis/url/text/txtshad",
+			"url": "https://docs.imgix.com/apis/url/text/txt-shad",
 			"short_description": "Applies a shadow to rendered text."
 		},
-		"txtsize": {
+		"txt-size": {
 			"display_name": "text font size",
 			"category": "text",
 			"available_in": [
@@ -2528,15 +2619,16 @@ return {
 			],
 			"default": 12,
 			"aliases": [
-				"tsz"
+				"tsz",
+				"txtsize"
 			],
 			"depends": [
 				"txt"
 			],
-			"url": "https://docs.imgix.com/apis/url/text/txtsize",
+			"url": "https://docs.imgix.com/apis/url/text/txt-size",
 			"short_description": "Sets the font size of rendered text."
 		},
-		"txttrack": {
+		"txt-track": {
 			"display_name": "text tracking",
 			"category": "typesetting",
 			"available_in": [
@@ -2552,15 +2644,16 @@ return {
 			],
 			"default": 0,
 			"aliases": [
+				"txttrack",
 				"tt"
 			],
 			"depends": [
 				"txt"
 			],
-			"url": "https://docs.imgix.com/apis/url/typesetting/txttrack",
+			"url": "https://docs.imgix.com/apis/url/typesetting/txt-track",
 			"short_description": "Sets the tracking (letter spacing) for rendered text. Only works on the multi-line text endpoint."
 		},
-		"txtwidth": {
+		"txt-width": {
 			"display_name": "text width",
 			"category": "text",
 			"available_in": [
@@ -2574,11 +2667,31 @@ return {
 					}
 				}
 			],
+			"aliases": [
+				"txtwidth"
+			],
 			"depends": [
 				"txt"
 			],
-			"url": "https://docs.imgix.com/apis/url/text/txtwidth",
+			"url": "https://docs.imgix.com/apis/url/text/txt-width",
 			"short_description": "Sets the width of rendered text."
+		},
+		"txt": {
+			"display_name": "text string",
+			"category": "text",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "string"
+				}
+			],
+			"aliases": [
+				"t"
+			],
+			"url": "https://docs.imgix.com/apis/url/text/txt",
+			"short_description": "Sets the text string to render."
 		},
 		"usm": {
 			"display_name": "unsharp mask",
@@ -2670,31 +2783,91 @@ return {
 		}
 	},
 	"aliases": {
+		"blendalign": "blend-align",
+		"ba": "blend-align",
+		"blendalpha": "blend-alpha",
+		"balph": "blend-alpha",
+		"blendcrop": "blend-crop",
+		"bc": "blend-crop",
+		"blendfit": "blend-fit",
+		"bf": "blend-fit",
+		"blendh": "blend-h",
+		"bh": "blend-h",
+		"blendmode": "blend-mode",
+		"bm": "blend-mode",
+		"blendpad": "blend-pad",
+		"bp": "blend-pad",
+		"blendsize": "blend-size",
+		"bs": "blend-size",
+		"blendw": "blend-w",
+		"bw": "blend-w",
+		"blendx": "blend-x",
+		"bx": "blend-x",
+		"blendy": "blend-y",
+		"by": "blend-y",
+		"b": "blend",
+		"fillcolor": "fill-color",
 		"f": "fit",
+		"inv": "invert",
+		"ma": "mark-align",
+		"markalign": "mark-align",
+		"markalpha": "mark-alpha",
+		"malph": "mark-alpha",
+		"mb": "mark-base",
+		"markbase": "mark-base",
+		"mf": "mark-fit",
+		"markfit": "mark-fit",
+		"mh": "mark-h",
+		"markh": "mark-h",
+		"mp": "mark-pad",
+		"markpad": "mark-pad",
+		"ms": "mark-scale",
+		"markscale": "mark-scale",
+		"mw": "mark-w",
+		"markw": "mark-w",
+		"mx": "mark-x",
+		"markx": "mark-x",
+		"my": "mark-y",
+		"marky": "mark-y",
 		"m": "mark",
-		"ma": "markalign",
-		"mb": "markbase",
-		"mf": "markfit",
-		"mh": "markh",
-		"mp": "markpad",
-		"ms": "markscale",
-		"mw": "markw",
-		"mx": "markx",
-		"my": "marky",
-		"monochrome": "mono",
-		"orient": "or",
-		"t": "txt",
-		"ta": "txtalign",
-		"tcl": "txtclip",
-		"txtcolor": "txtclr",
-		"tc": "txtclr",
-		"tf": "txtfont",
-		"tl": "txtline",
-		"txtlinecolor": "txtlineclr",
-		"tp": "txtpad",
-		"tsh": "txtshad",
-		"tsz": "txtsize",
-		"tt": "txttrack"
+		"max-height": "max-h",
+		"max-width": "max-w",
+		"min-height": "min-h",
+		"min-width": "min-w",
+		"mono": "monochrome",
+		"or": "orient",
+		"trimcolor": "trim-color",
+		"trimmd": "trim-md",
+		"trimsd": "trim-sd",
+		"trimtol": "trim-tol",
+		"txtalign": "txt-align",
+		"ta": "txt-align",
+		"txtclip": "txt-clip",
+		"tcl": "txt-clip",
+		"txtcolor": "txt-color",
+		"txt-clr": "txt-color",
+		"txtclr": "txt-color",
+		"tc": "txt-color",
+		"txtfit": "txt-fit",
+		"tf": "txt-font",
+		"txtfont": "txt-font",
+		"txtlead": "txt-lead",
+		"txtlig": "txt-lig",
+		"txtlinecolor": "txt-line-color",
+		"txt-line-clr": "txt-line-color",
+		"txtlineclr": "txt-line-color",
+		"txtline": "txt-line",
+		"tl": "txt-line",
+		"txtpad": "txt-pad",
+		"tp": "txt-pad",
+		"txtshad": "txt-shad",
+		"tsh": "txt-shad",
+		"tsz": "txt-size",
+		"txtsize": "txt-size",
+		"txttrack": "txt-track",
+		"tt": "txt-track",
+		"txtwidth": "txt-width",
+		"t": "txt"
 	},
 	"categoryValues": [
 		"adjustment",
