@@ -15,7 +15,7 @@
 }(this, function () {
 
 return {
-	"version": "11.1.1",
+	"version": "11.2.0",
 	"parameters": {
 		"ar": {
 			"display_name": "aspect ratio",
@@ -2255,6 +2255,30 @@ return {
 			"url": "https://docs.imgix.com/apis/url/trim/trim-md",
 			"short_description": "Specifies the mean difference on a trim operation."
 		},
+		"trim-pad": {
+			"display_name": "trim padding",
+			"category": "trim",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "integer",
+					"suggested_range": {
+						"min": 0
+					}
+				}
+			],
+			"default": 0,
+			"aliases": [
+				"trimpad"
+			],
+			"depends": [
+				"trim"
+			],
+			"url": "https://docs.imgix.com/apis/url/trim/trim-pad",
+			"short_description": "Pads the area of the source image before trimming."
+		},
 		"trim-sd": {
 			"display_name": "trim standard deviation",
 			"category": "trim",
@@ -2838,6 +2862,7 @@ return {
 		"or": "orient",
 		"trimcolor": "trim-color",
 		"trimmd": "trim-md",
+		"trimpad": "trim-pad",
 		"trimsd": "trim-sd",
 		"trimtol": "trim-tol",
 		"txtalign": "txt-align",
