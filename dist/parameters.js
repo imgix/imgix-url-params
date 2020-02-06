@@ -15,7 +15,7 @@
 }(this, function () {
 
 return {
-	"version": "11.2.0",
+	"version": "11.3.0",
 	"parameters": {
 		"ar": {
 			"display_name": "aspect ratio",
@@ -131,6 +131,27 @@ return {
 			],
 			"url": "https://docs.imgix.com/apis/url/blending/blend-alpha",
 			"short_description": "Changes the alpha of the blend image."
+		},
+		"blend-color": {
+			"display_name": "blend color",
+			"category": "blending",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "hex_color"
+				},
+				{
+					"type": "color_keyword"
+				}
+			],
+			"aliases": [
+				"blendcolor",
+				"blend-clr",
+				"blendclr"
+			],
+			"short_description": "Specifies a color to use when applying the blend."
 		},
 		"blend-crop": {
 			"display_name": "blend crop",
@@ -2811,6 +2832,9 @@ return {
 		"ba": "blend-align",
 		"blendalpha": "blend-alpha",
 		"balph": "blend-alpha",
+		"blendcolor": "blend-color",
+		"blend-clr": "blend-color",
+		"blendclr": "blend-color",
 		"blendcrop": "blend-crop",
 		"bc": "blend-crop",
 		"blendfit": "blend-fit",
