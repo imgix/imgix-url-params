@@ -1,4 +1,4 @@
-# Imgix URL Parameters
+# imgix URL Parameters
 
 This repo is intended to act as a single source of truth about the current state of all imgix URL API parameters, exposed
 as JSON.
