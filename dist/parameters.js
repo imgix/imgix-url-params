@@ -15,7 +15,7 @@
 }(this, function () {
 
 return {
-	"version": "11.3.0",
+	"version": "11.4.2",
 	"parameters": {
 		"ar": {
 			"display_name": "aspect ratio",
@@ -151,6 +151,7 @@ return {
 				"blend-clr",
 				"blendclr"
 			],
+			"url": "https://docs.imgix.com/apis/url/blending/blend-color",
 			"short_description": "Specifies a color to use when applying the blend."
 		},
 		"blend-crop": {
@@ -1310,6 +1311,9 @@ return {
 						"max": 1
 					}
 				}
+			],
+			"aliases": [
+				"height"
 			],
 			"url": "https://docs.imgix.com/apis/url/size/h",
 			"short_description": "Adjusts the height of the output image."
@@ -2823,6 +2827,9 @@ return {
 					}
 				}
 			],
+			"aliases": [
+				"width"
+			],
 			"url": "https://docs.imgix.com/apis/url/size/w",
 			"short_description": "Adjusts the width of the output image."
 		}
@@ -2856,6 +2863,7 @@ return {
 		"b": "blend",
 		"fillcolor": "fill-color",
 		"f": "fit",
+		"height": "h",
 		"inv": "invert",
 		"ma": "mark-align",
 		"markalign": "mark-align",
@@ -2916,7 +2924,8 @@ return {
 		"txttrack": "txt-track",
 		"tt": "txt-track",
 		"txtwidth": "txt-width",
-		"t": "txt"
+		"t": "txt",
+		"width": "w"
 	},
 	"categoryValues": [
 		"adjustment",
