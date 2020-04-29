@@ -15,7 +15,7 @@
 }(this, function () {
 
 return {
-	"version": "11.4.2",
+	"version": "11.4.3",
 	"parameters": {
 		"ar": {
 			"display_name": "aspect ratio",
@@ -2091,6 +2091,13 @@ return {
 								"center",
 								"right"
 							]
+						},
+						{
+							"type": "unit_scalar",
+							"strict_range": {
+								"min": 0,
+								"max": 1
+							}
 						}
 					],
 					"1": [
@@ -2107,6 +2114,13 @@ return {
 								"middle",
 								"bottom"
 							]
+						},
+						{
+							"type": "unit_scalar",
+							"strict_range": {
+								"min": 0,
+								"max": 1
+							}
 						}
 					],
 					"2": [
