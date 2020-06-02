@@ -15,7 +15,7 @@
 }(this, function () {
 
 return {
-	"version": "11.4.3",
+	"version": "11.6.0",
 	"parameters": {
 		"ar": {
 			"display_name": "aspect ratio",
@@ -1710,6 +1710,31 @@ return {
 			"url": "https://docs.imgix.com/apis/url/watermark/mark",
 			"short_description": "Specifies the location of the watermark image."
 		},
+		"mask-bg": {
+			"display_name": "mask background color",
+			"category": "mask",
+			"available_in": [
+				"url",
+				"graph"
+			],
+			"expects": [
+				{
+					"type": "hex_color"
+				},
+				{
+					"type": "color_keyword"
+				}
+			],
+			"default": "fff",
+			"aliases": [
+				"maskbg"
+			],
+			"depends": [
+				"mask"
+			],
+			"url": "https://docs.imgix.com/apis/url/mask/mask-bg",
+			"short_description": "Colors the background of the transparent mask area of images"
+		},
 		"mask": {
 			"display_name": "mask type",
 			"category": "mask",
@@ -1734,28 +1759,6 @@ return {
 			],
 			"url": "https://docs.imgix.com/apis/url/mask",
 			"short_description": "Defines the type of mask and specifies the URL if that type is selected."
-		},
-		"maskbg": {
-			"display_name": "mask background color",
-			"category": "mask",
-			"available_in": [
-				"url",
-				"graph"
-			],
-			"expects": [
-				{
-					"type": "hex_color"
-				},
-				{
-					"type": "color_keyword"
-				}
-			],
-			"default": "fff",
-			"depends": [
-				"mask"
-			],
-			"url": "https://docs.imgix.com/apis/url/mask/mask-bg",
-			"short_description": "Colors the background of the transparent mask area of images"
 		},
 		"max-h": {
 			"display_name": "maximum height",
@@ -2900,6 +2903,7 @@ return {
 		"my": "mark-y",
 		"marky": "mark-y",
 		"m": "mark",
+		"maskbg": "mask-bg",
 		"max-height": "max-h",
 		"max-width": "max-w",
 		"min-height": "min-h",
