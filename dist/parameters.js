@@ -15,7 +15,7 @@
 }(this, function () {
 
 return {
-	"version": "11.6.0",
+	"version": "11.7.0",
 	"parameters": {
 		"ar": {
 			"display_name": "aspect ratio",
@@ -1289,6 +1289,54 @@ return {
 			"url": "https://docs.imgix.com/apis/url/adjustment/gam",
 			"short_description": "Adjusts the gamma of the source image."
 		},
+		"grid-colors": {
+			"display_name": "grid colors",
+			"category": "fill",
+			"expects": [
+				{
+					"0": [
+						{
+							"type": "hex_color"
+						},
+						{
+							"type": "color_keyword"
+						}
+					],
+					"1": [
+						{
+							"type": "hex_color"
+						},
+						{
+							"type": "color_keyword"
+						}
+					],
+					"type": "list",
+					"default": "D0D7DD,FFFFFF",
+					"length": 2
+				}
+			],
+			"depends": [
+				"transparency"
+			],
+			"short_description": "Sets grid colors for the transparency checkerboard grid."
+		},
+		"grid-size": {
+			"display_name": "grid size",
+			"category": "fill",
+			"expects": [
+				{
+					"type": "integer",
+					"default": 4,
+					"strict_range": {
+						"min": 0
+					}
+				}
+			],
+			"depends": [
+				"transparency"
+			],
+			"short_description": "Sets grid size for the transparency checkerboard grid."
+		},
 		"h": {
 			"display_name": "image height",
 			"category": "size",
@@ -2247,6 +2295,19 @@ return {
 			"default": 0,
 			"url": "https://docs.imgix.com/apis/url/adjustment/sharp",
 			"short_description": "Adjusts the sharpness of the source image."
+		},
+		"transparency": {
+			"display_name": "transparency",
+			"category": "fill",
+			"expects": [
+				{
+					"type": "string",
+					"possible_values": [
+						"grid"
+					]
+				}
+			],
+			"short_description": "Adds checkerboard behind images which support transparency."
 		},
 		"trim-color": {
 			"display_name": "trim color",
