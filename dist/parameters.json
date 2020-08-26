@@ -1,5 +1,5 @@
 {
-	"version": "11.7.0",
+	"version": "11.8.0",
 	"parameters": {
 		"ar": {
 			"display_name": "aspect ratio",
@@ -444,6 +444,40 @@
 			"url": "https://docs.imgix.com/apis/url/stylize/blur",
 			"short_description": "Applies a gaussian blur to an image."
 		},
+		"border-bottom": {
+			"display_name": "bottom border",
+			"category": "border-and-padding",
+			"expects": [
+				{
+					"type": "integer",
+					"suggested_range": {
+						"min": 0,
+						"max": 100
+					}
+				}
+			],
+			"depends": [
+				"border"
+			],
+			"short_description": "Sets bottom border of an image."
+		},
+		"border-left": {
+			"display_name": "left border",
+			"category": "border-and-padding",
+			"expects": [
+				{
+					"type": "integer",
+					"suggested_range": {
+						"min": 0,
+						"max": 100
+					}
+				}
+			],
+			"depends": [
+				"border"
+			],
+			"short_description": "Sets left border of an image."
+		},
 		"border-radius-inner": {
 			"display_name": "inner border radius",
 			"category": "border-and-padding",
@@ -557,6 +591,40 @@
 			],
 			"url": "https://docs.imgix.com/apis/url/border-and-padding/border-radius",
 			"short_description": "Sets the outer radius of the image's border in pixels."
+		},
+		"border-right": {
+			"display_name": "right border",
+			"category": "border-and-padding",
+			"expects": [
+				{
+					"type": "integer",
+					"suggested_range": {
+						"min": 0,
+						"max": 100
+					}
+				}
+			],
+			"depends": [
+				"border"
+			],
+			"short_description": "Sets right border of an image."
+		},
+		"border-top": {
+			"display_name": "top border",
+			"category": "border-and-padding",
+			"expects": [
+				{
+					"type": "integer",
+					"suggested_range": {
+						"min": 0,
+						"max": 100
+					}
+				}
+			],
+			"depends": [
+				"border"
+			],
+			"short_description": "Sets top border of an image."
 		},
 		"border": {
 			"display_name": "border size & color",
@@ -1980,6 +2048,62 @@
 			],
 			"url": "https://docs.imgix.com/apis/url/rotation/orient",
 			"short_description": "Changes the image orientation."
+		},
+		"pad-bottom": {
+			"display_name": "bottom padding",
+			"category": "border-and-padding",
+			"expects": [
+				{
+					"type": "integer",
+					"suggested_range": {
+						"min": 0
+					},
+					"default": 0
+				}
+			],
+			"short_description": "Sets bottom padding of an image."
+		},
+		"pad-left": {
+			"display_name": "left padding",
+			"category": "border-and-padding",
+			"expects": [
+				{
+					"type": "integer",
+					"suggested_range": {
+						"min": 0
+					},
+					"default": 0
+				}
+			],
+			"short_description": "Sets left padding of an image."
+		},
+		"pad-right": {
+			"display_name": "right padding",
+			"category": "border-and-padding",
+			"expects": [
+				{
+					"type": "integer",
+					"suggested_range": {
+						"min": 0
+					},
+					"default": 0
+				}
+			],
+			"short_description": "Sets right padding of an image."
+		},
+		"pad-top": {
+			"display_name": "top padding",
+			"category": "border-and-padding",
+			"expects": [
+				{
+					"type": "integer",
+					"suggested_range": {
+						"min": 0
+					},
+					"default": 0
+				}
+			],
+			"short_description": "Sets top padding of an image."
 		},
 		"pad": {
 			"display_name": "padding",
