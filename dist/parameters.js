@@ -15,7 +15,7 @@
 }(this, function () {
 
 return {
-	"version": "11.8.0",
+	"version": "11.8.1",
 	"parameters": {
 		"ar": {
 			"display_name": "aspect ratio",
@@ -461,7 +461,7 @@ return {
 			"short_description": "Applies a gaussian blur to an image."
 		},
 		"border-bottom": {
-			"display_name": "bottom border",
+			"display_name": "border bottom",
 			"category": "border-and-padding",
 			"expects": [
 				{
@@ -478,7 +478,7 @@ return {
 			"short_description": "Sets bottom border of an image."
 		},
 		"border-left": {
-			"display_name": "left border",
+			"display_name": "border left",
 			"category": "border-and-padding",
 			"expects": [
 				{
@@ -609,7 +609,7 @@ return {
 			"short_description": "Sets the outer radius of the image's border in pixels."
 		},
 		"border-right": {
-			"display_name": "right border",
+			"display_name": "border right",
 			"category": "border-and-padding",
 			"expects": [
 				{
@@ -626,7 +626,7 @@ return {
 			"short_description": "Sets right border of an image."
 		},
 		"border-top": {
-			"display_name": "top border",
+			"display_name": "border top",
 			"category": "border-and-padding",
 			"expects": [
 				{
@@ -2066,7 +2066,7 @@ return {
 			"short_description": "Changes the image orientation."
 		},
 		"pad-bottom": {
-			"display_name": "bottom padding",
+			"display_name": "padding bottom",
 			"category": "border-and-padding",
 			"expects": [
 				{
@@ -2080,7 +2080,7 @@ return {
 			"short_description": "Sets bottom padding of an image."
 		},
 		"pad-left": {
-			"display_name": "left padding",
+			"display_name": "padding left",
 			"category": "border-and-padding",
 			"expects": [
 				{
@@ -2094,7 +2094,7 @@ return {
 			"short_description": "Sets left padding of an image."
 		},
 		"pad-right": {
-			"display_name": "right padding",
+			"display_name": "padding right",
 			"category": "border-and-padding",
 			"expects": [
 				{
@@ -2108,7 +2108,7 @@ return {
 			"short_description": "Sets right padding of an image."
 		},
 		"pad-top": {
-			"display_name": "top padding",
+			"display_name": "padding top",
 			"category": "border-and-padding",
 			"expects": [
 				{
