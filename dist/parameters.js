@@ -15,7 +15,7 @@
 }(this, function () {
 
 return {
-	"version": "11.9.0",
+	"version": "11.9.1",
 	"parameters": {
 		"ar": {
 			"display_name": "aspect ratio",
@@ -464,6 +464,9 @@ return {
 		"border-bottom": {
 			"display_name": "border bottom",
 			"category": "border-and-padding",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "integer",
@@ -482,6 +485,9 @@ return {
 		"border-left": {
 			"display_name": "border left",
 			"category": "border-and-padding",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "integer",
@@ -614,6 +620,9 @@ return {
 		"border-right": {
 			"display_name": "border right",
 			"category": "border-and-padding",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "integer",
@@ -632,6 +641,9 @@ return {
 		"border-top": {
 			"display_name": "border top",
 			"category": "border-and-padding",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "integer",
@@ -1365,6 +1377,9 @@ return {
 		"grid-colors": {
 			"display_name": "grid colors",
 			"category": "fill",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"0": [
@@ -1396,6 +1411,9 @@ return {
 		"grid-size": {
 			"display_name": "grid size",
 			"category": "fill",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "integer",
@@ -1734,6 +1752,9 @@ return {
 		"mark-tile": {
 			"display_name": "watermark tile",
 			"category": "watermark",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "string",
@@ -2094,6 +2115,9 @@ return {
 		"pad-bottom": {
 			"display_name": "padding bottom",
 			"category": "border-and-padding",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "integer",
@@ -2109,6 +2133,9 @@ return {
 		"pad-left": {
 			"display_name": "padding left",
 			"category": "border-and-padding",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "integer",
@@ -2124,6 +2151,9 @@ return {
 		"pad-right": {
 			"display_name": "padding right",
 			"category": "border-and-padding",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "integer",
@@ -2139,6 +2169,9 @@ return {
 		"pad-top": {
 			"display_name": "padding top",
 			"category": "border-and-padding",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "integer",
@@ -2454,6 +2487,9 @@ return {
 		"transparency": {
 			"display_name": "transparency",
 			"category": "fill",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "string",

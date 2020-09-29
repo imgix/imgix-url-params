@@ -1,5 +1,5 @@
 {
-	"version": "11.9.0",
+	"version": "11.9.1",
 	"parameters": {
 		"ar": {
 			"display_name": "aspect ratio",
@@ -448,6 +448,9 @@
 		"border-bottom": {
 			"display_name": "border bottom",
 			"category": "border-and-padding",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "integer",
@@ -466,6 +469,9 @@
 		"border-left": {
 			"display_name": "border left",
 			"category": "border-and-padding",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "integer",
@@ -598,6 +604,9 @@
 		"border-right": {
 			"display_name": "border right",
 			"category": "border-and-padding",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "integer",
@@ -616,6 +625,9 @@
 		"border-top": {
 			"display_name": "border top",
 			"category": "border-and-padding",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "integer",
@@ -1349,6 +1361,9 @@
 		"grid-colors": {
 			"display_name": "grid colors",
 			"category": "fill",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"0": [
@@ -1380,6 +1395,9 @@
 		"grid-size": {
 			"display_name": "grid size",
 			"category": "fill",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "integer",
@@ -1718,6 +1736,9 @@
 		"mark-tile": {
 			"display_name": "watermark tile",
 			"category": "watermark",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "string",
@@ -2078,6 +2099,9 @@
 		"pad-bottom": {
 			"display_name": "padding bottom",
 			"category": "border-and-padding",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "integer",
@@ -2093,6 +2117,9 @@
 		"pad-left": {
 			"display_name": "padding left",
 			"category": "border-and-padding",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "integer",
@@ -2108,6 +2135,9 @@
 		"pad-right": {
 			"display_name": "padding right",
 			"category": "border-and-padding",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "integer",
@@ -2123,6 +2153,9 @@
 		"pad-top": {
 			"display_name": "padding top",
 			"category": "border-and-padding",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "integer",
@@ -2438,6 +2471,9 @@
 		"transparency": {
 			"display_name": "transparency",
 			"category": "fill",
+			"available_in": [
+				"url"
+			],
 			"expects": [
 				{
 					"type": "string",
