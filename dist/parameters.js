@@ -15,7 +15,7 @@
 }(this, function () {
 
 return {
-	"version": "11.8.1",
+	"version": "11.9.0",
 	"parameters": {
 		"ar": {
 			"display_name": "aspect ratio",
@@ -34,6 +34,7 @@ return {
 			"depends": [
 				"fit=crop"
 			],
+			"url": "https://docs.imgix.com/apis/url/size/ar",
 			"short_description": "Specifies an aspect ratio to maintain when resizing and cropping the image"
 		},
 		"auto": {
@@ -475,6 +476,7 @@ return {
 			"depends": [
 				"border"
 			],
+			"url": "https://docs.imgix.com/apis/url/border-and-padding/border-bottom",
 			"short_description": "Sets bottom border of an image."
 		},
 		"border-left": {
@@ -492,6 +494,7 @@ return {
 			"depends": [
 				"border"
 			],
+			"url": "https://docs.imgix.com/apis/url/border-and-padding/border-left",
 			"short_description": "Sets left border of an image."
 		},
 		"border-radius-inner": {
@@ -623,6 +626,7 @@ return {
 			"depends": [
 				"border"
 			],
+			"url": "https://docs.imgix.com/apis/url/border-and-padding/border-right",
 			"short_description": "Sets right border of an image."
 		},
 		"border-top": {
@@ -640,6 +644,7 @@ return {
 			"depends": [
 				"border"
 			],
+			"url": "https://docs.imgix.com/apis/url/border-and-padding/border-top",
 			"short_description": "Sets top border of an image."
 		},
 		"border": {
@@ -1690,7 +1695,7 @@ return {
 					}
 				}
 			],
-			"default": 10,
+			"default": 5,
 			"aliases": [
 				"mp",
 				"markpad"
@@ -1725,6 +1730,27 @@ return {
 			],
 			"url": "https://docs.imgix.com/apis/url/watermark/mark-scale",
 			"short_description": "Adjusts the scale of the watermark image."
+		},
+		"mark-tile": {
+			"display_name": "watermark tile",
+			"category": "watermark",
+			"expects": [
+				{
+					"type": "string",
+					"possible_values": [
+						"grid"
+					]
+				}
+			],
+			"aliases": [
+				"mtile",
+				"marktile"
+			],
+			"depends": [
+				"mark"
+			],
+			"url": "https://docs.imgix.com/apis/url/watermark/mark-tile",
+			"short_description": "Adds tiled watermark."
 		},
 		"mark-w": {
 			"display_name": "watermark width",
@@ -2077,6 +2103,7 @@ return {
 					"default": 0
 				}
 			],
+			"url": "https://docs.imgix.com/apis/url/border-and-padding/pad-bottom",
 			"short_description": "Sets bottom padding of an image."
 		},
 		"pad-left": {
@@ -2091,6 +2118,7 @@ return {
 					"default": 0
 				}
 			],
+			"url": "https://docs.imgix.com/apis/url/border-and-padding/pad-left",
 			"short_description": "Sets left padding of an image."
 		},
 		"pad-right": {
@@ -2105,6 +2133,7 @@ return {
 					"default": 0
 				}
 			],
+			"url": "https://docs.imgix.com/apis/url/border-and-padding/pad-right",
 			"short_description": "Sets right padding of an image."
 		},
 		"pad-top": {
@@ -2119,6 +2148,7 @@ return {
 					"default": 0
 				}
 			],
+			"url": "https://docs.imgix.com/apis/url/border-and-padding/pad-top",
 			"short_description": "Sets top padding of an image."
 		},
 		"pad": {
@@ -2314,7 +2344,8 @@ return {
 							}
 						}
 					],
-					"type": "list"
+					"type": "list",
+					"length": 4
 				}
 			],
 			"url": "https://docs.imgix.com/apis/url/size/rect",
@@ -2431,6 +2462,7 @@ return {
 					]
 				}
 			],
+			"url": "https://docs.imgix.com/apis/url/fill/transparency",
 			"short_description": "Adds checkerboard behind images which support transparency."
 		},
 		"trim-color": {
@@ -3081,6 +3113,8 @@ return {
 		"markpad": "mark-pad",
 		"ms": "mark-scale",
 		"markscale": "mark-scale",
+		"mtile": "mark-tile",
+		"marktile": "mark-tile",
 		"mw": "mark-w",
 		"markw": "mark-w",
 		"mx": "mark-x",
