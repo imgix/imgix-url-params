@@ -15,7 +15,7 @@
 }(this, function () {
 
 return {
-	"version": "11.10.0",
+	"version": "11.10.1",
 	"parameters": {
 		"ar": {
 			"display_name": "aspect ratio",
@@ -2202,6 +2202,25 @@ return {
 			"url": "https://docs.imgix.com/apis/url/border-and-padding/pad",
 			"short_description": "Pads an image."
 		},
+		"page": {
+			"display_name": "pdf page number",
+			"category": "pdf",
+			"available_in": [
+				"url",
+				"graph"
+			],
+			"expects": [
+				{
+					"type": "integer",
+					"suggested_range": {
+						"min": 1
+					}
+				}
+			],
+			"default": 1,
+			"url": "https://docs.imgix.com/apis/url/pdf/page",
+			"short_description": "Selects a page from a PDF for display."
+		},
 		"palette": {
 			"display_name": "color palette extraction",
 			"category": "color-palette",
@@ -2239,28 +2258,6 @@ return {
 			],
 			"url": "https://docs.imgix.com/apis/url/pdf/pdf-annotation",
 			"short_description": "Enables or disables PDF annotation."
-		},
-		"pdf-page": {
-			"display_name": "pdf page number",
-			"category": "pdf",
-			"available_in": [
-				"url",
-				"graph"
-			],
-			"expects": [
-				{
-					"type": "integer",
-					"suggested_range": {
-						"min": 1
-					}
-				}
-			],
-			"default": 1,
-			"aliases": [
-				"page"
-			],
-			"url": "https://docs.imgix.com/apis/url/pdf/pdf-page",
-			"short_description": "Selects a page from a PDF for display."
 		},
 		"prefix": {
 			"display_name": "css prefix",
@@ -3188,7 +3185,6 @@ return {
 		"mono": "monochrome",
 		"or": "orient",
 		"annotation": "pdf-annotation",
-		"page": "pdf-page",
 		"trimcolor": "trim-color",
 		"trimmd": "trim-md",
 		"trimpad": "trim-pad",
