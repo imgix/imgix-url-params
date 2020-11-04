@@ -15,7 +15,7 @@
 }(this, function () {
 
 return {
-	"version": "11.10.1",
+	"version": "11.11.0",
 	"parameters": {
 		"ar": {
 			"display_name": "aspect ratio",
@@ -1723,6 +1723,26 @@ return {
 			],
 			"url": "https://docs.imgix.com/apis/url/watermark/mark-pad",
 			"short_description": "Applies padding to the watermark image."
+		},
+		"mark-rot": {
+			"display_name": "watermark rotation",
+			"category": "watermark",
+			"available_in": [
+				"url",
+				"graph"
+			],
+			"expects": [
+				{
+					"type": "number",
+					"suggested_range": {
+						"min": 0,
+						"max": 359
+					}
+				}
+			],
+			"default": 0,
+			"url": "https://docs.imgix.com/apis/url/watermark/mark-rot",
+			"short_description": "Rotates a watermark or tiled watermarks by a specified number of degrees."
 		},
 		"mark-scale": {
 			"display_name": "watermark scale",
