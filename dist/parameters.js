@@ -15,7 +15,7 @@
 }(this, function () {
 
 return {
-	"version": "11.11.0",
+	"version": "11.11.1",
 	"parameters": {
 		"ar": {
 			"display_name": "aspect ratio",
@@ -1335,7 +1335,7 @@ return {
 			],
 			"expects": [
 				{
-					"type": "integer",
+					"type": "number",
 					"default": 1,
 					"suggested_range": {
 						"min": 1,
