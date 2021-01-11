@@ -15,7 +15,7 @@
 }(this, function () {
 
 return {
-	"version": "11.11.1",
+	"version": "11.11.2",
 	"parameters": {
 		"ar": {
 			"display_name": "aspect ratio",
@@ -1255,7 +1255,8 @@ return {
 						"png8",
 						"png32",
 						"webp",
-						"webm"
+						"webm",
+						"blurhash"
 					]
 				}
 			],
