@@ -1,5 +1,5 @@
 {
-	"version": "11.11.2",
+	"version": "11.11.3",
 	"parameters": {
 		"ar": {
 			"display_name": "aspect ratio",
@@ -1240,7 +1240,8 @@
 						"png32",
 						"webp",
 						"webm",
-						"blurhash"
+						"blurhash",
+						"avif"
 					]
 				}
 			],
