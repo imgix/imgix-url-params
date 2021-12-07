@@ -15,7 +15,7 @@
   }(this, function () {
   
   return {
-	  "version": "11.11.3",
+	  "version": "11.12.0",
 	  "parameters": {
 		  "ar": {
 			  "display_name": "aspect ratio",
@@ -1537,6 +1537,23 @@
 			  "default": false,
 			  "url": "https://docs.imgix.com/apis/url/adjustment/invert",
 			  "short_description": "Inverts the colors on the source image."
+		  },
+		  "iptc": {
+			  "display_name": "IPTC Passthrough",
+			  "category": "format",
+			  "available_in": [
+				  "url"
+			  ],
+			  "expects": [
+				  {
+					  "type": "string",
+					  "possible_values": [
+						  "allow",
+						  "block"
+					  ]
+				  }
+			  ],
+			  "short_description": "Determine if IPTC data should be passed for JPEG images."
 		  },
 		  "lossless": {
 			  "display_name": "lossless compression",
