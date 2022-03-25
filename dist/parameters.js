@@ -15,7 +15,7 @@
   }(this, function () {
   
   return {
-	  "version": "11.12.0",
+	  "version": "11.13.0",
 	  "parameters": {
 		  "ar": {
 			  "display_name": "aspect ratio",
@@ -3053,6 +3053,48 @@
 			  "url": "https://docs.imgix.com/apis/url/text/txt-width",
 			  "short_description": "Sets the width of rendered text."
 		  },
+		  "txt-x": {
+			  "display_name": "text x position",
+			  "category": "text",
+			  "available_in": [
+				  "url"
+			  ],
+			  "expects": [
+				  {
+					  "type": "integer"
+				  }
+			  ],
+			  "aliases": [
+				  "txtx"
+			  ],
+			  "default": 0,
+			  "depends": [
+				  "txt"
+			  ],
+			  "url": "https://docs.imgix.com/apis/url/text/txt-x",
+			  "short_description": "Sets the horizontal (x) position of the text in pixels relative to the left edge of the base image."
+		  },
+		  "txt-y": {
+			  "display_name": "text y position",
+			  "category": "text",
+			  "available_in": [
+				  "url"
+			  ],
+			  "expects": [
+				  {
+					  "type": "integer"
+				  }
+			  ],
+			  "aliases": [
+				  "txty"
+			  ],
+			  "default": 0,
+			  "depends": [
+				  "txt"
+			  ],
+			  "url": "https://docs.imgix.com/apis/url/text/txt-y",
+			  "short_description": "Sets the vertical (y) position of the text in pixels relative to the top edge of the base image."
+		  },
 		  "txt": {
 			  "display_name": "text string",
 			  "category": "text",
@@ -3256,6 +3298,8 @@
 		  "txttrack": "txt-track",
 		  "tt": "txt-track",
 		  "txtwidth": "txt-width",
+		  "txtx": "txt-x",
+		  "txty": "txt-y",
 		  "t": "txt",
 		  "width": "w"
 	  },
