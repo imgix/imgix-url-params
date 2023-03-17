@@ -1,5 +1,5 @@
 {
-	"version": "11.13.1",
+	"version": "11.14.1",
 	"parameters": {
 		"ar": {
 			"display_name": "aspect ratio",
@@ -42,6 +42,23 @@
 			"disallow_base64": true,
 			"url": "https://docs.imgix.com/apis/url/auto",
 			"short_description": "Applies automatic enhancements to images."
+		},
+		"bg-remove": {
+			"display_name": "background removal",
+			"category": "background removal",
+			"available_in": [
+				"url",
+				"graph",
+				"output"
+			],
+			"expects": [
+				{
+					"type": "boolean"
+				}
+			],
+			"default": false,
+			"url": "https://docs.imgix.com/apis/rendering/background-removal/bg-remove",
+			"short_description": "Removes background from image."
 		},
 		"bg": {
 			"display_name": "background color",
@@ -1340,6 +1357,59 @@
 			"url": "https://docs.imgix.com/apis/url/focalpoint-crop/fp-z",
 			"short_description": "Sets the relative zoom value for the focal point of an image"
 		},
+		"fps": {
+			"display_name": "frames per second",
+			"category": "animation",
+			"available_in": [
+				"url",
+				"graph",
+				"output"
+			],
+			"expects": [
+				{
+					"type": "integer",
+					"suggested_range": {
+						"min": 1,
+						"max": 60
+					}
+				}
+			],
+			"short_description": "Specifies the framerate of the generated image."
+		},
+		"frame": {
+			"display_name": "frame selection",
+			"category": "animation",
+			"available_in": [
+				"url",
+				"graph"
+			],
+			"expects": [
+				{
+					"type": "integer",
+					"suggested_range": {
+						"min": 1
+					}
+				},
+				{
+					"type": "interval",
+					"lower_bound": {
+						"type": "integer",
+						"suggested_range": {
+							"min": 1
+						},
+						"required": false
+					},
+					"upper_bound": {
+						"type": "integer",
+						"suggested_range": {
+							"min": 1
+						},
+						"required": false
+					}
+				}
+			],
+			"short_description": "Specifies the frame of an animated image to use."
+		},
 		"gam": {
 			"display_name": "gamma",
 			"category": "adjustment",
@@ -1359,6 +1429,29 @@
 			"default": 0,
 			"url": "https://docs.imgix.com/apis/url/adjustment/gam",
 			"short_description": "Adjusts the gamma of the source image."
+		},
+		"gif-q": {
+			"display_name": "animated gif quality",
+			"category": "animation",
+			"available_in": [
+				"url",
+				"graph",
+				"output"
+			],
+			"expects": [
+				{
+					"type": "integer",
+					"strict_range": {
+						"min": 1
+					}
+				}
+			],
+			"depends": [
+				"fm=gif"
+			],
+			"aliases": [
+				"gifq"
+			]
 		},
 		"grid-colors": {
 			"display_name": "grid colors",
@@ -1503,6 +1596,22 @@
 			"url": "https://docs.imgix.com/apis/url/adjustment/hue",
 			"short_description": "Adjusts the hue of the source image."
 		},
+		"interval": {
+			"display_name": "frame interval",
+			"category": "animation",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "integer",
+					"strict_range": {
+						"min": 1
+					}
+				}
+			],
+			"short_description": "Displays every Nth frame starting with the first frame."
+		},
 		"invert": {
 			"display_name": "invert",
 			"category": "adjustment",
@@ -1538,6 +1647,25 @@
 				}
 			],
 			"short_description": "Determine if IPTC data should be passed for JPEG images."
+		},
+		"loop": {
+			"display_name": "animation loop count",
+			"category": "animation",
+			"available_in": [
+				"url",
+				"graph",
+				"output"
+			],
+			"expects": [
+				{
+					"type": "integer",
+					"suggested_range": {
+						"min": 0
+					}
+				}
+			],
+			"default": 0,
+			"short_description": "Specifies the number of times an animated image should repeat. A value of 0 means infinite looping."
 		},
 		"lossless": {
 			"display_name": "lossless compression",
@@ -2426,6 +2554,22 @@
 			"url": "https://docs.imgix.com/apis/url/size/rect",
 			"short_description": "Crops an image to a specified rectangle."
 		},
+		"reverse": {
+			"display_name": "reverse",
+			"category": "animation",
+			"available_in": [
+				"url",
+				"graph",
+				"output"
+			],
+			"expects": [
+				{
+					"type": "boolean"
+				}
+			],
+			"default": false,
+			"short_description": "Reverses the frame order on the source animation."
+		},
 		"rot": {
 			"display_name": "rotation",
 			"category": "rotation",
@@ -2525,6 +2669,22 @@
 			"default": 0,
 			"url": "https://docs.imgix.com/apis/url/adjustment/sharp",
 			"short_description": "Adjusts the sharpness of the source image."
+		},
+		"skip": {
+			"display_name": "frame skip",
+			"category": "animation",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "integer",
+					"strict_range": {
+						"min": 1
+					}
+				}
+			],
+			"short_description": "Skips every Nth frame starting with the first frame."
 		},
 		"transparency": {
 			"display_name": "transparency",
@@ -3217,6 +3377,7 @@
 		"b": "blend",
 		"fillcolor": "fill-color",
 		"f": "fit",
+		"gifq": "gif-q",
 		"height": "h",
 		"inv": "invert",
 		"ma": "mark-align",
