@@ -1,18 +1,9 @@
 {
   "name": "imgix-url-params",
-  "version": "11.14.1",
+  "version": "11.15.2",
   "homepage": "https://github.com/imgix/imgix-url-params",
-  "authors": [
-    "Jason Eberle <jason@imgix.com>"
-  ],
+  "authors": ["Jason Eberle <jason@imgix.com>"],
   "description": "Organized, machine-friendly documentation of imgix's URL parameters",
-  "main": [
-    "dist/parameters.json",
-    "dist/parameters.js"
-  ],
-  "ignore": [
-    ".*",
-    "README.md",
-    "package.json"
-  ]
+  "main": ["dist/parameters.json", "dist/parameters.js"],
+  "ignore": [".*", "README.md", "package.json"]
 }
