@@ -7,7 +7,7 @@ name: Keyword Check
 on:
   pull_request:
     branches:
-      - main
+      - master
 
 jobs:
   keywordCheck:
