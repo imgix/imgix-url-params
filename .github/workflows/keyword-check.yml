@@ -1,0 +1,40 @@
+# SUPPORT-663 Using this action, we check whether specific keywords are present in the dist
+# files that have been changed in a pull request.
+# If the keyword is found, the action will fail and the pull request will not be merged.
+
+name: Keyword Check
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  keywordCheck:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Check for keywords
+        run: |
+          keyword_1="${{ secrets.KEYWORD_1 }}"
+          keyword_2="${{ secrets.KEYWORD_2 }}"
+          keyword_found=false
+
+          # Loop through the files in /dist directory
+          for file in $(find dist -type f); do
+            if grep -q "$keyword_1" "$file" || grep -q "$keyword_2" "$file"; then
+              echo "Keyword found in file: $file"
+              keyword_found=true
+            fi
+          done
+
+          # If keyword was found, set an error status
+          if [ "$keyword_found" = true ]; then
+            echo "Keywords found in one or more files."
+            exit 1
+          else
+            echo "Keywords not found in any files."
+          fi
