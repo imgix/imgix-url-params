@@ -1,12 +1,9 @@
 (function (root, factory) {
   if (typeof define === 'function' && define.amd) {
-  if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module unless amdModuleId is set
     define([], function () {
       return (factory());
-      return (factory());
     });
-  } else if (typeof exports === 'object') {
   } else if (typeof exports === 'object') {
     // Node. Does not work with strict CommonJS, but
     // only CommonJS-like environments that support module.exports,
@@ -14,12 +11,11 @@
     module.exports = factory();
   } else {
     root['imgixParameters'] = factory();
-    root['imgixParameters'] = factory();
   }
 }(this, function () {
 
 return {
-	"version": "11.15.4",
+	"version": "11.16.0",
 	"parameters": {
 		"ar": {
 			"display_name": "aspect ratio",
@@ -3293,6 +3289,40 @@ return {
 			"url": "https://docs.imgix.com/apis/url/text/txt",
 			"short_description": "Sets the text string to render."
 		},
+		"upscale-fallback": {
+			"display_name": "super resolution fallback",
+			"category": "super-resolution",
+			"available_in": [
+				"url",
+				"graph",
+				"output"
+			],
+			"expects": [
+				{
+					"type": "boolean"
+				}
+			],
+			"default": true,
+			"url": "https://docs.imgix.com/apis/rendering/super-resolution/upscale-fallback",
+			"short_description": "Overrides default fallback behavior for super resolution failures"
+		},
+		"upscale": {
+			"display_name": "super resolution",
+			"category": "super-resolution",
+			"available_in": [
+				"url",
+				"graph",
+				"output"
+			],
+			"expects": [
+				{
+					"type": "boolean"
+				}
+			],
+			"default": false,
+			"url": "https://docs.imgix.com/apis/rendering/super-resolution/upscale",
+			"short_description": "Uses generative AI fill to upscale low resolution images."
+		},
 		"usm": {
 			"display_name": "unsharp mask",
 			"category": "adjustment",
@@ -3505,6 +3535,7 @@ return {
 		"rotation",
 		"size",
 		"stylize",
+		"super-resolution",
 		"text",
 		"typesetting",
 		"trim",
