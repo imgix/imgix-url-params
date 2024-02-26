@@ -15,7 +15,7 @@
 }(this, function () {
 
 return {
-	"version": "11.16.0",
+	"version": "11.17.0",
 	"parameters": {
 		"ar": {
 			"display_name": "aspect ratio",
@@ -1195,6 +1195,124 @@ return {
 			"url": "https://docs.imgix.com/apis/url/fill/fill-color",
 			"short_description": "Sets the fill color for images with additional space created by the fit setting"
 		},
+		"fill-generative-fallback": {
+			"display_name": "fill generative fallback",
+			"category": "fill",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "boolean"
+				}
+			],
+			"default": true,
+			"aliases": [
+				"fill-gen-fallback"
+			],
+			"depends": [
+				"fit=fill",
+				"fill=generative"
+			],
+			"url": "https://docs.imgix.com/apis/rendering/fill/fill-generative-fallback",
+			"short_description": "Sets the fallback behavior for generative fill."
+		},
+		"fill-generative-negative-prompt": {
+			"display_name": "fill generative negative prompt",
+			"category": "fill",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "string"
+				}
+			],
+			"aliases": [
+				"fill-gen-neg-prompt"
+			],
+			"depends": [
+				"fit=fill",
+				"fill=generative"
+			],
+			"url": "https://docs.imgix.com/apis/rendering/fill/fill-generative-negative-prompt",
+			"short_description": "Provides a negative text suggestion to the generative fill parameter. Used to reduce the probability of a subject, detail, or object appearing in generative output."
+		},
+		"fill-generative-position": {
+			"display_name": "fill generative position",
+			"category": "fill",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "list",
+					"possible_values": [
+						"top",
+						"bottom",
+						"middle",
+						"left",
+						"right",
+						"center"
+					]
+				}
+			],
+			"default": "center,middle",
+			"aliases": [
+				"fill-gen-pos"
+			],
+			"depends": [
+				"fit=fill",
+				"fill=generative"
+			],
+			"url": "https://docs.imgix.com/apis/rendering/fill/fill-generative-position",
+			"short_description": "Sets the position of the Origin Image in relation to the generative fill."
+		},
+		"fill-generative-prompt": {
+			"display_name": "fill generative prompt",
+			"category": "fill",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "string"
+				}
+			],
+			"aliases": [
+				"fill-gen-prompt"
+			],
+			"depends": [
+				"fit=fill",
+				"fill=generative"
+			],
+			"url": "https://docs.imgix.com/apis/rendering/fill/fill-generative-prompt",
+			"short_description": "Provides a text suggestion to the generative fill parameter."
+		},
+		"fill-generative-seed": {
+			"display_name": "fill generative seed",
+			"category": "fill",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "integer",
+					"strict_range": {
+						"min": 0
+					}
+				}
+			],
+			"aliases": [
+				"fill-gen-seed"
+			],
+			"depends": [
+				"fit=fill",
+				"fill=generative"
+			],
+			"url": "https://docs.imgix.com/apis/rendering/fill/fill-generative-seed",
+			"short_description": "Sets the generative seed value. Used to generate similar outputs from different prompts."
+		},
 		"fill": {
 			"display_name": "fill mode",
 			"category": "fill",
@@ -1484,7 +1602,8 @@ return {
 			],
 			"aliases": [
 				"gifq"
-			]
+			],
+			"short_description": "Specifies the quality of the animated gif. The higher the value, the better more compression is applied."
 		},
 		"grid-colors": {
 			"display_name": "grid colors",
@@ -3029,31 +3148,6 @@ return {
 			"url": "https://docs.imgix.com/apis/url/typesetting/txt-lead",
 			"short_description": "Sets the leading (line spacing) for rendered text. Only works on the multi-line text endpoint."
 		},
-		"txt-lig": {
-			"display_name": "text ligatures",
-			"category": "text",
-			"available_in": [
-				"url"
-			],
-			"expects": [
-				{
-					"type": "integer",
-					"possible_values": [
-						0,
-						1,
-						2
-					]
-				}
-			],
-			"aliases": [
-				"txtlig"
-			],
-			"depends": [
-				"txt"
-			],
-			"url": "https://docs.imgix.com/apis/url/text/txt-lig",
-			"short_description": "Controls the level of ligature substitution"
-		},
 		"txt-line-color": {
 			"display_name": "text outline color",
 			"category": "text",
@@ -3443,6 +3537,11 @@ return {
 		"by": "blend-y",
 		"b": "blend",
 		"fillcolor": "fill-color",
+		"fill-gen-fallback": "fill-generative-fallback",
+		"fill-gen-neg-prompt": "fill-generative-negative-prompt",
+		"fill-gen-pos": "fill-generative-position",
+		"fill-gen-prompt": "fill-generative-prompt",
+		"fill-gen-seed": "fill-generative-seed",
 		"f": "fit",
 		"gifq": "gif-q",
 		"height": "h",
@@ -3495,7 +3594,6 @@ return {
 		"tf": "txt-font",
 		"txtfont": "txt-font",
 		"txtlead": "txt-lead",
-		"txtlig": "txt-lig",
 		"txtlinecolor": "txt-line-color",
 		"txt-line-clr": "txt-line-color",
 		"txtlineclr": "txt-line-color",
