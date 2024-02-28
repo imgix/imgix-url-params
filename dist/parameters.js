@@ -15,7 +15,7 @@
 }(this, function () {
 
 return {
-	"version": "11.17.1",
+	"version": "11.17.2",
 	"parameters": {
 		"ar": {
 			"display_name": "aspect ratio",
@@ -1214,7 +1214,7 @@ return {
 				"fit=fill",
 				"fill=gen"
 			],
-			"url": "https://docs.imgix.com/apis/rendering/fill/fill-gen-fallback",
+			"url": "https://docs.imgix.com/apis/url/fill/fill-gen-fallback",
 			"short_description": "Sets the fallback behavior for generative fill."
 		},
 		"fill-gen-neg-prompt": {
@@ -1235,7 +1235,7 @@ return {
 				"fit=fill",
 				"fill=gen"
 			],
-			"url": "https://docs.imgix.com/apis/rendering/fill/fill-gen-neg-prompt",
+			"url": "https://docs.imgix.com/apis/url/fill/fill-gen-neg-prompt",
 			"short_description": "Provides a negative text suggestion to the generative fill parameter. Used to reduce the probability of a subject, detail, or object appearing in generative output."
 		},
 		"fill-gen-pos": {
@@ -1265,7 +1265,7 @@ return {
 				"fit=fill",
 				"fill=gen"
 			],
-			"url": "https://docs.imgix.com/apis/rendering/fill/fill-gen-pos",
+			"url": "https://docs.imgix.com/apis/url/fill/fill-gen-pos",
 			"short_description": "Sets the position of the Origin Image in relation to the generative fill."
 		},
 		"fill-gen-prompt": {
@@ -1286,7 +1286,7 @@ return {
 				"fit=fill",
 				"fill=gen"
 			],
-			"url": "https://docs.imgix.com/apis/rendering/fill/fill-gen-prompt",
+			"url": "https://docs.imgix.com/apis/url/fill/fill-gen-prompt",
 			"short_description": "Provides a text suggestion to the generative fill parameter."
 		},
 		"fill-gen-seed": {
@@ -1310,7 +1310,7 @@ return {
 				"fit=fill",
 				"fill=gen"
 			],
-			"url": "https://docs.imgix.com/apis/rendering/fill/fill-gen-seed",
+			"url": "https://docs.imgix.com/apis/url/fill/fill-gen-seed",
 			"short_description": "Sets the generative seed value. Used to generate similar outputs from different prompts."
 		},
 		"fill": {
