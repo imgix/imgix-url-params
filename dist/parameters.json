@@ -1,5 +1,5 @@
 {
-	"version": "11.17.2",
+	"version": "11.18.0",
 	"parameters": {
 		"ar": {
 			"display_name": "aspect ratio",
@@ -1297,6 +1297,247 @@
 			"url": "https://docs.imgix.com/apis/url/fill/fill-gen-seed",
 			"short_description": "Sets the generative seed value. Used to generate similar outputs from different prompts."
 		},
+		"fill-gradient-cs": {
+			"display_name": "fill gradient color space",
+			"category": "fill",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "list",
+					"possible_values": [
+						"linear",
+						"srgb",
+						"oklab"
+					]
+				}
+			],
+			"default": "srgb",
+			"depends": [
+				"fit=fill",
+				"fill=gradient"
+			],
+			"url": "https://docs.imgix.com/apis/url/fill/fill-gradient-cs",
+			"short_description": "Defines the color space as linear, sRGB, or Oklab for gradient color interpolation"
+		},
+		"fill-gradient-linear-direction": {
+			"display_name": "fill gradient linear direction",
+			"category": "fill",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "list",
+					"possible_values": [
+						"top",
+						"bottom",
+						"left",
+						"right"
+					]
+				}
+			],
+			"default": "top,bottom",
+			"depends": [
+				"fit=fill",
+				"fill=gen"
+			],
+			"url": "https://docs.imgix.com/apis/url/fill/fill-gradient-linear-direction",
+			"short_description": "The fill-gradient-linear-direction specifies the gradient's direction, flowing towards the bottom, top, right, or left"
+		},
+		"fill-gradient-linear": {
+			"display_name": "fill gradient linear",
+			"category": "fill",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"0": [
+						{
+							"type": "hex_color"
+						},
+						{
+							"type": "color_keyword"
+						}
+					],
+					"1": [
+						{
+							"type": "hex_color"
+						},
+						{
+							"type": "color_keyword"
+						}
+					],
+					"type": "list",
+					"length": 2
+				}
+			],
+			"depends": [
+				"fit=fill",
+				"fill=gradient"
+			],
+			"url": "https://docs.imgix.com/apis/url/fill/fill-gradient-linear",
+			"short_description": "Blends a gradient between two colors, {color1} and {color2}, along a straight path"
+		},
+		"fill-gradient-radial-radius": {
+			"display_name": "fill gradient radial radius",
+			"category": "fill",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"0": [
+						{
+							"type": "integer",
+							"strict_range": {
+								"min": 0,
+								"max": 1
+							},
+							"suggested_range": {
+								"min": 0,
+								"max": 1
+							}
+						}
+					],
+					"1": [
+						{
+							"type": "integer",
+							"strict_range": {
+								"min": 0,
+								"max": 1
+							},
+							"suggested_range": {
+								"min": 0,
+								"max": 1
+							}
+						}
+					],
+					"type": "list",
+					"length": 2
+				}
+			],
+			"depends": [
+				"fit=fill",
+				"fill=gradient"
+			],
+			"url": "https://docs.imgix.com/apis/url/fill/fill-gradient-radial-radius",
+			"short_description": "Parameter defines the radial gradient's radius as pixels or a percentage (0.0-1.0) of the image's smallest dimension"
+		},
+		"fill-gradient-radial-x": {
+			"display_name": "fill gradient radial x",
+			"category": "fill",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "number",
+					"suggested_range": {
+						"min": 0,
+						"max": 1
+					},
+					"strict_range": {
+						"min": 0,
+						"max": 1
+					}
+				}
+			],
+			"default": 0,
+			"depends": [
+				"fit=fill",
+				"fill=gradient"
+			],
+			"url": "https://docs.imgix.com/apis/url/fill/fill-gradient-radial-x",
+			"short_description": "Specifies the location of the radial gradient's center along the x-axis, using either a pixel value or a floating point percentage (ranging from 0.0 to 1.0) of the image's width"
+		},
+		"fill-gradient-radial-y": {
+			"display_name": "fill gradient radial y",
+			"category": "fill",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "number",
+					"suggested_range": {
+						"min": 0,
+						"max": 1
+					},
+					"strict_range": {
+						"min": 0,
+						"max": 1
+					}
+				}
+			],
+			"default": 0,
+			"depends": [
+				"fit=fill",
+				"fill=gradient"
+			],
+			"url": "https://docs.imgix.com/apis/url/fill/fill-gradient-radial-y",
+			"short_description": "Parameter sets the radial gradient's center on the y-axis, using pixels or a 0.0 to 1.0 percentage of the image's height"
+		},
+		"fill-gradient-radial": {
+			"display_name": "fill gradient radial",
+			"category": "fill",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"0": [
+						{
+							"type": "hex_color"
+						},
+						{
+							"type": "color_keyword"
+						}
+					],
+					"1": [
+						{
+							"type": "hex_color"
+						},
+						{
+							"type": "color_keywordi"
+						}
+					],
+					"type": "list",
+					"length": 2
+				}
+			],
+			"depends": [
+				"fit=fill",
+				"fill=gradient"
+			],
+			"url": "https://docs.imgix.com/apis/url/fill/fill-gradient-radial",
+			"short_description": "The fill-gradient-radial parameter creates a circular gradient transitioning from a central color (Color1) to an outer color (Color2)"
+		},
+		"fill-gradient-type": {
+			"display_name": "fill gradient type",
+			"category": "fill",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "list",
+					"possible_values": [
+						"linear",
+						"radial"
+					]
+				}
+			],
+			"default": "linear",
+			"depends": [
+				"fit=fill",
+				"fill=gradient"
+			],
+			"url": "https://docs.imgix.com/apis/url/fill/fill-gradient-type",
+			"short_description": "Specifies if a gradient is radial (circular) or linear (straight)"
+		},
 		"fill": {
 			"display_name": "fill mode",
 			"category": "fill",
@@ -1310,7 +1551,8 @@
 						"solid",
 						"blur",
 						"gen",
-						"generative"
+						"generative",
+						"gradient"
 					]
 				}
 			],
