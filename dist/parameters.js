@@ -15,7 +15,7 @@
 }(this, function () {
 
 return {
-	"version": "11.19.0",
+	"version": "11.19.1",
 	"parameters": {
 		"ar": {
 			"display_name": "aspect ratio",
@@ -2044,6 +2044,23 @@ return {
 			],
 			"short_description": "Determine if IPTC data should be passed for JPEG images."
 		},
+		"jpg-progressive": {
+			"display_name": "jpg progressive",
+			"category": "misc",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "boolean"
+				}
+			],
+			"default": true,
+			"aliases": [
+				"jpeg-progressive"
+			],
+			"short_description": "Specifies whether or not a jpg/jpeg uses progressive (true) or baseline (false)"
+		},
 		"loop": {
 			"display_name": "animation loop count",
 			"category": "animation",
@@ -3790,6 +3807,7 @@ return {
 		"gifq": "gif-q",
 		"height": "h",
 		"inv": "invert",
+		"jpeg-progressive": "jpg-progressive",
 		"ma": "mark-align",
 		"markalign": "mark-align",
 		"markalpha": "mark-alpha",
