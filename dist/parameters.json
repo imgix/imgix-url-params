@@ -1,5 +1,5 @@
 {
-	"version": "11.19.1",
+	"version": "11.19.2",
 	"parameters": {
 		"ar": {
 			"display_name": "aspect ratio",
@@ -1309,7 +1309,8 @@
 					"possible_values": [
 						"linear",
 						"srgb",
-						"oklab"
+						"oklab",
+						"hsl"
 					]
 				}
 			],
@@ -2030,7 +2031,7 @@
 		},
 		"jpg-progressive": {
 			"display_name": "jpg progressive",
-			"category": "misc",
+			"category": "format",
 			"available_in": [
 				"url"
 			],

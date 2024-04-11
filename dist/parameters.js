@@ -15,7 +15,7 @@
 }(this, function () {
 
 return {
-	"version": "11.19.1",
+	"version": "11.19.2",
 	"parameters": {
 		"ar": {
 			"display_name": "aspect ratio",
@@ -1325,7 +1325,8 @@ return {
 					"possible_values": [
 						"linear",
 						"srgb",
-						"oklab"
+						"oklab",
+						"hsl"
 					]
 				}
 			],
@@ -2046,7 +2047,7 @@ return {
 		},
 		"jpg-progressive": {
 			"display_name": "jpg progressive",
-			"category": "misc",
+			"category": "format",
 			"available_in": [
 				"url"
 			],
