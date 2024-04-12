@@ -15,7 +15,7 @@
 }(this, function () {
 
 return {
-	"version": "11.19.2",
+	"version": "11.19.3",
 	"parameters": {
 		"ar": {
 			"display_name": "aspect ratio",
@@ -1326,7 +1326,8 @@ return {
 						"linear",
 						"srgb",
 						"oklab",
-						"hsl"
+						"hsl",
+						"lch"
 					]
 				}
 			],

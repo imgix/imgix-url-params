@@ -1,6 +1,6 @@
 {
   "name": "imgix-url-params",
-  "version": "11.19.2",
+  "version": "11.19.3",
   "homepage": "https://github.com/imgix/imgix-url-params",
   "authors": ["Jason Eberle <jason@imgix.com>"],
   "description": "Organized, machine-friendly documentation of imgix's URL parameters",
