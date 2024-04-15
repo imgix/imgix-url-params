@@ -15,7 +15,7 @@
 }(this, function () {
 
 return {
-	"version": "11.19.3",
+	"version": "11.19.4",
 	"parameters": {
 		"ar": {
 			"display_name": "aspect ratio",
@@ -1321,7 +1321,7 @@ return {
 			],
 			"expects": [
 				{
-					"type": "list",
+					"type": "string",
 					"possible_values": [
 						"linear",
 						"srgb",
@@ -1337,7 +1337,7 @@ return {
 				"fill=gradient"
 			],
 			"url": "https://docs.imgix.com/apis/url/fill/fill-gradient-cs",
-			"short_description": "Defines the color space as linear, sRGB, or Oklab for gradient color interpolation"
+			"short_description": "Defines the color space as linear, sRGB, Oklab, HSL, or LCH for gradient color interpolation"
 		},
 		"fill-gradient-linear-direction": {
 			"display_name": "fill gradient linear direction",
@@ -1411,10 +1411,13 @@ return {
 						{
 							"type": "integer",
 							"strict_range": {
-								"min": 0,
-								"max": 1
-							},
-							"suggested_range": {
+								"min": 2,
+								"max": 8192
+							}
+						},
+						{
+							"type": "unit_scalar",
+							"strict_range": {
 								"min": 0,
 								"max": 1
 							}
@@ -1424,10 +1427,13 @@ return {
 						{
 							"type": "integer",
 							"strict_range": {
-								"min": 0,
-								"max": 1
-							},
-							"suggested_range": {
+								"min": 2,
+								"max": 8192
+							}
+						},
+						{
+							"type": "unit_scalar",
+							"strict_range": {
 								"min": 0,
 								"max": 1
 							}
@@ -1441,6 +1447,7 @@ return {
 				"fit=fill",
 				"fill=gradient"
 			],
+			"default": "0.25,0.5",
 			"url": "https://docs.imgix.com/apis/url/fill/fill-gradient-radial-radius",
 			"short_description": "Parameter defines the radial gradient's radius as pixels or a percentage (0.0-1.0) of the image's smallest dimension"
 		},
@@ -1452,18 +1459,21 @@ return {
 			],
 			"expects": [
 				{
-					"type": "number",
-					"suggested_range": {
-						"min": 0,
-						"max": 1
-					},
+					"type": "integer",
+					"strict_range": {
+						"min": 2,
+						"max": 8192
+					}
+				},
+				{
+					"type": "unit_scalar",
 					"strict_range": {
 						"min": 0,
 						"max": 1
 					}
 				}
 			],
-			"default": 0,
+			"default": 0.5,
 			"depends": [
 				"fit=fill",
 				"fill=gradient"
@@ -1479,18 +1489,21 @@ return {
 			],
 			"expects": [
 				{
-					"type": "number",
-					"suggested_range": {
-						"min": 0,
-						"max": 1
-					},
+					"type": "integer",
+					"strict_range": {
+						"min": 2,
+						"max": 8192
+					}
+				},
+				{
+					"type": "unit_scalar",
 					"strict_range": {
 						"min": 0,
 						"max": 1
 					}
 				}
 			],
-			"default": 0,
+			"default": 0.5,
 			"depends": [
 				"fit=fill",
 				"fill=gradient"
@@ -1519,7 +1532,7 @@ return {
 							"type": "hex_color"
 						},
 						{
-							"type": "color_keywordi"
+							"type": "color_keyword"
 						}
 					],
 					"type": "list",
@@ -1541,7 +1554,7 @@ return {
 			],
 			"expects": [
 				{
-					"type": "list",
+					"type": "string",
 					"possible_values": [
 						"linear",
 						"radial"
