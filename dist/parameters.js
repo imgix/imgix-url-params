@@ -15,7 +15,7 @@
 }(this, function () {
 
 return {
-	"version": "11.19.4",
+	"version": "11.20.0",
 	"parameters": {
 		"ar": {
 			"display_name": "aspect ratio",
@@ -59,23 +59,6 @@ return {
 			"url": "https://docs.imgix.com/apis/url/auto",
 			"short_description": "Applies automatic enhancements to images."
 		},
-		"bg-remove": {
-			"display_name": "background removal",
-			"category": "background removal",
-			"available_in": [
-				"url",
-				"graph",
-				"output"
-			],
-			"expects": [
-				{
-					"type": "boolean"
-				}
-			],
-			"default": false,
-			"url": "https://docs.imgix.com/apis/rendering/background-removal/bg-remove",
-			"short_description": "Removes background from image."
-		},
 		"bg-remove-fallback": {
 			"display_name": "background removal fallback",
 			"category": "background removal",
@@ -90,8 +73,85 @@ return {
 				}
 			],
 			"default": true,
-			"url": "https://docs.imgix.com/apis/rendering/background-removal/bg-remove",
+			"url": "https://docs.imgix.com/apis/rendering/background/bg-remove",
 			"short_description": "Overrides default fallback behavior for bg-remove failures."
+		},
+		"bg-remove": {
+			"display_name": "background removal",
+			"category": "background",
+			"available_in": [
+				"url",
+				"graph",
+				"output"
+			],
+			"expects": [
+				{
+					"type": "boolean"
+				}
+			],
+			"aliases": [
+				"background-remove"
+			],
+			"default": false,
+			"url": "https://docs.imgix.com/apis/rendering/background/bg-remove",
+			"short_description": "Removes background from image."
+		},
+		"bg-replace-fallback": {
+			"display_name": "background removal fallback",
+			"category": "background removal",
+			"available_in": [
+				"url",
+				"graph",
+				"output"
+			],
+			"expects": [
+				{
+					"type": "boolean"
+				}
+			],
+			"default": true,
+			"url": "https://docs.imgix.com/apis/rendering/background/bg-replace",
+			"short_description": "Overrides default fallback behavior for bg-replace failures."
+		},
+		"bg-replace-neg-prompt": {
+			"display_name": "background replacement negative prompt",
+			"category": "background",
+			"available_in": [
+				"url",
+				"graph",
+				"output"
+			],
+			"expects": [
+				{
+					"type": "string"
+				}
+			],
+			"aliases": [
+				"background-replace-negative-prompt"
+			],
+			"default": false,
+			"url": "https://docs.imgix.com/apis/rendering/background/bg-replace-neg-prompt",
+			"short_description": "Provides a negative text suggestion for background replacement."
+		},
+		"bg-replace": {
+			"display_name": "background replacement",
+			"category": "background",
+			"available_in": [
+				"url",
+				"graph",
+				"output"
+			],
+			"expects": [
+				{
+					"type": "string"
+				}
+			],
+			"aliases": [
+				"background-replace"
+			],
+			"default": false,
+			"url": "https://docs.imgix.com/apis/rendering/background/bg-replace",
+			"short_description": "Replaces background from image using a string based prompt."
 		},
 		"bg": {
 			"display_name": "background color",
@@ -3786,6 +3846,9 @@ return {
 		}
 	},
 	"aliases": {
+		"background-remove": "bg-remove",
+		"background-replace-negative-prompt": "bg-replace-neg-prompt",
+		"background-replace": "bg-replace",
 		"blendalign": "blend-align",
 		"ba": "blend-align",
 		"blendalpha": "blend-alpha",
