@@ -15,7 +15,7 @@
 }(this, function () {
 
 return {
-	"version": "11.19.4",
+	"version": "11.20.0",
 	"parameters": {
 		"ar": {
 			"display_name": "aspect ratio",
@@ -59,23 +59,6 @@ return {
 			"url": "https://docs.imgix.com/apis/url/auto",
 			"short_description": "Applies automatic enhancements to images."
 		},
-		"bg-remove": {
-			"display_name": "background removal",
-			"category": "background removal",
-			"available_in": [
-				"url",
-				"graph",
-				"output"
-			],
-			"expects": [
-				{
-					"type": "boolean"
-				}
-			],
-			"default": false,
-			"url": "https://docs.imgix.com/apis/rendering/background-removal/bg-remove",
-			"short_description": "Removes background from image."
-		},
 		"bg-remove-fallback": {
 			"display_name": "background removal fallback",
 			"category": "background removal",
@@ -90,8 +73,85 @@ return {
 				}
 			],
 			"default": true,
-			"url": "https://docs.imgix.com/apis/rendering/background-removal/bg-remove",
+			"url": "https://docs.imgix.com/apis/rendering/background/bg-remove",
 			"short_description": "Overrides default fallback behavior for bg-remove failures."
+		},
+		"bg-remove": {
+			"display_name": "background removal",
+			"category": "background",
+			"available_in": [
+				"url",
+				"graph",
+				"output"
+			],
+			"expects": [
+				{
+					"type": "boolean"
+				}
+			],
+			"aliases": [
+				"background-remove"
+			],
+			"default": false,
+			"url": "https://docs.imgix.com/apis/rendering/background/bg-remove",
+			"short_description": "Removes background from image."
+		},
+		"bg-replace-fallback": {
+			"display_name": "background removal fallback",
+			"category": "background removal",
+			"available_in": [
+				"url",
+				"graph",
+				"output"
+			],
+			"expects": [
+				{
+					"type": "boolean"
+				}
+			],
+			"default": true,
+			"url": "https://docs.imgix.com/apis/rendering/background/bg-replace",
+			"short_description": "Overrides default fallback behavior for bg-replace failures."
+		},
+		"bg-replace-neg-prompt": {
+			"display_name": "background replacement negative prompt",
+			"category": "background",
+			"available_in": [
+				"url",
+				"graph",
+				"output"
+			],
+			"expects": [
+				{
+					"type": "string"
+				}
+			],
+			"aliases": [
+				"background-replace-negative-prompt"
+			],
+			"default": false,
+			"url": "https://docs.imgix.com/apis/rendering/background/bg-replace-neg-prompt",
+			"short_description": "Provides a negative text suggestion for background replacement."
+		},
+		"bg-replace": {
+			"display_name": "background replacement",
+			"category": "background",
+			"available_in": [
+				"url",
+				"graph",
+				"output"
+			],
+			"expects": [
+				{
+					"type": "string"
+				}
+			],
+			"aliases": [
+				"background-replace"
+			],
+			"default": false,
+			"url": "https://docs.imgix.com/apis/rendering/background/bg-replace",
+			"short_description": "Replaces background from image using a string based prompt."
 		},
 		"bg": {
 			"display_name": "background color",
@@ -3785,7 +3845,838 @@ return {
 			"short_description": "Adjusts the width of the output image."
 		}
 	},
+	"deprecatedParameters": {
+		"class": {
+			"display_name": "css class",
+			"category": "color-palette",
+			"available_in": [
+				"url",
+				"output"
+			],
+			"expects": [
+				{
+					"type": "string"
+				}
+			],
+			"depends": [
+				"palette=css"
+			],
+			"deprecated": true,
+			"short_description": "Specifies the CSS class to use for palette extraction."
+		},
+		"skin": {
+			"display_name": "skin detection",
+			"category": "misc",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "string",
+					"possible_values": [
+						"map"
+					]
+				}
+			],
+			"experimental": true,
+			"deprecated": true,
+			"short_description": "Specifies the skin detection algorithm to use."
+		},
+		"txt-lig": {
+			"display_name": "text ligatures",
+			"category": "text",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "integer",
+					"possible_values": [
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"aliases": [
+				"txtlig"
+			],
+			"depends": [
+				"txt"
+			],
+			"url": "https://docs.imgix.com/apis/url/text/txt-lig",
+			"deprecated": true,
+			"short_description": "Controls the level of ligature substitution"
+		}
+	},
+	"experimentalParameters": {
+		"bypass": {
+			"display_name": "bypass",
+			"category": "misc",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "boolean"
+				}
+			],
+			"default": false,
+			"experimental": true,
+			"short_description": "Bypasses all rendering parameters (including default parameters) and serves the original image."
+		},
+		"codec": {
+			"display_name": "jpeg codec",
+			"category": "format",
+			"available_in": [
+				"url",
+				"graph",
+				"output"
+			],
+			"expects": [
+				{
+					"type": "string",
+					"possible_values": [
+						"mozjpeg",
+						"ci"
+					]
+				}
+			],
+			"default": "mozjpeg",
+			"depends": [
+				"fm=jpg"
+			],
+			"experimental": true,
+			"short_description": "Specifies the jpeg codec to use, mozjpeg or ci. Defaults to mozjpeg."
+		},
+		"face-blur": {
+			"display_name": "face blur",
+			"category": "face-detection",
+			"available_in": [
+				"url",
+				"graph",
+				"output"
+			],
+			"expects": [
+				{
+					"type": "unit_scalar"
+				}
+			],
+			"default": 0,
+			"experimental": true,
+			"short_description": "Specifies the amount of blur to apply to detected faces. Defaults to 0."
+		},
+		"face-pixel": {
+			"display_name": "face pixelation",
+			"category": "face-detection",
+			"available_in": [
+				"url",
+				"graph",
+				"output"
+			],
+			"expects": [
+				{
+					"type": "unit_scalar"
+				}
+			],
+			"default": 0,
+			"experimental": true,
+			"short_description": "Specifies the pixelation amount of the face."
+		},
+		"fill-blur": {
+			"display_name": "fill blur",
+			"category": "fill",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "integer",
+					"suggested_range": {
+						"min": 0,
+						"max": 2000
+					}
+				},
+				{
+					"type": "unit_scalar",
+					"strict_range": {
+						"min": 0,
+						"max": 0.5
+					}
+				}
+			],
+			"default": 0.1,
+			"depends": [
+				"fill=blur"
+			],
+			"experimental": true,
+			"short_description": "Sets the blur factor for images with additional space created by the fit setting"
+		},
+		"gamut": {
+			"display_name": "gamut",
+			"category": "format",
+			"available_in": [
+				"url",
+				"graph",
+				"output"
+			],
+			"expects": [
+				{
+					"type": "string",
+					"possible_values": [
+						"srgb",
+						"p3",
+						"rec2020"
+					]
+				}
+			],
+			"default": "srgb",
+			"experimental": true,
+			"short_description": "Adjusts the color gamut of the output image"
+		},
+		"miss": {
+			"display_name": "Cache bypass",
+			"category": "misc",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "integer",
+					"possible_values": [
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"experimental": true,
+			"short_description": "Allows for manually bypassing various levels of the cache."
+		},
+		"mp4-fragmented": {
+			"display_name": "mp4 fragmented mode",
+			"category": "format",
+			"available_in": [
+				"url",
+				"graph",
+				"output"
+			],
+			"expects": [
+				{
+					"type": "boolean"
+				}
+			],
+			"default": false,
+			"depends": [
+				"fm=mp4"
+			],
+			"experimental": true,
+			"short_description": "Enables or disables fragmented mp4 output."
+		},
+		"pdf-renderer": {
+			"display_name": "pdf renderer",
+			"category": "format",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "string",
+					"possible_values": [
+						"pdfium",
+						"pdfkit"
+					]
+				}
+			],
+			"experimental": true,
+			"short_description": "Forces a specific PDF renderer."
+		},
+		"png-compress": {
+			"display_name": "png compression",
+			"category": "format",
+			"available_in": [
+				"url",
+				"graph",
+				"output"
+			],
+			"expects": [
+				{
+					"type": "integer",
+					"strict_range": {
+						"min": 0,
+						"max": 9
+					}
+				}
+			],
+			"default": 5,
+			"depends": [
+				"fm=png"
+			],
+			"experimental": true,
+			"short_description": "Specifies the compression level of the png image."
+		},
+		"png-quality": {
+			"display_name": "png quality",
+			"category": "format",
+			"available_in": [
+				"url",
+				"graph",
+				"output"
+			],
+			"expects": [
+				{
+					"type": "integer",
+					"strict_range": {
+						"min": 0,
+						"max": 100
+					}
+				}
+			],
+			"default": 100,
+			"depends": [
+				"fm=png"
+			],
+			"experimental": true,
+			"short_description": "Specifies the quality of the output PNG."
+		},
+		"rot-type": {
+			"display_name": "rotation type",
+			"category": "rotation",
+			"available_in": [
+				"url",
+				"graph"
+			],
+			"expects": [
+				{
+					"type": "string",
+					"possible_values": [
+						"pivot",
+						"straighten"
+					]
+				}
+			],
+			"aliases": [
+				"rottype",
+				"rott"
+			],
+			"experimental": true,
+			"short_description": "Changes the rotation type."
+		},
+		"skin": {
+			"display_name": "skin detection",
+			"category": "misc",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "string",
+					"possible_values": [
+						"map"
+					]
+				}
+			],
+			"experimental": true,
+			"deprecated": true,
+			"short_description": "Specifies the skin detection algorithm to use."
+		},
+		"txt-box": {
+			"display_name": "text box string",
+			"category": "text",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "string"
+				}
+			],
+			"aliases": [
+				"txtbox"
+			],
+			"experimental": true,
+			"url": "https://docs.imgix.com/apis/url/text/txt-box",
+			"short_description": "Sets the text string to render inside a textbox."
+		},
+		"txtbox-align": {
+			"display_name": "textbox align",
+			"category": "text",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "list",
+					"possible_values": [
+						"top",
+						"middle",
+						"bottom",
+						"left",
+						"center",
+						"right"
+					]
+				}
+			],
+			"aliases": [
+				"tba"
+			],
+			"depends": [
+				"txtbox"
+			],
+			"experimental": true,
+			"url": "https://docs.imgix.com/apis/url/text/txtbox-align",
+			"short_description": "Sets the vertical and horizontal alignment of a text box relative to the base image."
+		},
+		"txtbox-clip": {
+			"display_name": "textbox clip",
+			"category": "text",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "list",
+					"possible_values": [
+						"start",
+						"middle",
+						"end",
+						"ellipsis"
+					]
+				}
+			],
+			"aliases": [
+				"tbcl"
+			],
+			"depends": [
+				"txtbox"
+			],
+			"experimental": true,
+			"short_description": "Sets the clipping properties of rendered text inside a textbox."
+		},
+		"txtbox-color": {
+			"display_name": "textbox color",
+			"category": "text",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "hex_color"
+				},
+				{
+					"type": "color_keyword"
+				}
+			],
+			"aliases": [
+				"txtbox-clr",
+				"tbc"
+			],
+			"depends": [
+				"txtbox"
+			],
+			"experimental": true,
+			"url": "https://docs.imgix.com/apis/url/text/txtbox-clr",
+			"short_description": "Specifies the color of rendered text inside a textbox."
+		},
+		"txtbox-font": {
+			"display_name": "textbox font",
+			"category": "text",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "font"
+				}
+			],
+			"aliases": [
+				"tbf"
+			],
+			"depends": [
+				"txtbox"
+			],
+			"experimental": true,
+			"url": "https://docs.imgix.com/apis/url/text/txtbox-font",
+			"short_description": "Selects a font for rendered text inside a textbox."
+		},
+		"txtbox-hang": {
+			"display_name": "textbox hanging character",
+			"category": "text",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "boolean"
+				}
+			],
+			"aliases": [
+				"tbhang"
+			],
+			"default": false,
+			"experimental": true,
+			"url": "https://docs.imgix.com/apis/url/text/txtbox-hang",
+			"short_description": "Displays an initial quotation mark as hanging punctuation outside of the textbox."
+		},
+		"txtbox-height": {
+			"display_name": "textbox height",
+			"category": "text",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "integer",
+					"suggested_range": {
+						"min": 0
+					}
+				}
+			],
+			"aliases": [
+				"tbh"
+			],
+			"depends": [
+				"txtbox"
+			],
+			"experimental": true,
+			"url": "https://docs.imgix.com/apis/url/text/txtbox-height",
+			"short_description": "Sets the height of a textbox."
+		},
+		"txtbox-justify": {
+			"display_name": "textbox justification",
+			"category": "text",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "list",
+					"possible_values": [
+						"left",
+						"center",
+						"right",
+						"full",
+						"justify"
+					]
+				}
+			],
+			"depends": [
+				"txtbox"
+			],
+			"experimental": true,
+			"url": "https://docs.imgix.com/apis/url/text/txtbox-justify",
+			"short_description": "Sets the justification for rendered text inside a textbox."
+		},
+		"txtbox-lead": {
+			"display_name": "textbox leading",
+			"category": "text",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "number",
+					"suggested_range": {
+						"min": 0
+					}
+				}
+			],
+			"aliases": [
+				"tblead"
+			],
+			"default": 0,
+			"depends": [
+				"txtbox"
+			],
+			"experimental": true,
+			"url": "https://docs.imgix.com/apis/url/text/txtbox-lead",
+			"short_description": "Sets the leading (line spacing) for rendered text inside a textbox."
+		},
+		"txtbox-lig": {
+			"display_name": "textbox ligatures",
+			"category": "text",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "integer",
+					"possible_values": [
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"depends": [
+				"txtbox"
+			],
+			"experimental": true,
+			"url": "https://docs.imgix.com/apis/url/text/txtbox-lig",
+			"short_description": "Controls the level of ligature substitution for rendered text inside a textbox."
+		},
+		"txtbox-line-color": {
+			"display_name": "textbox outline color",
+			"category": "text",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "hex_color"
+				},
+				{
+					"type": "color_keyword"
+				}
+			],
+			"aliases": [
+				"txtbox-line-clr",
+				"txtbox-lineclr"
+			],
+			"default": "fff",
+			"depends": [
+				"txtbox",
+				"txtbox-line"
+			],
+			"experimental": true,
+			"url": "https://docs.imgix.com/apis/url/text/txtbox-line-color",
+			"short_description": "Specifies the color of outlined text when set."
+		},
+		"txtbox-line": {
+			"display_name": "textbox outline",
+			"category": "text",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "integer",
+					"suggested_range": {
+						"min": 0
+					}
+				}
+			],
+			"default": 0,
+			"aliases": [
+				"tbl"
+			],
+			"depends": [
+				"txtbox"
+			],
+			"experimental": true,
+			"url": "https://docs.imgix.com/apis/url/text/txtbox-line",
+			"short_description": "Outlines the rendered text inside a textbox with a specified color."
+		},
+		"txtbox-lorem": {
+			"display_name": "textbox lorem ipsum",
+			"category": "text",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "string",
+					"possible_values": [
+						"fh"
+					]
+				}
+			],
+			"experimental": true,
+			"short_description": "Fills the textbox with placeholder text, for debugging purposes."
+		},
+		"txtbox-pad": {
+			"display_name": "textbox padding",
+			"category": "text",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "integer",
+					"default": 10,
+					"suggested_range": {
+						"min": 0
+					}
+				}
+			],
+			"aliases": [
+				"tbp"
+			],
+			"depends": [
+				"txtbox"
+			],
+			"experimental": true,
+			"url": "https://docs.imgix.com/apis/url/text/txtbox-pad",
+			"short_description": "Specifies the padding (in device-independent pixels) between a textbox and the edges of the base image."
+		},
+		"txtbox-shad": {
+			"display_name": "textbox shadow",
+			"category": "text",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "number",
+					"suggested_range": {
+						"min": 0,
+						"max": 10
+					}
+				}
+			],
+			"default": 0,
+			"aliases": [
+				"tbsh"
+			],
+			"depends": [
+				"txtbox"
+			],
+			"experimental": true,
+			"url": "https://docs.imgix.com/apis/url/text/txtbox-shad",
+			"short_description": "Sets the amount of shadow applied to rendered text inside a textbox."
+		},
+		"txtbox-size": {
+			"display_name": "textbox font size",
+			"category": "text",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "integer",
+					"suggested_range": {
+						"min": 0
+					}
+				}
+			],
+			"aliases": [
+				"tbsz"
+			],
+			"default": 12,
+			"depends": [
+				"txtbox"
+			],
+			"experimental": true,
+			"url": "https://docs.imgix.com/apis/url/text/txtbox-size",
+			"short_description": "Sets the font size of rendered text inside a textbox."
+		},
+		"txtbox-track": {
+			"display_name": "textbox tracking",
+			"category": "text",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "number",
+					"suggested_range": {
+						"min": -4
+					}
+				}
+			],
+			"aliases": [
+				"tbt"
+			],
+			"default": 0,
+			"depends": [
+				"txtbox"
+			],
+			"experimental": true,
+			"url": "https://docs.imgix.com/apis/url/text/txtbox-track",
+			"short_description": "Sets the tracking (letter spacing) for rendered text inside a textbox."
+		},
+		"txtbox-width": {
+			"display_name": "textbox width",
+			"category": "text",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "integer",
+					"suggested_range": {
+						"min": 0
+					}
+				}
+			],
+			"aliases": [
+				"tbw"
+			],
+			"depends": [
+				"txtbox"
+			],
+			"experimental": true,
+			"url": "https://docs.imgix.com/apis/url/text/txtbox-width",
+			"short_description": "Sets the width of a textbox."
+		},
+		"txtbox-x": {
+			"display_name": "textbox x position",
+			"category": "text",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "integer"
+				}
+			],
+			"aliases": [
+				"tbx"
+			],
+			"default": 0,
+			"depends": [
+				"txtbox"
+			],
+			"experimental": true,
+			"url": "https://docs.imgix.com/apis/url/text/txtbox-x",
+			"short_description": "Sets the horizontal (x) position of the textbox in pixels relative to the left edge of the base image."
+		},
+		"txtbox-y": {
+			"display_name": "textbox y position",
+			"category": "text",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "integer"
+				}
+			],
+			"aliases": [
+				"tby"
+			],
+			"default": 0,
+			"depends": [
+				"txtbox"
+			],
+			"experimental": true,
+			"url": "https://docs.imgix.com/apis/url/text/txtbox-y",
+			"short_description": "Sets the vertical (y) position of the textbox in pixels relative to the top edge of the base image."
+		},
+		"webp-alpha-filtering": {
+			"display_name": "webp alpha filtering",
+			"category": "format",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "integer",
+					"possible_values": [
+						1,
+						2
+					]
+				}
+			],
+			"default": 1,
+			"experimental": true,
+			"short_description": "Changes the WebP alpha channel filtering algorithm from fast to slow."
+		}
+	},
 	"aliases": {
+		"background-remove": "bg-remove",
+		"background-replace-negative-prompt": "bg-replace-neg-prompt",
+		"background-replace": "bg-replace",
 		"blendalign": "blend-align",
 		"ba": "blend-align",
 		"blendalpha": "blend-alpha",
@@ -3854,6 +4745,8 @@ return {
 		"mono": "monochrome",
 		"or": "orient",
 		"annotation": "pdf-annotation",
+		"rottype": "rot-type",
+		"rott": "rot-type",
 		"trimcolor": "trim-color",
 		"trimmd": "trim-md",
 		"trimpad": "trim-pad",
@@ -3861,6 +4754,7 @@ return {
 		"trimtol": "trim-tol",
 		"txtalign": "txt-align",
 		"ta": "txt-align",
+		"txtbox": "txt-box",
 		"txtclip": "txt-clip",
 		"tcl": "txt-clip",
 		"txtcolor": "txt-color",
@@ -3871,6 +4765,7 @@ return {
 		"tf": "txt-font",
 		"txtfont": "txt-font",
 		"txtlead": "txt-lead",
+		"txtlig": "txt-lig",
 		"txtlinecolor": "txt-line-color",
 		"txt-line-clr": "txt-line-color",
 		"txtlineclr": "txt-line-color",
@@ -3888,6 +4783,24 @@ return {
 		"txtx": "txt-x",
 		"txty": "txt-y",
 		"t": "txt",
+		"tba": "txtbox-align",
+		"tbcl": "txtbox-clip",
+		"txtbox-clr": "txtbox-color",
+		"tbc": "txtbox-color",
+		"tbf": "txtbox-font",
+		"tbhang": "txtbox-hang",
+		"tbh": "txtbox-height",
+		"tblead": "txtbox-lead",
+		"txtbox-line-clr": "txtbox-line-color",
+		"txtbox-lineclr": "txtbox-line-color",
+		"tbl": "txtbox-line",
+		"tbp": "txtbox-pad",
+		"tbsh": "txtbox-shad",
+		"tbsz": "txtbox-size",
+		"tbt": "txtbox-track",
+		"tbw": "txtbox-width",
+		"tbx": "txtbox-x",
+		"tby": "txtbox-y",
 		"width": "w"
 	},
 	"categoryValues": [
