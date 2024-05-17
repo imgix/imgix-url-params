@@ -15,7 +15,7 @@
 }(this, function () {
 
 return {
-	"version": "11.20.0",
+	"version": "11.21.0",
 	"parameters": {
 		"ar": {
 			"display_name": "aspect ratio",
@@ -3173,6 +3173,20 @@ return {
 				}
 			],
 			"short_description": "Skips every Nth frame starting with the first frame."
+		},
+		"svg-sanitize": {
+			"display_name": "sanitize svg",
+			"category": "format",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "boolean"
+				}
+			],
+			"default": true,
+			"short_description": "Specifies that the output image should be a lossless variant."
 		},
 		"transparency": {
 			"display_name": "transparency",
