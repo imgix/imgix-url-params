@@ -3186,7 +3186,7 @@ return {
 				}
 			],
 			"default": true,
-			"short_description": "Specifies that the output image should be a lossless variant."
+			"short_description": "Specifies whether to sanitize an SVG."
 		},
 		"transparency": {
 			"display_name": "transparency",
