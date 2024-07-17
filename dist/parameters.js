@@ -1008,7 +1008,7 @@ return {
 				{
 					"type": "string",
 					"possible_values": [
-						"source",
+						"origin",
 						"srgb",
 						"adobergb1998",
 						"tinysrgb",
