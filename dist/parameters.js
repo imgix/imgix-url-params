@@ -15,7 +15,7 @@
 }(this, function () {
 
 return {
-	"version": "11.22.1",
+	"version": "11.23.0",
 	"parameters": {
 		"ar": {
 			"display_name": "aspect ratio",
@@ -1008,6 +1008,7 @@ return {
 				{
 					"type": "string",
 					"possible_values": [
+						"source",
 						"srgb",
 						"adobergb1998",
 						"tinysrgb",
