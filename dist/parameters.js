@@ -15,7 +15,7 @@
 }(this, function () {
 
 return {
-	"version": "11.23.0",
+	"version": "11.24.0",
 	"parameters": {
 		"ar": {
 			"display_name": "aspect ratio",
@@ -1166,6 +1166,49 @@ return {
 			],
 			"url": "https://docs.imgix.com/apis/url/expires",
 			"short_description": "A Unix timestamp specifying a UTC time. Requests made to this URL after that time will output a 404 status code."
+		},
+		"face-blur": {
+			"display_name": "face blur",
+			"category": "face-detection",
+			"available_in": [
+				"url",
+				"graph",
+				"output"
+			],
+			"expects": [
+				{
+					"type": "integer",
+					"strict_range": {
+						"min": 0,
+						"max": 100
+					}
+				}
+			],
+			"default": 0,
+			"short_description": "Specifies the amount of blur to apply to detected faces. Defaults to 0."
+		},
+		"face-pixel": {
+			"display_name": "face pixelation",
+			"category": "face-detection",
+			"available_in": [
+				"url",
+				"graph",
+				"output"
+			],
+			"expects": [
+				{
+					"type": "integer",
+					"strict_range": {
+						"min": 0,
+						"max": 100
+					}
+				}
+			],
+			"default": 0,
+			"aliases": [
+				"face-pixelate"
+			],
+			"short_description": "Specifies the pixelation amount of the face."
 		},
 		"faceindex": {
 			"display_name": "face index",
@@ -3890,6 +3933,7 @@ return {
 		"blendy": "blend-y",
 		"by": "blend-y",
 		"b": "blend",
+		"face-pixelate": "face-pixel",
 		"fillcolor": "fill-color",
 		"fill-generative-fallback": "fill-gen-fallback",
 		"fill-generative-negative-prompt": "fill-gen-neg-prompt",
