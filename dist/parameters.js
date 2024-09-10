@@ -15,7 +15,7 @@
 }(this, function () {
 
 return {
-	"version": "11.24.0",
+	"version": "11.24.1",
 	"parameters": {
 		"ar": {
 			"display_name": "aspect ratio",
@@ -34,7 +34,7 @@ return {
 			"depends": [
 				"fit=crop"
 			],
-			"url": "https://docs.imgix.com/apis/url/size/ar",
+			"url": "https://docs.imgix.com/apis/rendering/size/aspect-ratio",
 			"short_description": "Specifies an aspect ratio to maintain when resizing and cropping the image"
 		},
 		"auto": {
@@ -56,7 +56,7 @@ return {
 				}
 			],
 			"disallow_base64": true,
-			"url": "https://docs.imgix.com/apis/url/auto",
+			"url": "https://docs.imgix.com/apis/rendering/automatic",
 			"short_description": "Applies automatic enhancements to images."
 		},
 		"bg-remove-fallback": {
@@ -73,7 +73,7 @@ return {
 				}
 			],
 			"default": true,
-			"url": "https://docs.imgix.com/apis/rendering/background/bg-remove",
+			"url": "https://docs.imgix.com/apis/rendering/background/background-removal-fallback",
 			"short_description": "Overrides default fallback behavior for bg-remove failures."
 		},
 		"bg-remove": {
@@ -93,7 +93,7 @@ return {
 				"background-remove"
 			],
 			"default": false,
-			"url": "https://docs.imgix.com/apis/rendering/background/bg-remove",
+			"url": "https://docs.imgix.com/apis/rendering/background/background-removal",
 			"short_description": "Removes background from image."
 		},
 		"bg-replace-fallback": {
@@ -110,7 +110,7 @@ return {
 				}
 			],
 			"default": true,
-			"url": "https://docs.imgix.com/apis/rendering/background/bg-replace",
+			"url": "https://docs.imgix.com/apis/rendering/background/background-removal-fallback",
 			"short_description": "Overrides default fallback behavior for bg-replace failures."
 		},
 		"bg-replace-neg-prompt": {
@@ -130,7 +130,7 @@ return {
 				"background-replace-negative-prompt"
 			],
 			"default": false,
-			"url": "https://docs.imgix.com/apis/rendering/background/bg-replace-neg-prompt",
+			"url": "https://docs.imgix.com/apis/rendering/background/background-replacement-negative-prompt",
 			"short_description": "Provides a negative text suggestion for background replacement."
 		},
 		"bg-replace": {
@@ -150,7 +150,7 @@ return {
 				"background-replace"
 			],
 			"default": false,
-			"url": "https://docs.imgix.com/apis/rendering/background/bg-replace",
+			"url": "https://docs.imgix.com/apis/rendering/background/background-replacement",
 			"short_description": "Replaces background from image using a string based prompt."
 		},
 		"bg": {
@@ -169,7 +169,7 @@ return {
 				}
 			],
 			"default": "fff",
-			"url": "https://docs.imgix.com/apis/url/bg",
+			"url": "https://docs.imgix.com/apis/rendering/fill/background-color",
 			"short_description": "Colors the background of padded and partially-transparent images."
 		},
 		"blend-align": {
@@ -198,7 +198,7 @@ return {
 			"depends": [
 				"blend"
 			],
-			"url": "https://docs.imgix.com/apis/url/blending/blend-align",
+			"url": "https://docs.imgix.com/apis/rendering/blending/blend-align",
 			"short_description": "Changes the blend alignment relative to the parent image."
 		},
 		"blend-alpha": {
@@ -224,7 +224,7 @@ return {
 			"depends": [
 				"blend"
 			],
-			"url": "https://docs.imgix.com/apis/url/blending/blend-alpha",
+			"url": "https://docs.imgix.com/apis/rendering/blending/blend-alpha",
 			"short_description": "Changes the alpha of the blend image."
 		},
 		"blend-color": {
@@ -246,7 +246,7 @@ return {
 				"blend-clr",
 				"blendclr"
 			],
-			"url": "https://docs.imgix.com/apis/url/blending/blend-color",
+			"url": "https://docs.imgix.com/apis/rendering/blending/blend-color",
 			"short_description": "Specifies a color to use when applying the blend."
 		},
 		"blend-crop": {
@@ -274,7 +274,7 @@ return {
 			"depends": [
 				"blend"
 			],
-			"url": "https://docs.imgix.com/apis/url/blending/blend-crop",
+			"url": "https://docs.imgix.com/apis/rendering/blending/blend-crop",
 			"short_description": "Specifies the type of crop for blend images."
 		},
 		"blend-fit": {
@@ -303,7 +303,7 @@ return {
 			"depends": [
 				"blend"
 			],
-			"url": "https://docs.imgix.com/apis/url/blending/blend-fit",
+			"url": "https://docs.imgix.com/apis/rendering/blending/blend-fit",
 			"short_description": "Specifies the fit mode for blend images."
 		},
 		"blend-h": {
@@ -335,7 +335,7 @@ return {
 			"depends": [
 				"blend"
 			],
-			"url": "https://docs.imgix.com/apis/url/blending/blend-h",
+			"url": "https://docs.imgix.com/apis/rendering/blending/blend-height",
 			"short_description": "Adjusts the height of the blend image."
 		},
 		"blend-mode": {
@@ -375,7 +375,7 @@ return {
 			"depends": [
 				"blend"
 			],
-			"url": "https://docs.imgix.com/apis/url/blending/blend-mode",
+			"url": "https://docs.imgix.com/apis/rendering/blending/blend-mode",
 			"short_description": "Sets the blend mode for a blend image."
 		},
 		"blend-pad": {
@@ -400,7 +400,7 @@ return {
 			"depends": [
 				"blend"
 			],
-			"url": "https://docs.imgix.com/apis/url/blending/blend-pad",
+			"url": "https://docs.imgix.com/apis/rendering/blending/blend-padding",
 			"short_description": "Applies padding to the blend image."
 		},
 		"blend-size": {
@@ -424,7 +424,7 @@ return {
 			"depends": [
 				"blend"
 			],
-			"url": "https://docs.imgix.com/apis/url/blending/blend-size",
+			"url": "https://docs.imgix.com/apis/rendering/blending/blend-size",
 			"short_description": "Adjusts the size of the blend image."
 		},
 		"blend-w": {
@@ -456,7 +456,7 @@ return {
 			"depends": [
 				"blend"
 			],
-			"url": "https://docs.imgix.com/apis/url/blending/blend-w",
+			"url": "https://docs.imgix.com/apis/rendering/blending/blend-width",
 			"short_description": "Adjusts the width of the blend image."
 		},
 		"blend-x": {
@@ -481,7 +481,7 @@ return {
 			"depends": [
 				"blend"
 			],
-			"url": "https://docs.imgix.com/apis/url/blending/blend-x",
+			"url": "https://docs.imgix.com/apis/rendering/blending/blend-x-position",
 			"short_description": "Adjusts the x-offset of the blend image relative to its parent."
 		},
 		"blend-y": {
@@ -506,7 +506,7 @@ return {
 			"depends": [
 				"blend"
 			],
-			"url": "https://docs.imgix.com/apis/url/blending/blend-y",
+			"url": "https://docs.imgix.com/apis/rendering/blending/blend-y-position",
 			"short_description": "Adjusts the y-offset of the blend image relative to its parent."
 		},
 		"blend": {
@@ -532,7 +532,7 @@ return {
 			"aliases": [
 				"b"
 			],
-			"url": "https://docs.imgix.com/apis/url/blending/blend",
+			"url": "https://docs.imgix.com/apis/rendering/blending/blend",
 			"short_description": "Specifies the location of the blend image."
 		},
 		"blur": {
@@ -552,7 +552,7 @@ return {
 				}
 			],
 			"default": 0,
-			"url": "https://docs.imgix.com/apis/url/stylize/blur",
+			"url": "https://docs.imgix.com/apis/rendering/stylize/gaussian-blur",
 			"short_description": "Applies a gaussian blur to an image."
 		},
 		"border-bottom": {
@@ -573,7 +573,7 @@ return {
 			"depends": [
 				"border"
 			],
-			"url": "https://docs.imgix.com/apis/url/border-and-padding/border-bottom",
+			"url": "https://docs.imgix.com/apis/rendering/border-and-padding/border-bottom",
 			"short_description": "Sets bottom border of an image."
 		},
 		"border-left": {
@@ -594,7 +594,7 @@ return {
 			"depends": [
 				"border"
 			],
-			"url": "https://docs.imgix.com/apis/url/border-and-padding/border-left",
+			"url": "https://docs.imgix.com/apis/rendering/border-and-padding/border-left",
 			"short_description": "Sets left border of an image."
 		},
 		"border-radius-inner": {
@@ -651,7 +651,7 @@ return {
 			"depends": [
 				"border"
 			],
-			"url": "https://docs.imgix.com/apis/url/border-and-padding/border-radius-inner",
+			"url": "https://docs.imgix.com/apis/rendering/border-and-padding/inner-border-radius",
 			"short_description": "Sets the inner radius of the image's border in pixels."
 		},
 		"border-radius": {
@@ -708,7 +708,7 @@ return {
 			"depends": [
 				"border"
 			],
-			"url": "https://docs.imgix.com/apis/url/border-and-padding/border-radius",
+			"url": "https://docs.imgix.com/apis/rendering/border-and-padding/outer-border-radius",
 			"short_description": "Sets the outer radius of the image's border in pixels."
 		},
 		"border-right": {
@@ -729,7 +729,7 @@ return {
 			"depends": [
 				"border"
 			],
-			"url": "https://docs.imgix.com/apis/url/border-and-padding/border-right",
+			"url": "https://docs.imgix.com/apis/rendering/border-and-padding/border-right",
 			"short_description": "Sets right border of an image."
 		},
 		"border-top": {
@@ -750,7 +750,7 @@ return {
 			"depends": [
 				"border"
 			],
-			"url": "https://docs.imgix.com/apis/url/border-and-padding/border-top",
+			"url": "https://docs.imgix.com/apis/rendering/border-and-padding/border-top",
 			"short_description": "Sets top border of an image."
 		},
 		"border": {
@@ -783,7 +783,7 @@ return {
 					"length": 2
 				}
 			],
-			"url": "https://docs.imgix.com/apis/url/border-and-padding/border",
+			"url": "https://docs.imgix.com/apis/rendering/size",
 			"short_description": "Applies a border to an image."
 		},
 		"bri": {
@@ -803,7 +803,7 @@ return {
 				}
 			],
 			"default": 0,
-			"url": "https://docs.imgix.com/apis/url/adjustment/bri",
+			"url": "https://docs.imgix.com/apis/rendering/adjustment/brightness",
 			"short_description": "Adjusts the brightness of the source image."
 		},
 		"ch": {
@@ -823,7 +823,7 @@ return {
 				}
 			],
 			"disallow_base64": true,
-			"url": "https://docs.imgix.com/apis/url/format/ch",
+			"url": "https://docs.imgix.com/apis/rendering/format/client-hints",
 			"short_description": "Sets one or more Client-Hints headers"
 		},
 		"chromasub": {
@@ -845,7 +845,7 @@ return {
 				}
 			],
 			"default": 420,
-			"url": "https://docs.imgix.com/apis/url/format/chromasub",
+			"url": "https://docs.imgix.com/apis/rendering/format/chroma-subsampling",
 			"short_description": "Specifies the output chroma subsampling rate."
 		},
 		"colorquant": {
@@ -865,7 +865,7 @@ return {
 					}
 				}
 			],
-			"url": "https://docs.imgix.com/apis/url/format/colorquant",
+			"url": "https://docs.imgix.com/apis/rendering/format/color-quantization",
 			"short_description": "Limits the number of unique colors in an image."
 		},
 		"colors": {
@@ -888,7 +888,7 @@ return {
 			"depends": [
 				"palette"
 			],
-			"url": "https://docs.imgix.com/apis/url/color-palette/colors",
+			"url": "https://docs.imgix.com/apis/rendering/color-palette/palette-color-count",
 			"short_description": "Specifies how many colors to include in a palette-extraction response."
 		},
 		"con": {
@@ -908,7 +908,7 @@ return {
 				}
 			],
 			"default": 0,
-			"url": "https://docs.imgix.com/apis/url/adjustment/con",
+			"url": "https://docs.imgix.com/apis/rendering/adjustment/contrast",
 			"short_description": "Adjusts the contrast of the source image."
 		},
 		"corner-radius": {
@@ -965,7 +965,7 @@ return {
 			"depends": [
 				"mask=corners"
 			],
-			"url": "https://docs.imgix.com/apis/url/mask/corner-radius",
+			"url": "https://docs.imgix.com/apis/rendering/mask-image/mask-corner-radius",
 			"short_description": "Specifies the radius value for a rounded corner mask."
 		},
 		"crop": {
@@ -993,7 +993,7 @@ return {
 			"depends": [
 				"fit=crop"
 			],
-			"url": "https://docs.imgix.com/apis/url/size/crop",
+			"url": "https://docs.imgix.com/apis/rendering/size/crop-mode",
 			"short_description": "Specifies how to crop an image."
 		},
 		"cs": {
@@ -1016,7 +1016,7 @@ return {
 					]
 				}
 			],
-			"url": "https://docs.imgix.com/apis/url/format/cs",
+			"url": "https://docs.imgix.com/apis/rendering/format/color-space",
 			"short_description": "Specifies the color space of the output image."
 		},
 		"dl": {
@@ -1031,7 +1031,7 @@ return {
 					"type": "string"
 				}
 			],
-			"url": "https://docs.imgix.com/apis/url/format/dl",
+			"url": "https://docs.imgix.com/apis/rendering/format/download",
 			"short_description": "Forces a URL to use send-file in its response."
 		},
 		"dpi": {
@@ -1050,7 +1050,7 @@ return {
 					}
 				}
 			],
-			"url": "https://docs.imgix.com/apis/url/format/dpi",
+			"url": "https://docs.imgix.com/apis/rendering/format/dots-per-inch",
 			"short_description": "Sets the DPI value in the EXIF header."
 		},
 		"dpr": {
@@ -1075,7 +1075,7 @@ return {
 				}
 			],
 			"default": 1,
-			"url": "https://docs.imgix.com/apis/url/dpr",
+			"url": "https://docs.imgix.com/apis/rendering/device-pixel-ratio",
 			"short_description": "Adjusts the device-pixel ratio of the output image."
 		},
 		"duotone-alpha": {
@@ -1098,7 +1098,7 @@ return {
 			"depends": [
 				"duotone"
 			],
-			"url": "https://docs.imgix.com/apis/url/stylize/duotone-alpha",
+			"url": "https://docs.imgix.com/apis/rendering/stylize/duotone-alpha",
 			"short_description": "Changes the alpha of the duotone effect atop the source image."
 		},
 		"duotone": {
@@ -1130,7 +1130,7 @@ return {
 					"length": 2
 				}
 			],
-			"url": "https://docs.imgix.com/apis/url/stylize/duotone",
+			"url": "https://docs.imgix.com/apis/rendering/stylize/duotone",
 			"short_description": "Applies a duotone effect to the source image."
 		},
 		"exp": {
@@ -1150,7 +1150,7 @@ return {
 				}
 			],
 			"default": 0,
-			"url": "https://docs.imgix.com/apis/url/adjustment/exp",
+			"url": "https://docs.imgix.com/apis/rendering/adjustment/exposure",
 			"short_description": "Adjusts the exposure of the output image."
 		},
 		"expires": {
@@ -1164,7 +1164,7 @@ return {
 					"type": "timestamp"
 				}
 			],
-			"url": "https://docs.imgix.com/apis/url/expires",
+			"url": "https://docs.imgix.com/apis/rendering/expiration",
 			"short_description": "A Unix timestamp specifying a UTC time. Requests made to this URL after that time will output a 404 status code."
 		},
 		"face-blur": {
@@ -1185,6 +1185,7 @@ return {
 				}
 			],
 			"default": 0,
+			"url": "https://docs.imgix.com/apis/rendering/face-detection/face-blur",
 			"short_description": "Specifies the amount of blur to apply to detected faces. Defaults to 0."
 		},
 		"face-pixel": {
@@ -1208,6 +1209,7 @@ return {
 			"aliases": [
 				"face-pixelate"
 			],
+			"url": "https://docs.imgix.com/apis/rendering/face-detection/face-pixelation",
 			"short_description": "Specifies the pixelation amount of the face."
 		},
 		"faceindex": {
@@ -1228,7 +1230,7 @@ return {
 			"depends": [
 				"fit=facearea"
 			],
-			"url": "https://docs.imgix.com/apis/url/face-detection/faceindex",
+			"url": "https://docs.imgix.com/apis/rendering/face-detection/face-index",
 			"short_description": "Selects a face to crop to."
 		},
 		"facepad": {
@@ -1251,7 +1253,7 @@ return {
 			"depends": [
 				"fit=facearea"
 			],
-			"url": "https://docs.imgix.com/apis/url/face-detection/facepad",
+			"url": "https://docs.imgix.com/apis/rendering/face-detection/face-padding",
 			"short_description": "Adjusts padding around a selected face."
 		},
 		"faces": {
@@ -1272,7 +1274,7 @@ return {
 			"depends": [
 				"fm=json"
 			],
-			"url": "https://docs.imgix.com/apis/url/face-detection/faces",
+			"url": "https://docs.imgix.com/apis/rendering/face-detection/json-face-data",
 			"short_description": "Specifies that face data should be included in output when combined with `fm=json`."
 		},
 		"fill-color": {
@@ -1296,7 +1298,7 @@ return {
 			"depends": [
 				"fill=solid"
 			],
-			"url": "https://docs.imgix.com/apis/url/fill/fill-color",
+			"url": "https://docs.imgix.com/apis/rendering/fill/fill-color",
 			"short_description": "Sets the fill color for images with additional space created by the fit setting"
 		},
 		"fill-gen-fallback": {
@@ -1318,7 +1320,7 @@ return {
 				"fit=fill",
 				"fill=gen"
 			],
-			"url": "https://docs.imgix.com/apis/url/fill/fill-gen-fallback",
+			"url": "https://docs.imgix.com/apis/rendering/fill/fill-generative-fallback",
 			"short_description": "Sets the fallback behavior for generative fill."
 		},
 		"fill-gen-neg-prompt": {
@@ -1339,7 +1341,7 @@ return {
 				"fit=fill",
 				"fill=gen"
 			],
-			"url": "https://docs.imgix.com/apis/url/fill/fill-gen-neg-prompt",
+			"url": "https://docs.imgix.com/apis/rendering/fill/fill-generative-negative-prompt",
 			"short_description": "Provides a negative text suggestion to the generative fill parameter. Used to reduce the probability of a subject, detail, or object appearing in generative output."
 		},
 		"fill-gen-pos": {
@@ -1369,7 +1371,7 @@ return {
 				"fit=fill",
 				"fill=gen"
 			],
-			"url": "https://docs.imgix.com/apis/url/fill/fill-gen-pos",
+			"url": "https://docs.imgix.com/apis/rendering/fill/fill-generative-position",
 			"short_description": "Sets the position of the Origin Image in relation to the generative fill."
 		},
 		"fill-gen-prompt": {
@@ -1390,7 +1392,7 @@ return {
 				"fit=fill",
 				"fill=gen"
 			],
-			"url": "https://docs.imgix.com/apis/url/fill/fill-gen-prompt",
+			"url": "https://docs.imgix.com/apis/rendering/fill/fill-generative-prompt",
 			"short_description": "Provides a text suggestion to the generative fill parameter."
 		},
 		"fill-gen-seed": {
@@ -1414,7 +1416,7 @@ return {
 				"fit=fill",
 				"fill=gen"
 			],
-			"url": "https://docs.imgix.com/apis/url/fill/fill-gen-seed",
+			"url": "https://docs.imgix.com/apis/rendering/fill/fill-generative-seed",
 			"short_description": "Sets the generative seed value. Used to generate similar outputs from different prompts."
 		},
 		"fill-gradient-cs": {
@@ -1440,7 +1442,7 @@ return {
 				"fit=fill",
 				"fill=gradient"
 			],
-			"url": "https://docs.imgix.com/apis/url/fill/fill-gradient-cs",
+			"url": "https://docs.imgix.com/apis/rendering/fill/fill-gradient-color-space",
 			"short_description": "Defines the color space as linear, sRGB, Oklab, HSL, or LCH for gradient color interpolation"
 		},
 		"fill-gradient-linear-direction": {
@@ -1465,7 +1467,7 @@ return {
 				"fit=fill",
 				"fill=gen"
 			],
-			"url": "https://docs.imgix.com/apis/url/fill/fill-gradient-linear-direction",
+			"url": "https://docs.imgix.com/apis/rendering/fill/fill-gradient-linear-direction",
 			"short_description": "The fill-gradient-linear-direction specifies the gradient's direction, flowing towards the bottom, top, right, or left"
 		},
 		"fill-gradient-linear": {
@@ -1500,7 +1502,7 @@ return {
 				"fit=fill",
 				"fill=gradient"
 			],
-			"url": "https://docs.imgix.com/apis/url/fill/fill-gradient-linear",
+			"url": "https://docs.imgix.com/apis/rendering/fill/fill-gradient-linear",
 			"short_description": "Blends a gradient between two colors, {color1} and {color2}, along a straight path"
 		},
 		"fill-gradient-radial-radius": {
@@ -1552,7 +1554,7 @@ return {
 				"fill=gradient"
 			],
 			"default": "0.25,0.5",
-			"url": "https://docs.imgix.com/apis/url/fill/fill-gradient-radial-radius",
+			"url": "https://docs.imgix.com/apis/rendering/fill/fill-gradient-radial-radius",
 			"short_description": "Parameter defines the radial gradient's radius as pixels or a percentage (0.0-1.0) of the image's smallest dimension"
 		},
 		"fill-gradient-radial-x": {
@@ -1582,7 +1584,7 @@ return {
 				"fit=fill",
 				"fill=gradient"
 			],
-			"url": "https://docs.imgix.com/apis/url/fill/fill-gradient-radial-x",
+			"url": "https://docs.imgix.com/apis/rendering/fill/fill-gradient-radial-x",
 			"short_description": "Specifies the location of the radial gradient's center along the x-axis, using either a pixel value or a floating point percentage (ranging from 0.0 to 1.0) of the image's width"
 		},
 		"fill-gradient-radial-y": {
@@ -1612,7 +1614,7 @@ return {
 				"fit=fill",
 				"fill=gradient"
 			],
-			"url": "https://docs.imgix.com/apis/url/fill/fill-gradient-radial-y",
+			"url": "https://docs.imgix.com/apis/rendering/fill/fill-gradient-radial-y",
 			"short_description": "Parameter sets the radial gradient's center on the y-axis, using pixels or a 0.0 to 1.0 percentage of the image's height"
 		},
 		"fill-gradient-radial": {
@@ -1647,7 +1649,7 @@ return {
 				"fit=fill",
 				"fill=gradient"
 			],
-			"url": "https://docs.imgix.com/apis/url/fill/fill-gradient-radial",
+			"url": "https://docs.imgix.com/apis/rendering/fill/fill-gradient-radial",
 			"short_description": "The fill-gradient-radial parameter creates a circular gradient transitioning from a central color (Color1) to an outer color (Color2)"
 		},
 		"fill-gradient-type": {
@@ -1670,7 +1672,7 @@ return {
 				"fit=fill",
 				"fill=gradient"
 			],
-			"url": "https://docs.imgix.com/apis/url/fill/fill-gradient-type",
+			"url": "https://docs.imgix.com/apis/rendering/fill/fill-gradient-type",
 			"short_description": "Specifies if a gradient is radial (circular) or linear (straight)"
 		},
 		"fill": {
@@ -1694,7 +1696,7 @@ return {
 			"depends": [
 				"fit"
 			],
-			"url": "https://docs.imgix.com/apis/url/fill/fill",
+			"url": "https://docs.imgix.com/apis/rendering/fill/fill-mode",
 			"short_description": "Determines how to fill in additional space created by the fit setting"
 		},
 		"fit": {
@@ -1724,7 +1726,7 @@ return {
 			"aliases": [
 				"f"
 			],
-			"url": "https://docs.imgix.com/apis/url/size/fit",
+			"url": "https://docs.imgix.com/apis/rendering/size/resize-fit-mode",
 			"short_description": "Specifies how to map the source image to the output image dimensions."
 		},
 		"flip": {
@@ -1744,7 +1746,7 @@ return {
 					]
 				}
 			],
-			"url": "https://docs.imgix.com/apis/url/rotation/flip",
+			"url": "https://docs.imgix.com/apis/rendering/rotation/flip-axis",
 			"short_description": "Flips an image on a specified axis."
 		},
 		"fm": {
@@ -1776,7 +1778,7 @@ return {
 					]
 				}
 			],
-			"url": "https://docs.imgix.com/apis/url/format/fm",
+			"url": "https://docs.imgix.com/apis/rendering/format/output-format",
 			"short_description": "Changes the format of the output image."
 		},
 		"fp-debug": {
@@ -1795,7 +1797,7 @@ return {
 				"fit=crop",
 				"crop=focalpoint"
 			],
-			"url": "https://docs.imgix.com/apis/url/focalpoint-crop/fp-debug",
+			"url": "https://docs.imgix.com/apis/rendering/focal-point-crop/focal-point-debug",
 			"short_description": "Displays crosshairs identifying the location of the set focal point"
 		},
 		"fp-x": {
@@ -1818,7 +1820,7 @@ return {
 				"fit=crop",
 				"crop=focalpoint"
 			],
-			"url": "https://docs.imgix.com/apis/url/focalpoint-crop/fp-x",
+			"url": "https://docs.imgix.com/apis/rendering/focal-point-crop/focal-point-x-position",
 			"short_description": "Sets the relative horizontal value for the focal point of an image"
 		},
 		"fp-y": {
@@ -1841,7 +1843,7 @@ return {
 				"fit=crop",
 				"crop=focalpoint"
 			],
-			"url": "https://docs.imgix.com/apis/url/focalpoint-crop/fp-y",
+			"url": "https://docs.imgix.com/apis/rendering/focal-point-crop/focal-point-y-position",
 			"short_description": "Sets the relative vertical value for the focal point of an image"
 		},
 		"fp-z": {
@@ -1868,7 +1870,7 @@ return {
 				"fit=crop",
 				"crop=focalpoint"
 			],
-			"url": "https://docs.imgix.com/apis/url/focalpoint-crop/fp-z",
+			"url": "https://docs.imgix.com/apis/rendering/focal-point-crop/focal-point-zoom",
 			"short_description": "Sets the relative zoom value for the focal point of an image"
 		},
 		"fps": {
@@ -1888,6 +1890,7 @@ return {
 					}
 				}
 			],
+			"url": "https://docs.imgix.com/apis/rendering/animation/frames-per-second",
 			"short_description": "Specifies the framerate of the generated image."
 		},
 		"frame": {
@@ -1922,6 +1925,7 @@ return {
 					}
 				}
 			],
+			"url": "https://docs.imgix.com/apis/rendering/animation/frame-selection",
 			"short_description": "Specifies the frame of an animated image to use."
 		},
 		"gam": {
@@ -1941,7 +1945,7 @@ return {
 				}
 			],
 			"default": 0,
-			"url": "https://docs.imgix.com/apis/url/adjustment/gam",
+			"url": "https://docs.imgix.com/apis/rendering/adjustment/gamma",
 			"short_description": "Adjusts the gamma of the source image."
 		},
 		"gif-q": {
@@ -1966,6 +1970,7 @@ return {
 			"aliases": [
 				"gifq"
 			],
+			"url": "https://docs.imgix.com/apis/rendering/animation/animated-gif-quality",
 			"short_description": "Specifies the quality of the animated gif. The higher the value, the better more compression is applied."
 		},
 		"grid-colors": {
@@ -2000,6 +2005,7 @@ return {
 			"depends": [
 				"transparency"
 			],
+			"url": "https://docs.imgix.com/apis/rendering/fill/grid-colors",
 			"short_description": "Sets grid colors for the transparency checkerboard grid."
 		},
 		"grid-size": {
@@ -2020,6 +2026,7 @@ return {
 			"depends": [
 				"transparency"
 			],
+			"url": "https://docs.imgix.com/apis/rendering/fill/grid-size",
 			"short_description": "Sets grid size for the transparency checkerboard grid."
 		},
 		"h": {
@@ -2048,7 +2055,7 @@ return {
 			"aliases": [
 				"height"
 			],
-			"url": "https://docs.imgix.com/apis/url/size/h",
+			"url": "https://docs.imgix.com/apis/rendering/size/image-height",
 			"short_description": "Adjusts the height of the output image."
 		},
 		"high": {
@@ -2068,7 +2075,7 @@ return {
 				}
 			],
 			"default": 0,
-			"url": "https://docs.imgix.com/apis/url/adjustment/high",
+			"url": "https://docs.imgix.com/apis/rendering/adjustment/highlight",
 			"short_description": "Adjusts the highlights of the source image."
 		},
 		"htn": {
@@ -2088,7 +2095,7 @@ return {
 				}
 			],
 			"default": 0,
-			"url": "https://docs.imgix.com/apis/url/stylize/htn",
+			"url": "https://docs.imgix.com/apis/rendering/stylize/halftone",
 			"short_description": "Applies a half-tone effect to the source image."
 		},
 		"hue": {
@@ -2108,7 +2115,7 @@ return {
 				}
 			],
 			"default": 0,
-			"url": "https://docs.imgix.com/apis/url/adjustment/hue",
+			"url": "https://docs.imgix.com/apis/rendering/adjustment/hue-shift",
 			"short_description": "Adjusts the hue of the source image."
 		},
 		"interval": {
@@ -2125,6 +2132,7 @@ return {
 					}
 				}
 			],
+			"url": "https://docs.imgix.com/apis/rendering/animation/frame-interval",
 			"short_description": "Displays every Nth frame starting with the first frame."
 		},
 		"invert": {
@@ -2143,7 +2151,7 @@ return {
 				"inv"
 			],
 			"default": false,
-			"url": "https://docs.imgix.com/apis/url/adjustment/invert",
+			"url": "https://docs.imgix.com/apis/rendering/adjustment/invert",
 			"short_description": "Inverts the colors on the source image."
 		},
 		"iptc": {
@@ -2161,6 +2169,7 @@ return {
 					]
 				}
 			],
+			"url": "https://docs.imgix.com/apis/rendering/format/iptc-passthrough",
 			"short_description": "Determine if IPTC data should be passed for JPEG images."
 		},
 		"jpg-progressive": {
@@ -2178,6 +2187,7 @@ return {
 			"aliases": [
 				"jpeg-progressive"
 			],
+			"url": "https://docs.imgix.com/apis/rendering/format/jpg-progressive",
 			"short_description": "Specifies whether or not a jpg/jpeg uses progressive (true) or baseline (false)"
 		},
 		"loop": {
@@ -2197,6 +2207,7 @@ return {
 				}
 			],
 			"default": 0,
+			"url": "https://docs.imgix.com/apis/rendering/animation",
 			"short_description": "Specifies the number of times an animated image should repeat. A value of 0 means infinite looping."
 		},
 		"lossless": {
@@ -2217,7 +2228,7 @@ return {
 				"fm=webp",
 				"fm=jxr"
 			],
-			"url": "https://docs.imgix.com/apis/url/format/lossless",
+			"url": "https://docs.imgix.com/apis/rendering/format/lossless-compression",
 			"short_description": "Specifies that the output image should be a lossless variant."
 		},
 		"mark-align": {
@@ -2246,7 +2257,7 @@ return {
 			"depends": [
 				"mark"
 			],
-			"url": "https://docs.imgix.com/apis/url/watermark/mark-align",
+			"url": "https://docs.imgix.com/apis/rendering/watermark/watermark-alignment-mode",
 			"short_description": "Changes the watermark alignment relative to the parent image."
 		},
 		"mark-alpha": {
@@ -2272,7 +2283,7 @@ return {
 			"depends": [
 				"mark"
 			],
-			"url": "https://docs.imgix.com/apis/url/watermark/mark-alpha",
+			"url": "https://docs.imgix.com/apis/rendering/watermark/watermark-alpha",
 			"short_description": "Changes the alpha of the watermark image."
 		},
 		"mark-base": {
@@ -2296,7 +2307,7 @@ return {
 			"depends": [
 				"mark"
 			],
-			"url": "https://docs.imgix.com/apis/url/watermark/mark-base",
+			"url": "https://docs.imgix.com/apis/rendering/watermark/watermark-base-url",
 			"short_description": "Changes base URL of the watermark image."
 		},
 		"mark-fit": {
@@ -2327,7 +2338,7 @@ return {
 				"markw",
 				"markh"
 			],
-			"url": "https://docs.imgix.com/apis/url/watermark/mark-fit",
+			"url": "https://docs.imgix.com/apis/rendering/watermark/watermark-fit-mode",
 			"short_description": "Specifies the fit mode for watermark images."
 		},
 		"mark-h": {
@@ -2359,7 +2370,7 @@ return {
 			"depends": [
 				"mark"
 			],
-			"url": "https://docs.imgix.com/apis/url/watermark/mark-h",
+			"url": "https://docs.imgix.com/apis/rendering/watermark/watermark-height",
 			"short_description": "Adjusts the height of the watermark image."
 		},
 		"mark-pad": {
@@ -2384,7 +2395,7 @@ return {
 			"depends": [
 				"mark"
 			],
-			"url": "https://docs.imgix.com/apis/url/watermark/mark-pad",
+			"url": "https://docs.imgix.com/apis/rendering/watermark/watermark-padding",
 			"short_description": "Applies padding to the watermark image."
 		},
 		"mark-rot": {
@@ -2404,7 +2415,7 @@ return {
 				}
 			],
 			"default": 0,
-			"url": "https://docs.imgix.com/apis/url/watermark/mark-rot",
+			"url": "https://docs.imgix.com/apis/rendering/watermark/watermark-rotation",
 			"short_description": "Rotates a watermark or tiled watermarks by a specified number of degrees."
 		},
 		"mark-scale": {
@@ -2429,7 +2440,7 @@ return {
 			"depends": [
 				"mark"
 			],
-			"url": "https://docs.imgix.com/apis/url/watermark/mark-scale",
+			"url": "https://docs.imgix.com/apis/rendering/watermark/watermark-scale",
 			"short_description": "Adjusts the scale of the watermark image."
 		},
 		"mark-tile": {
@@ -2453,7 +2464,7 @@ return {
 			"depends": [
 				"mark"
 			],
-			"url": "https://docs.imgix.com/apis/url/watermark/mark-tile",
+			"url": "https://docs.imgix.com/apis/rendering/watermark/watermark-tile",
 			"short_description": "Adds tiled watermark."
 		},
 		"mark-w": {
@@ -2485,7 +2496,7 @@ return {
 			"depends": [
 				"mark"
 			],
-			"url": "https://docs.imgix.com/apis/url/watermark/mark-w",
+			"url": "https://docs.imgix.com/apis/rendering/watermark/watermark-width",
 			"short_description": "Adjusts the width of the watermark image."
 		},
 		"mark-x": {
@@ -2509,7 +2520,7 @@ return {
 			"depends": [
 				"mark"
 			],
-			"url": "https://docs.imgix.com/apis/url/watermark/mark-x",
+			"url": "https://docs.imgix.com/apis/rendering/watermark/watermark-x-position",
 			"short_description": "Adjusts the x-offset of the watermark image relative to its parent."
 		},
 		"mark-y": {
@@ -2533,7 +2544,7 @@ return {
 			"depends": [
 				"mark"
 			],
-			"url": "https://docs.imgix.com/apis/url/watermark/mark-y",
+			"url": "https://docs.imgix.com/apis/rendering/watermark/watermark-y-position",
 			"short_description": "Adjusts the y-offset of the watermark image relative to its parent."
 		},
 		"mark": {
@@ -2553,7 +2564,7 @@ return {
 			"aliases": [
 				"m"
 			],
-			"url": "https://docs.imgix.com/apis/url/watermark/mark",
+			"url": "https://docs.imgix.com/apis/rendering/watermark/watermark-image-url",
 			"short_description": "Specifies the location of the watermark image."
 		},
 		"mask-bg": {
@@ -2578,7 +2589,7 @@ return {
 			"depends": [
 				"mask"
 			],
-			"url": "https://docs.imgix.com/apis/url/mask/mask-bg",
+			"url": "https://docs.imgix.com/apis/rendering/mask-image/mask-background-color",
 			"short_description": "Colors the background of the transparent mask area of images"
 		},
 		"mask": {
@@ -2603,7 +2614,7 @@ return {
 					"type": "path"
 				}
 			],
-			"url": "https://docs.imgix.com/apis/url/mask",
+			"url": "https://docs.imgix.com/apis/rendering/mask-image/mask-type",
 			"short_description": "Defines the type of mask and specifies the URL if that type is selected."
 		},
 		"max-h": {
@@ -2627,7 +2638,7 @@ return {
 			"depends": [
 				"fit=crop"
 			],
-			"url": "https://docs.imgix.com/apis/url/size/max-height",
+			"url": "https://docs.imgix.com/apis/rendering/size/maximum-height",
 			"short_description": "Specifies the maximum height of the output image in pixels."
 		},
 		"max-w": {
@@ -2651,7 +2662,7 @@ return {
 			"depends": [
 				"fit=crop"
 			],
-			"url": "https://docs.imgix.com/apis/url/size/max-width",
+			"url": "https://docs.imgix.com/apis/rendering/size/maximum-width",
 			"short_description": "Specifies the maximum width of the output image in pixels."
 		},
 		"min-h": {
@@ -2675,7 +2686,7 @@ return {
 			"depends": [
 				"fit=crop"
 			],
-			"url": "https://docs.imgix.com/apis/url/size/min-height",
+			"url": "https://docs.imgix.com/apis/rendering/size/minimum-height",
 			"short_description": "Specifies the minimum height of the output image in pixels."
 		},
 		"min-w": {
@@ -2699,7 +2710,7 @@ return {
 			"depends": [
 				"fit=crop"
 			],
-			"url": "https://docs.imgix.com/apis/url/size/min-width",
+			"url": "https://docs.imgix.com/apis/rendering/size/minimum-width",
 			"short_description": "Specifies the minimum width of the output image in pixels."
 		},
 		"monochrome": {
@@ -2720,7 +2731,7 @@ return {
 			"aliases": [
 				"mono"
 			],
-			"url": "https://docs.imgix.com/apis/url/stylize/monochrome",
+			"url": "https://docs.imgix.com/apis/rendering/stylize/monochrome",
 			"short_description": "Applies a monochrome effect to the source image."
 		},
 		"nr": {
@@ -2740,7 +2751,7 @@ return {
 				}
 			],
 			"default": 20,
-			"url": "https://docs.imgix.com/apis/url/noise-reduction/nr",
+			"url": "https://docs.imgix.com/apis/rendering/noise-reduction/noise-reduction-bound",
 			"short_description": "Reduces the noise in an image."
 		},
 		"nrs": {
@@ -2760,7 +2771,7 @@ return {
 				}
 			],
 			"default": 20,
-			"url": "https://docs.imgix.com/apis/url/noise-reduction/nrs",
+			"url": "https://docs.imgix.com/apis/rendering/noise-reduction/noise-reduction-sharpen",
 			"short_description": "Provides a threshold by which to sharpen an image."
 		},
 		"orient": {
@@ -2792,7 +2803,7 @@ return {
 			"aliases": [
 				"or"
 			],
-			"url": "https://docs.imgix.com/apis/url/rotation/orient",
+			"url": "https://docs.imgix.com/apis/rendering/rotation/orientation",
 			"short_description": "Changes the image orientation."
 		},
 		"pad-bottom": {
@@ -2810,7 +2821,7 @@ return {
 					"default": 0
 				}
 			],
-			"url": "https://docs.imgix.com/apis/url/border-and-padding/pad-bottom",
+			"url": "https://docs.imgix.com/apis/rendering/border-and-padding/padding-bottom",
 			"short_description": "Sets bottom padding of an image."
 		},
 		"pad-left": {
@@ -2828,7 +2839,7 @@ return {
 					"default": 0
 				}
 			],
-			"url": "https://docs.imgix.com/apis/url/border-and-padding/pad-left",
+			"url": "https://docs.imgix.com/apis/rendering/border-and-padding/padding-left",
 			"short_description": "Sets left padding of an image."
 		},
 		"pad-right": {
@@ -2846,7 +2857,7 @@ return {
 					"default": 0
 				}
 			],
-			"url": "https://docs.imgix.com/apis/url/border-and-padding/pad-right",
+			"url": "https://docs.imgix.com/apis/rendering/border-and-padding/padding-right",
 			"short_description": "Sets right padding of an image."
 		},
 		"pad-top": {
@@ -2864,7 +2875,7 @@ return {
 					"default": 0
 				}
 			],
-			"url": "https://docs.imgix.com/apis/url/border-and-padding/pad-top",
+			"url": "https://docs.imgix.com/apis/rendering/border-and-padding/padding-top",
 			"short_description": "Sets top padding of an image."
 		},
 		"pad": {
@@ -2882,7 +2893,7 @@ return {
 				}
 			],
 			"default": 0,
-			"url": "https://docs.imgix.com/apis/url/border-and-padding/pad",
+			"url": "https://docs.imgix.com/apis/rendering/border-and-padding/padding",
 			"short_description": "Pads an image."
 		},
 		"page": {
@@ -2901,7 +2912,7 @@ return {
 				}
 			],
 			"default": 1,
-			"url": "https://docs.imgix.com/apis/url/pdf/page",
+			"url": "https://docs.imgix.com/apis/rendering/pdf/pdf-page-number",
 			"short_description": "Selects a page from a PDF for display."
 		},
 		"palette": {
@@ -2920,7 +2931,7 @@ return {
 					]
 				}
 			],
-			"url": "https://docs.imgix.com/apis/url/color-palette/palette",
+			"url": "https://docs.imgix.com/apis/rendering/color-palette/color-palette-extraction",
 			"short_description": "Specifies an output format for palette-extraction."
 		},
 		"pdf-annotation": {
@@ -2939,7 +2950,7 @@ return {
 			"aliases": [
 				"annotation"
 			],
-			"url": "https://docs.imgix.com/apis/url/pdf/pdf-annotation",
+			"url": "https://docs.imgix.com/apis/rendering/pdf/pdf-annotation",
 			"short_description": "Enables or disables PDF annotation."
 		},
 		"prefix": {
@@ -2958,7 +2969,7 @@ return {
 			"depends": [
 				"palette=css"
 			],
-			"url": "https://docs.imgix.com/apis/url/color-palette/prefix",
+			"url": "https://docs.imgix.com/apis/rendering/color-palette/css-prefix",
 			"short_description": "Specifies a CSS prefix for all classes in palette-extraction."
 		},
 		"px": {
@@ -2978,7 +2989,7 @@ return {
 				}
 			],
 			"default": 0,
-			"url": "https://docs.imgix.com/apis/url/stylize/px",
+			"url": "https://docs.imgix.com/apis/rendering/stylize/pixellate",
 			"short_description": "Applies a pixelation effect to an image."
 		},
 		"q": {
@@ -3005,7 +3016,7 @@ return {
 				"fm=webp",
 				"fm=jxr"
 			],
-			"url": "https://docs.imgix.com/apis/url/format/q",
+			"url": "https://docs.imgix.com/apis/rendering/format/output-quality",
 			"short_description": "Adjusts the quality of an output image."
 		},
 		"rect": {
@@ -3083,7 +3094,7 @@ return {
 					"length": 4
 				}
 			],
-			"url": "https://docs.imgix.com/apis/url/size/rect",
+			"url": "https://docs.imgix.com/apis/rendering/size/source-rectangle-region",
 			"short_description": "Crops an image to a specified rectangle."
 		},
 		"reverse": {
@@ -3100,6 +3111,7 @@ return {
 				}
 			],
 			"default": false,
+			"url": "https://docs.imgix.com/apis/rendering/animation/reverse",
 			"short_description": "Reverses the frame order on the source animation."
 		},
 		"rot": {
@@ -3119,7 +3131,7 @@ return {
 				}
 			],
 			"default": 0,
-			"url": "https://docs.imgix.com/apis/url/rotation/rot",
+			"url": "https://docs.imgix.com/apis/rendering/rotation/rotation",
 			"short_description": "Rotates an image by a specified number of degrees."
 		},
 		"sat": {
@@ -3139,7 +3151,7 @@ return {
 				}
 			],
 			"default": 0,
-			"url": "https://docs.imgix.com/apis/url/adjustment/sat",
+			"url": "https://docs.imgix.com/apis/rendering/adjustment/saturation",
 			"short_description": "Adjusts the saturation of an image."
 		},
 		"sepia": {
@@ -3159,7 +3171,7 @@ return {
 				}
 			],
 			"default": 0,
-			"url": "https://docs.imgix.com/apis/url/stylize/sepia",
+			"url": "https://docs.imgix.com/apis/rendering/stylize/sepia-tone",
 			"short_description": "Applies a sepia effect to an image."
 		},
 		"shad": {
@@ -3179,7 +3191,7 @@ return {
 				}
 			],
 			"default": 0,
-			"url": "https://docs.imgix.com/apis/url/adjustment/shad",
+			"url": "https://docs.imgix.com/apis/rendering/adjustment/shadow",
 			"short_description": "Adjusts the highlights of the source image."
 		},
 		"sharp": {
@@ -3199,7 +3211,7 @@ return {
 				}
 			],
 			"default": 0,
-			"url": "https://docs.imgix.com/apis/url/adjustment/sharp",
+			"url": "https://docs.imgix.com/apis/rendering/adjustment/sharpen",
 			"short_description": "Adjusts the sharpness of the source image."
 		},
 		"skip": {
@@ -3216,6 +3228,7 @@ return {
 					}
 				}
 			],
+			"url": "https://docs.imgix.com/apis/rendering/animation/frame-skip",
 			"short_description": "Skips every Nth frame starting with the first frame."
 		},
 		"svg-sanitize": {
@@ -3230,6 +3243,7 @@ return {
 				}
 			],
 			"default": true,
+			"url": "https://docs.imgix.com/apis/rendering/format/sanitize-svg",
 			"short_description": "Specifies whether to sanitize an SVG."
 		},
 		"transparency": {
@@ -3246,7 +3260,7 @@ return {
 					]
 				}
 			],
-			"url": "https://docs.imgix.com/apis/url/fill/transparency",
+			"url": "https://docs.imgix.com/apis/rendering/fill/transparency",
 			"short_description": "Adds checkerboard behind images which support transparency."
 		},
 		"trim-color": {
@@ -3270,7 +3284,7 @@ return {
 			"depends": [
 				"trim=color"
 			],
-			"url": "https://docs.imgix.com/apis/url/trim/trim-color",
+			"url": "https://docs.imgix.com/apis/rendering/trim/trim-color",
 			"short_description": "Specifies a trim color on a trim operation."
 		},
 		"trim-md": {
@@ -3295,7 +3309,7 @@ return {
 			"depends": [
 				"trim=auto"
 			],
-			"url": "https://docs.imgix.com/apis/url/trim/trim-md",
+			"url": "https://docs.imgix.com/apis/rendering/trim/trim-mean-difference",
 			"short_description": "Specifies the mean difference on a trim operation."
 		},
 		"trim-pad": {
@@ -3319,7 +3333,7 @@ return {
 			"depends": [
 				"trim"
 			],
-			"url": "https://docs.imgix.com/apis/url/trim/trim-pad",
+			"url": "https://docs.imgix.com/apis/rendering/trim/trim-padding",
 			"short_description": "Pads the area of the source image before trimming."
 		},
 		"trim-sd": {
@@ -3344,7 +3358,7 @@ return {
 			"depends": [
 				"trim=auto"
 			],
-			"url": "https://docs.imgix.com/apis/url/trim/trim-sd",
+			"url": "https://docs.imgix.com/apis/rendering/trim/trim-standard-deviation",
 			"short_description": "Specifies the standard deviation on a trim operation."
 		},
 		"trim-tol": {
@@ -3369,7 +3383,7 @@ return {
 			"depends": [
 				"trim=color"
 			],
-			"url": "https://docs.imgix.com/apis/url/trim/trim-tol",
+			"url": "https://docs.imgix.com/apis/rendering/trim/trim-tolerance",
 			"short_description": "Specifies the tolerance on a trim operation."
 		},
 		"trim": {
@@ -3388,7 +3402,7 @@ return {
 					]
 				}
 			],
-			"url": "https://docs.imgix.com/apis/url/trim/trim",
+			"url": "https://docs.imgix.com/apis/rendering/trim/trim-image",
 			"short_description": "Trims the source image."
 		},
 		"txt-align": {
@@ -3417,7 +3431,7 @@ return {
 			"depends": [
 				"txt"
 			],
-			"url": "https://docs.imgix.com/apis/url/text/txt-align",
+			"url": "https://docs.imgix.com/apis/rendering/text/text-align",
 			"short_description": "Sets the vertical and horizontal alignment of rendered text relative to the base image."
 		},
 		"txt-clip": {
@@ -3445,7 +3459,7 @@ return {
 			"depends": [
 				"txt"
 			],
-			"url": "https://docs.imgix.com/apis/url/text/txt-clip",
+			"url": "https://docs.imgix.com/apis/rendering/text/text-clipping-mode",
 			"short_description": "Sets the clipping properties of rendered text."
 		},
 		"txt-color": {
@@ -3471,7 +3485,7 @@ return {
 			"depends": [
 				"txt"
 			],
-			"url": "https://docs.imgix.com/apis/url/text/txt-color",
+			"url": "https://docs.imgix.com/apis/rendering/text/text-color",
 			"short_description": "Specifies the color of rendered text."
 		},
 		"txt-fit": {
@@ -3494,7 +3508,7 @@ return {
 			"depends": [
 				"txt"
 			],
-			"url": "https://docs.imgix.com/apis/url/text/txt-fit",
+			"url": "https://docs.imgix.com/apis/rendering/text/text-fit-mode",
 			"short_description": "Specifies the fit approach for rendered text."
 		},
 		"txt-font": {
@@ -3515,7 +3529,7 @@ return {
 			"depends": [
 				"txt"
 			],
-			"url": "https://docs.imgix.com/apis/url/text/txt-font",
+			"url": "https://docs.imgix.com/apis/rendering/text/text-font",
 			"short_description": "Selects a font for rendered text."
 		},
 		"txt-lead": {
@@ -3539,7 +3553,7 @@ return {
 			"depends": [
 				"txt"
 			],
-			"url": "https://docs.imgix.com/apis/url/typesetting/txt-lead",
+			"url": "https://docs.imgix.com/apis/rendering/typesetting-endpoint/text-leading",
 			"short_description": "Sets the leading (line spacing) for rendered text. Only works on the multi-line text endpoint."
 		},
 		"txt-line-color": {
@@ -3566,7 +3580,7 @@ return {
 				"txt",
 				"txtline"
 			],
-			"url": "https://docs.imgix.com/apis/url/text/txt-line-color",
+			"url": "https://docs.imgix.com/apis/rendering/text/text-outline-color",
 			"short_description": "Specifies a text outline color."
 		},
 		"txt-line": {
@@ -3591,7 +3605,7 @@ return {
 			"depends": [
 				"txt"
 			],
-			"url": "https://docs.imgix.com/apis/url/text/txt-line",
+			"url": "https://docs.imgix.com/apis/rendering/text/text-outline",
 			"short_description": "Outlines the rendered text with a specified color."
 		},
 		"txt-pad": {
@@ -3616,7 +3630,7 @@ return {
 			"depends": [
 				"txt"
 			],
-			"url": "https://docs.imgix.com/apis/url/text/txt-pad",
+			"url": "https://docs.imgix.com/apis/rendering/text/text-padding",
 			"short_description": "Specifies the padding (in device-independent pixels) between a textbox and the edges of the base image."
 		},
 		"txt-shad": {
@@ -3642,7 +3656,7 @@ return {
 			"depends": [
 				"txt"
 			],
-			"url": "https://docs.imgix.com/apis/url/text/txt-shad",
+			"url": "https://docs.imgix.com/apis/rendering/text/text-shadow",
 			"short_description": "Applies a shadow to rendered text."
 		},
 		"txt-size": {
@@ -3667,7 +3681,7 @@ return {
 			"depends": [
 				"txt"
 			],
-			"url": "https://docs.imgix.com/apis/url/text/txt-size",
+			"url": "https://docs.imgix.com/apis/rendering/text/text-font-size",
 			"short_description": "Sets the font size of rendered text."
 		},
 		"txt-track": {
@@ -3692,7 +3706,7 @@ return {
 			"depends": [
 				"txt"
 			],
-			"url": "https://docs.imgix.com/apis/url/typesetting/txt-track",
+			"url": "https://docs.imgix.com/apis/rendering/typesetting-endpoint/text-tracking",
 			"short_description": "Sets the tracking (letter spacing) for rendered text. Only works on the multi-line text endpoint."
 		},
 		"txt-width": {
@@ -3715,7 +3729,7 @@ return {
 			"depends": [
 				"txt"
 			],
-			"url": "https://docs.imgix.com/apis/url/text/txt-width",
+			"url": "https://docs.imgix.com/apis/rendering/text/text-width",
 			"short_description": "Sets the width of rendered text."
 		},
 		"txt-x": {
@@ -3736,7 +3750,7 @@ return {
 			"depends": [
 				"txt"
 			],
-			"url": "https://docs.imgix.com/apis/url/text/txt-x",
+			"url": "https://docs.imgix.com/apis/rendering/text/text-x-position",
 			"short_description": "Sets the horizontal (x) position of the text in pixels relative to the left edge of the base image."
 		},
 		"txt-y": {
@@ -3757,7 +3771,7 @@ return {
 			"depends": [
 				"txt"
 			],
-			"url": "https://docs.imgix.com/apis/url/text/txt-y",
+			"url": "https://docs.imgix.com/apis/rendering/text/text-y-position",
 			"short_description": "Sets the vertical (y) position of the text in pixels relative to the top edge of the base image."
 		},
 		"txt": {
@@ -3774,7 +3788,7 @@ return {
 			"aliases": [
 				"t"
 			],
-			"url": "https://docs.imgix.com/apis/url/text/txt",
+			"url": "https://docs.imgix.com/apis/rendering/text/text-string",
 			"short_description": "Sets the text string to render."
 		},
 		"upscale-fallback": {
@@ -3791,7 +3805,7 @@ return {
 				}
 			],
 			"default": true,
-			"url": "https://docs.imgix.com/apis/rendering/super-resolution/upscale-fallback",
+			"url": "https://docs.imgix.com/apis/rendering/super-resolution",
 			"short_description": "Overrides default fallback behavior for super resolution failures"
 		},
 		"upscale": {
@@ -3808,7 +3822,7 @@ return {
 				}
 			],
 			"default": false,
-			"url": "https://docs.imgix.com/apis/rendering/super-resolution/upscale",
+			"url": "https://docs.imgix.com/apis/rendering/super-resolution",
 			"short_description": "Uses generative AI fill to upscale low resolution images."
 		},
 		"usm": {
@@ -3828,7 +3842,7 @@ return {
 				}
 			],
 			"default": 0,
-			"url": "https://docs.imgix.com/apis/url/adjustment/usm",
+			"url": "https://docs.imgix.com/apis/rendering/adjustment/unsharp-mask",
 			"short_description": "Sharpens the source image using an unsharp mask."
 		},
 		"usmrad": {
@@ -3850,7 +3864,7 @@ return {
 			"depends": [
 				"usm"
 			],
-			"url": "https://docs.imgix.com/apis/url/adjustment/usmrad",
+			"url": "https://docs.imgix.com/apis/rendering/adjustment/unsharp-mask-radius",
 			"short_description": "Specifies the radius for an unsharp mask operation."
 		},
 		"vib": {
@@ -3870,7 +3884,7 @@ return {
 				}
 			],
 			"default": 0,
-			"url": "https://docs.imgix.com/apis/url/adjustment/vib",
+			"url": "https://docs.imgix.com/apis/rendering/adjustment/vibrance",
 			"short_description": "Adjusts the vibrance of an image."
 		},
 		"w": {
@@ -3899,7 +3913,7 @@ return {
 			"aliases": [
 				"width"
 			],
-			"url": "https://docs.imgix.com/apis/url/size/w",
+			"url": "https://docs.imgix.com/apis/rendering/size/image-width",
 			"short_description": "Adjusts the width of the output image."
 		}
 	},
