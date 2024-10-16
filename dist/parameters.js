@@ -15,7 +15,7 @@
 }(this, function () {
 
 return {
-	"version": "11.24.1",
+	"version": "11.25.0",
 	"parameters": {
 		"ar": {
 			"display_name": "aspect ratio",
@@ -2774,6 +2774,54 @@ return {
 			"url": "https://docs.imgix.com/apis/rendering/noise-reduction/noise-reduction-sharpen",
 			"short_description": "Provides a threshold by which to sharpen an image."
 		},
+		"object-removal-rect": {
+			"display_name": "object removal",
+			"category": "size",
+			"available_in": [
+				"url",
+				"graph"
+			],
+			"expects": [
+				{
+					"0": [
+						{
+							"type": "integer",
+							"strict_range": {
+								"min": 0
+							}
+						}
+					],
+					"1": [
+						{
+							"type": "integer",
+							"strict_range": {
+								"min": 0
+							}
+						}
+					],
+					"2": [
+						{
+							"type": "integer",
+							"strict_range": {
+								"min": 1
+							}
+						}
+					],
+					"3": [
+						{
+							"type": "integer",
+							"strict_range": {
+								"min": 1
+							}
+						}
+					],
+					"type": "list",
+					"length": 4
+				}
+			],
+			"url": "https://docs.imgix.com/apis/rendering/object-removal",
+			"short_description": "Using a specified rectangle, an object is removed from the image"
+		},
 		"orient": {
 			"display_name": "orientation",
 			"category": "rotation",
@@ -3011,6 +3059,7 @@ return {
 			],
 			"default": 75,
 			"depends": [
+				"fm=avif",
 				"fm=jpg",
 				"fm=pjpg",
 				"fm=webp",
