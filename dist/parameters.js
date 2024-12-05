@@ -15,7 +15,7 @@
 }(this, function () {
 
 return {
-	"version": "11.25.0",
+	"version": "11.27.0",
 	"parameters": {
 		"ar": {
 			"display_name": "aspect ratio",
@@ -61,7 +61,7 @@ return {
 		},
 		"bg-remove-fallback": {
 			"display_name": "background removal fallback",
-			"category": "background removal",
+			"category": "background",
 			"available_in": [
 				"url",
 				"graph",
@@ -75,6 +75,26 @@ return {
 			"default": true,
 			"url": "https://docs.imgix.com/apis/rendering/background/background-removal-fallback",
 			"short_description": "Overrides default fallback behavior for bg-remove failures."
+		},
+		"bg-remove-semi-transparency": {
+			"display_name": "background removal semi transparency",
+			"category": "background",
+			"available_in": [
+				"url",
+				"graph",
+				"output"
+			],
+			"expects": [
+				{
+					"type": "boolean"
+				}
+			],
+			"aliases": [
+				"background-removal-semi-transparency"
+			],
+			"default": true,
+			"url": "https://docs.imgix.com/apis/rendering/background/background-removal-semi-transparency",
+			"short_description": "Enables background removal while retaining semi-transparent areas."
 		},
 		"bg-remove": {
 			"display_name": "background removal",
@@ -97,8 +117,8 @@ return {
 			"short_description": "Removes background from image."
 		},
 		"bg-replace-fallback": {
-			"display_name": "background removal fallback",
-			"category": "background removal",
+			"display_name": "background replace fallback",
+			"category": "background",
 			"available_in": [
 				"url",
 				"graph",
@@ -110,7 +130,7 @@ return {
 				}
 			],
 			"default": true,
-			"url": "https://docs.imgix.com/apis/rendering/background/background-removal-fallback",
+			"url": "https://docs.imgix.com/apis/rendering/background/background-replace-fallback",
 			"short_description": "Overrides default fallback behavior for bg-replace failures."
 		},
 		"bg-replace-neg-prompt": {
@@ -2373,6 +2393,46 @@ return {
 			"url": "https://docs.imgix.com/apis/rendering/watermark/watermark-height",
 			"short_description": "Adjusts the height of the watermark image."
 		},
+		"mark-if-min-height": {
+			"display_name": "watermark if minimum height",
+			"category": "watermark",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "integer",
+					"strict_range": {
+						"min": 0
+					}
+				}
+			],
+			"depends": [
+				"mark"
+			],
+			"url": "https://docs.imgix.com/apis/rendering/watermark/watermark-if-minimum-height",
+			"short_description": "Displays the watermark if rendered base image pixel height is equal to or larger than the supplied value"
+		},
+		"mark-if-min-width": {
+			"display_name": "watermark if minimum width",
+			"category": "watermark",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "integer",
+					"strict_range": {
+						"min": 0
+					}
+				}
+			],
+			"depends": [
+				"mark"
+			],
+			"url": "https://docs.imgix.com/apis/rendering/watermark/watermark-if-minimum-width",
+			"short_description": "Displays the watermark if rendered base image pixel width is equal to or larger than the supplied value"
+		},
 		"mark-pad": {
 			"display_name": "watermark padding",
 			"category": "watermark",
@@ -3163,6 +3223,30 @@ return {
 			"url": "https://docs.imgix.com/apis/rendering/animation/reverse",
 			"short_description": "Reverses the frame order on the source animation."
 		},
+		"rot-type": {
+			"display_name": "rotation type",
+			"category": "rotation",
+			"available_in": [
+				"url",
+				"graph"
+			],
+			"expects": [
+				{
+					"type": "string",
+					"possible_values": [
+						"pivot",
+						"straighten"
+					]
+				}
+			],
+			"aliases": [
+				"rottype",
+				"rott"
+			],
+			"default": "straighten",
+			"short_description": "Changes the rotation type.",
+			"url": "https://docs.imgix.com/apis/rendering/rotation/rotation-type"
+		},
 		"rot": {
 			"display_name": "rotation",
 			"category": "rotation",
@@ -3371,7 +3455,8 @@ return {
 				{
 					"type": "integer",
 					"suggested_range": {
-						"min": 0
+						"min": -200,
+						"max": 200
 					}
 				}
 			],
@@ -3967,6 +4052,7 @@ return {
 		}
 	},
 	"aliases": {
+		"background-removal-semi-transparency": "bg-remove-semi-transparency",
 		"background-remove": "bg-remove",
 		"background-replace-negative-prompt": "bg-replace-neg-prompt",
 		"background-replace": "bg-replace",
@@ -4039,6 +4125,8 @@ return {
 		"mono": "monochrome",
 		"or": "orient",
 		"annotation": "pdf-annotation",
+		"rottype": "rot-type",
+		"rott": "rot-type",
 		"trimcolor": "trim-color",
 		"trimmd": "trim-md",
 		"trimpad": "trim-pad",
@@ -4079,6 +4167,7 @@ return {
 		"adjustment",
 		"animation",
 		"auto",
+		"background",
 		"blending",
 		"border-and-padding",
 		"color-palette",
