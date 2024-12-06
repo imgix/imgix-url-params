@@ -15,7 +15,7 @@
 }(this, function () {
 
 return {
-	"version": "11.27.0",
+	"version": "11.27.1",
 	"parameters": {
 		"ar": {
 			"display_name": "aspect ratio",
