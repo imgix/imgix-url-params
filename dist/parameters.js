@@ -15,7 +15,7 @@
 }(this, function () {
 
 return {
-	"version": "11.27.1",
+	"version": "11.29.0",
 	"parameters": {
 		"ar": {
 			"display_name": "aspect ratio",
@@ -3128,6 +3128,20 @@ return {
 			"url": "https://docs.imgix.com/apis/rendering/format/output-quality",
 			"short_description": "Adjusts the quality of an output image."
 		},
+		"rasterize-bypass": {
+			"display_name": "rasterize bypass",
+			"category": "misc",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "boolean"
+				}
+			],
+			"default": false,
+			"short_description": "Bypasses all rendering parameters (including default parameters) and serves the original image. Works for svg+xml,x-eps,pdf, and vnd.adobe.illustrator."
+		},
 		"rect": {
 			"display_name": "source rectangle region",
 			"category": "size",
@@ -3396,6 +3410,28 @@ return {
 			"url": "https://docs.imgix.com/apis/rendering/fill/transparency",
 			"short_description": "Adds checkerboard behind images which support transparency."
 		},
+		"trim-alpha": {
+			"display_name": "trim alpha",
+			"category": "trim",
+			"available_in": [
+				"url",
+				"graph"
+			],
+			"expects": [
+				{
+					"type": "number",
+					"suggested_range": {
+						"min": 0,
+						"max": 255
+					}
+				}
+			],
+			"depends": [
+				"trim=alpha"
+			],
+			"url": "https://docs.imgix.com/apis/rendering/trim/trim-alpha",
+			"short_description": "Specifies a trim alpha on a trim operation."
+		},
 		"trim-color": {
 			"display_name": "trim color",
 			"category": "trim",
@@ -3532,7 +3568,8 @@ return {
 					"type": "string",
 					"possible_values": [
 						"auto",
-						"color"
+						"color",
+						"alpha"
 					]
 				}
 			],
