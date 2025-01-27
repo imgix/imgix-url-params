@@ -15,7 +15,7 @@
 }(this, function () {
 
 return {
-	"version": "11.28.0",
+	"version": "11.30.0",
 	"parameters": {
 		"ar": {
 			"display_name": "aspect ratio",
@@ -75,6 +75,29 @@ return {
 			"default": true,
 			"url": "https://docs.imgix.com/apis/rendering/background/background-removal-fallback",
 			"short_description": "Overrides default fallback behavior for bg-remove failures."
+		},
+		"bg-remove-fg-type": {
+			"display_name": "background removal foreground type",
+			"category": "background",
+			"available_in": [
+				"url",
+				"graph"
+			],
+			"expects": [
+				{
+					"type": "list",
+					"possible_values": [
+						"auto",
+						"car"
+					]
+				}
+			],
+			"depends": [
+				"bg-remove=true"
+			],
+			"default": "auto",
+			"url": "https://docs.imgix.com/apis/rendering/background/background-removal-foreground-type",
+			"short_description": "Specifies the image foreground type for background removal."
 		},
 		"bg-remove-semi-transparency": {
 			"display_name": "background removal semi transparency",
@@ -3127,6 +3150,20 @@ return {
 			],
 			"url": "https://docs.imgix.com/apis/rendering/format/output-quality",
 			"short_description": "Adjusts the quality of an output image."
+		},
+		"rasterize-bypass": {
+			"display_name": "rasterize bypass",
+			"category": "misc",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "boolean"
+				}
+			],
+			"default": false,
+			"short_description": "Bypasses all rendering parameters (including default parameters) and serves the original image. Works for svg+xml,x-eps,pdf, and vnd.adobe.illustrator."
 		},
 		"rect": {
 			"display_name": "source rectangle region",
