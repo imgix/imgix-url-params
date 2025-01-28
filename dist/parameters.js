@@ -15,7 +15,7 @@
 }(this, function () {
 
 return {
-	"version": "11.30.0",
+	"version": "11.31.0",
 	"parameters": {
 		"ar": {
 			"display_name": "aspect ratio",
@@ -2233,6 +2233,27 @@ return {
 			"url": "https://docs.imgix.com/apis/rendering/format/jpg-progressive",
 			"short_description": "Specifies whether or not a jpg/jpeg uses progressive (true) or baseline (false)"
 		},
+		"license-plate-blur": {
+			"display_name": "license plate blur",
+			"category": "license-plate-detection",
+			"available_in": [
+				"url",
+				"graph",
+				"output"
+			],
+			"expects": [
+				{
+					"type": "integer",
+					"strict_range": {
+						"min": 0,
+						"max": 100
+					}
+				}
+			],
+			"default": 0,
+			"url": "https://docs.imgix.com/apis/rendering/license-plate-detection/license-plate-blur",
+			"short_description": "Specifies the amount of blur to apply to detected license plates. Defaults to 0."
+		},
 		"loop": {
 			"display_name": "animation loop count",
 			"category": "animation",
@@ -2857,9 +2878,43 @@ return {
 			"url": "https://docs.imgix.com/apis/rendering/noise-reduction/noise-reduction-sharpen",
 			"short_description": "Provides a threshold by which to sharpen an image."
 		},
+		"object-removal-negative-prompt": {
+			"display_name": "object removal negative prompt",
+			"category": "object-manipulation",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "string"
+				}
+			],
+			"depends": [
+				"object-removal-rect"
+			],
+			"url": "https://docs.imgix.com/apis/rendering/object-manipulation/object-removal-negative-prompt",
+			"short_description": "Provides a negative text suggestion to object-removal-prompt. Used to reduce the probability of a subject, detail, or object appearing in generative output."
+		},
+		"object-removal-prompt": {
+			"display_name": "object removal prompt",
+			"category": "object-manipulation",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "string"
+				}
+			],
+			"depends": [
+				"object-removal-rect"
+			],
+			"url": "https://docs.imgix.com/apis/rendering/object-manipulation/object-removal-prompt",
+			"short_description": "Suggest auto generative fill for the object-removal-rect parameter"
+		},
 		"object-removal-rect": {
 			"display_name": "object removal",
-			"category": "size",
+			"category": "object-manipulation",
 			"available_in": [
 				"url",
 				"graph"
@@ -2902,8 +2957,26 @@ return {
 					"length": 4
 				}
 			],
-			"url": "https://docs.imgix.com/apis/rendering/object-removal",
+			"url": "https://docs.imgix.com/apis/rendering/object-manipulation/object-removal",
 			"short_description": "Using a specified rectangle, an object is removed from the image"
+		},
+		"object-removal-seed": {
+			"display_name": "object removal seed",
+			"category": "object-manipulation",
+			"available_in": [
+				"url"
+			],
+			"expects": [
+				{
+					"type": "integer"
+				}
+			],
+			"depends": [
+				"object-removal-rect",
+				"object-removal-prompt"
+			],
+			"url": "https://docs.imgix.com/apis/rendering/object-manipulation/object-removal-seed",
+			"short_description": "Sets the generative seed value for object-removal. Used to generate new outputs from the same prompt"
 		},
 		"orient": {
 			"display_name": "orientation",
@@ -4239,6 +4312,7 @@ return {
 		"mask",
 		"misc",
 		"noise-reduction",
+		"object-manipulation",
 		"pdf",
 		"pixel-density",
 		"rotation",
