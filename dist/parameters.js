@@ -15,7 +15,7 @@
 }(this, function () {
 
 return {
-	"version": "11.31.0",
+	"version": "11.31.1",
 	"parameters": {
 		"ar": {
 			"display_name": "aspect ratio",
@@ -2233,7 +2233,7 @@ return {
 			"url": "https://docs.imgix.com/apis/rendering/format/jpg-progressive",
 			"short_description": "Specifies whether or not a jpg/jpeg uses progressive (true) or baseline (false)"
 		},
-		"license-plate-blur": {
+		"lp-blur": {
 			"display_name": "license plate blur",
 			"category": "license-plate-detection",
 			"available_in": [
@@ -2249,6 +2249,9 @@ return {
 						"max": 100
 					}
 				}
+			],
+			"aliases": [
+				"license-plate-blur"
 			],
 			"default": 0,
 			"url": "https://docs.imgix.com/apis/rendering/license-plate-detection/license-plate-blur",
@@ -4227,6 +4230,7 @@ return {
 		"height": "h",
 		"inv": "invert",
 		"jpeg-progressive": "jpg-progressive",
+		"license-plate-blur": "lp-blur",
 		"ma": "mark-align",
 		"markalign": "mark-align",
 		"markalpha": "mark-alpha",
