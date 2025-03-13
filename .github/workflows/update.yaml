@@ -1,0 +1,40 @@
+name: Update Imgix URL Params
+
+on:
+  workflow_dispatch:
+
+jobs:
+  update-files:
+    name: Update Parameters and Create PR
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Clone image-api-spec
+        run: git clone https://github.com/zebrafishlabs/image-api-spec.git ../image-api-spec
+      - name: Copy updated parameter files
+        run: |
+          cp ../image-api-spec/.public/parameters.js dist/parameters.js
+          cp ../image-api-spec/.public/parameters.json dist/parameters.json
+      - name: Get new version
+        id: version
+        run: echo "VERSION=$(node -p 'require("../image-api-spec/package.json").version')" >> $GITHUB_ENV
+      - name: Update package.json and bower.json
+        run: |
+          jq '.version="${{ env.VERSION }}"' package.json > package.tmp && mv package.tmp package.json
+          jq '.version="${{ env.VERSION }}"' bower.json > bower.tmp && mv bower.tmp bower.json
+      - name: Create Branch
+        run: |
+          BRANCH_NAME="update-${{ env.VERSION }}"
+          git checkout -b $BRANCH_NAME
+          git add .
+          git commit -m "Update parameters and version to ${{ env.VERSION }}"
+          git push origin $BRANCH_NAME
+          echo "BRANCH_NAME=$BRANCH_NAME" >> $GITHUB_ENV
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ env.BRANCH_NAME }}
+          title: "Update parameters and version to ${{ env.VERSION }}"
+          body: "This PR updates parameters.js, parameters.json, package.json, and bower.json to version ${{ env.VERSION }}."
+          base: main
