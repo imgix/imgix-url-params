@@ -15,7 +15,7 @@
 }(this, function () {
 
 return {
-	"version": "11.31.1",
+	"version": "11.33.0",
 	"parameters": {
 		"ar": {
 			"display_name": "aspect ratio",
@@ -3668,7 +3668,8 @@ return {
 					"possible_values": [
 						"auto",
 						"color",
-						"alpha"
+						"alpha",
+						"colorunlessalpha"
 					]
 				}
 			],
@@ -4156,6 +4157,145 @@ return {
 			"default": 0,
 			"url": "https://docs.imgix.com/apis/rendering/adjustment/vibrance",
 			"short_description": "Adjusts the vibrance of an image."
+		},
+		"video-bitrate": {
+			"display_name": "video bitrate",
+			"category": "video-rendering",
+			"available_in": [
+				"url",
+				"graph",
+				"output"
+			],
+			"expects": [
+				{
+					"type": "string",
+					"possible_values": [
+						"1m",
+						"2m",
+						"3m",
+						"4m",
+						"5m"
+					]
+				}
+			],
+			"url": "https://docs.imgix.com/apis/rendering/video-rendering/video-bitrate",
+			"short_description": "Specifies the bitrate for a video to use."
+		},
+		"video-clip-start": {
+			"display_name": "video clip",
+			"category": "video rendering",
+			"available_in": [
+				"url",
+				"graph"
+			],
+			"expects": [
+				{
+					"type": "integer",
+					"suggested_range": {
+						"min": 1
+					}
+				},
+				{
+					"type": "interval",
+					"lower_bound": {
+						"type": "integer",
+						"suggested_range": {
+							"min": 1
+						},
+						"required": false
+					},
+					"upper_bound": {
+						"type": "integer",
+						"suggested_range": {
+							"min": 1
+						},
+						"required": false
+					}
+				}
+			],
+			"url": "https://docs.imgix.com/apis/rendering/video-rendering/video-clip",
+			"short_description": "Specifies the start time for a video clip."
+		},
+		"video-clip-end": {
+			"display_name": "video clip",
+			"category": "video rendering",
+			"available_in": [
+				"url",
+				"graph"
+			],
+			"expects": [
+				{
+					"type": "integer",
+					"suggested_range": {
+						"min": 1
+					}
+				},
+				{
+					"type": "interval",
+					"lower_bound": {
+						"type": "integer",
+						"suggested_range": {
+							"min": 1
+						},
+						"required": false
+					},
+					"upper_bound": {
+						"type": "integer",
+						"suggested_range": {
+							"min": 1
+						},
+						"required": false
+					}
+				}
+			],
+			"url": "https://docs.imgix.com/apis/rendering/video-rendering/video-clip",
+			"short_description": "Specifies the end time for a video clip."
+		},
+		"video-codec": {
+			"display_name": "video codec",
+			"category": "video-rendering",
+			"available_in": [
+				"url",
+				"graph",
+				"output"
+			],
+			"expects": [
+				{
+					"type": "string",
+					"possible_values": [
+						"av1",
+						"h264",
+						"h265"
+					]
+				}
+			],
+			"depends": [
+				"fm=mp4"
+			],
+			"short_description": "Specifies the video codec to use, av1, h264, or h265."
+		},
+		"video-thumbnail": {
+			"display_name": "video thumbnail",
+			"category": "video-rendering",
+			"available_in": [
+				"url",
+				"graph",
+				"output"
+			],
+			"expects": [
+				{
+					"type": "integer"
+				},
+				{
+					"type": "string",
+					"possible_values": [
+						"auto"
+					]
+				}
+			],
+			"default": "auto",
+			"url": "https://docs.imgix.com/apis/rendering/video-rendering/video-thumbnail",
+			"short_description": "Outputs a thumbnail from a video file."
 		},
 		"w": {
 			"display_name": "image width",
