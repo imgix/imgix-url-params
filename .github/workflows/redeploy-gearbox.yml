@@ -1,0 +1,18 @@
+# SUPPORT-1275: Redeploys Gearbox to apply new changes from image-url-params
+
+name: Redeploy Gearbox
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  redeploy-gearbox-vercel:
+    name: Trigger a redeploy for gearbox
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Redeploy Gearbox
+        run: |
+          curl -X POST "https://api.vercel.com/v1/integrations/deploy/${{ secrets.VERCEL_DEPLOY_HOOK_ID }}"
