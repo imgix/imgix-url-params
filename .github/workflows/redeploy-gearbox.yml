@@ -5,7 +5,7 @@ name: Redeploy Gearbox
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   redeploy-gearbox-vercel:
