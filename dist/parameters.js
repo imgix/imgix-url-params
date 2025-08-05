@@ -15,7 +15,7 @@
 }(this, function () {
 
 return {
-	"version": "11.33.0",
+	"version": "11.34.0",
 	"parameters": {
 		"ar": {
 			"display_name": "aspect ratio",
@@ -118,6 +118,29 @@ return {
 			"default": true,
 			"url": "https://docs.imgix.com/apis/rendering/background/background-removal-semi-transparency",
 			"short_description": "Enables background removal while retaining semi-transparent areas."
+		},
+		"bg-remove-transparency-threshold": {
+			"display_name": "background transparency threshold",
+			"category": "background",
+			"available_in": [
+				"url",
+				"graph",
+				"output"
+			],
+			"expects": [
+				{
+					"type": "unit_scalar",
+					"unit": "ratio",
+					"min": 0,
+					"max": 1
+				}
+			],
+			"aliases": [
+				"bg-remove-transparency-threshold"
+			],
+			"default": 0.2,
+			"url": "https://docs.imgix.com/apis/rendering/background/bg-remove-transparency-threshold",
+			"short_description": "Sets the threshold for background removal based on transparency. Transparency in an image below or equal to the threshold will skip the entire background removal process"
 		},
 		"bg-remove": {
 			"display_name": "background removal",
@@ -4329,6 +4352,7 @@ return {
 	},
 	"aliases": {
 		"background-removal-semi-transparency": "bg-remove-semi-transparency",
+		"bg-remove-transparency-threshold": "bg-remove-transparency-threshold",
 		"background-remove": "bg-remove",
 		"background-replace-negative-prompt": "bg-replace-neg-prompt",
 		"background-replace": "bg-replace",
