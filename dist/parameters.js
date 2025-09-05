@@ -15,7 +15,7 @@
 }(this, function () {
 
 return {
-	"version": "11.34.0",
+	"version": "11.35.0",
 	"parameters": {
 		"ar": {
 			"display_name": "aspect ratio",
@@ -797,6 +797,45 @@ return {
 			],
 			"url": "https://docs.imgix.com/apis/rendering/border-and-padding/border-right",
 			"short_description": "Sets right border of an image."
+		},
+		"border-stroke-color": {
+			"display_name": "border stroke color",
+			"category": "border-and-padding",
+			"available_in": [
+				"url",
+				"graph"
+			],
+			"expects": [
+				{
+					"type": "hex_color"
+				},
+				{
+					"type": "color_keyword"
+				}
+			],
+			"default": 0,
+			"url": "https://docs.imgix.com/apis/rendering/border-and-padding/border-stroke-color",
+			"short_description": "Sets the color of the border stroke around the image."
+		},
+		"border-stroke-size": {
+			"display_name": "border stroke size",
+			"category": "border-and-padding",
+			"available_in": [
+				"url",
+				"graph"
+			],
+			"expects": [
+				{
+					"type": "integer",
+					"suggested_range": {
+						"min": 0,
+						"max": 100
+					}
+				}
+			],
+			"default": 0,
+			"url": "https://docs.imgix.com/apis/rendering/border-and-padding/border-stroke-size",
+			"short_description": "Sets the stroke size of the border around the image."
 		},
 		"border-top": {
 			"display_name": "border top",
@@ -2013,31 +2052,6 @@ return {
 			"default": 0,
 			"url": "https://docs.imgix.com/apis/rendering/adjustment/gamma",
 			"short_description": "Adjusts the gamma of the source image."
-		},
-		"gif-q": {
-			"display_name": "animated gif quality",
-			"category": "animation",
-			"available_in": [
-				"url",
-				"graph",
-				"output"
-			],
-			"expects": [
-				{
-					"type": "integer",
-					"strict_range": {
-						"min": 1
-					}
-				}
-			],
-			"depends": [
-				"fm=gif"
-			],
-			"aliases": [
-				"gifq"
-			],
-			"url": "https://docs.imgix.com/apis/rendering/animation/animated-gif-quality",
-			"short_description": "Specifies the quality of the animated gif. The higher the value, the better more compression is applied."
 		},
 		"grid-colors": {
 			"display_name": "grid colors",
@@ -4390,7 +4404,6 @@ return {
 		"fill-generative-prompt": "fill-gen-prompt",
 		"fill-generative-seed": "fill-gen-seed",
 		"f": "fit",
-		"gifq": "gif-q",
 		"height": "h",
 		"inv": "invert",
 		"jpeg-progressive": "jpg-progressive",
