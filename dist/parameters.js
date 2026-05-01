@@ -15,7 +15,7 @@
 }(this, function () {
 
 return {
-	"version": "11.35.0",
+	"version": "11.35.1",
 	"parameters": {
 		"ar": {
 			"display_name": "aspect ratio",
@@ -139,7 +139,7 @@ return {
 				"bg-remove-transparency-threshold"
 			],
 			"default": 0.2,
-			"url": "https://docs.imgix.com/apis/rendering/background/bg-remove-transparency-threshold",
+			"url": "https://docs.imgix.com/apis/rendering/background/background-removal-transparency-threshold",
 			"short_description": "Sets the threshold for background removal based on transparency. Transparency in an image below or equal to the threshold will skip the entire background removal process"
 		},
 		"bg-remove": {
@@ -176,7 +176,7 @@ return {
 				}
 			],
 			"default": true,
-			"url": "https://docs.imgix.com/apis/rendering/background/background-replace-fallback",
+			"url": "https://docs.imgix.com/apis/rendering/background/background-replacement-fallback",
 			"short_description": "Overrides default fallback behavior for bg-replace failures."
 		},
 		"bg-replace-neg-prompt": {
@@ -3276,6 +3276,7 @@ return {
 				}
 			],
 			"default": false,
+			"url": "https://docs.imgix.com/apis/rendering/format/rasterize-bypass",
 			"short_description": "Bypasses all rendering parameters (including default parameters) and serves the original image. Works for svg+xml,x-eps,pdf, and vnd.adobe.illustrator."
 		},
 		"rect": {
@@ -4215,11 +4216,11 @@ return {
 					]
 				}
 			],
-			"url": "https://docs.imgix.com/apis/rendering/video-rendering/video-bitrate",
+			"url": "https://docs.imgix.com/apis/video/imgix-video/encoding/video-bitrate",
 			"short_description": "Specifies the bitrate for a video to use."
 		},
-		"video-clip-start": {
-			"display_name": "video clip",
+		"video-clip-duration": {
+			"display_name": "video clip duration",
 			"category": "video rendering",
 			"available_in": [
 				"url",
@@ -4231,27 +4232,10 @@ return {
 					"suggested_range": {
 						"min": 1
 					}
-				},
-				{
-					"type": "interval",
-					"lower_bound": {
-						"type": "integer",
-						"suggested_range": {
-							"min": 1
-						},
-						"required": false
-					},
-					"upper_bound": {
-						"type": "integer",
-						"suggested_range": {
-							"min": 1
-						},
-						"required": false
-					}
 				}
 			],
-			"url": "https://docs.imgix.com/apis/rendering/video-rendering/video-clip",
-			"short_description": "Specifies the start time for a video clip."
+			"url": "https://docs.imgix.com/apis/video/imgix-video/clip/video-clip-duration",
+			"short_description": "Specifies the duration for a video clip."
 		},
 		"video-clip-end": {
 			"display_name": "video clip",
@@ -4285,8 +4269,43 @@ return {
 					}
 				}
 			],
-			"url": "https://docs.imgix.com/apis/rendering/video-rendering/video-clip",
+			"url": "https://docs.imgix.com/apis/video/imgix-video/clip/video-clip-end",
 			"short_description": "Specifies the end time for a video clip."
+		},
+		"video-clip-start": {
+			"display_name": "video clip",
+			"category": "video rendering",
+			"available_in": [
+				"url",
+				"graph"
+			],
+			"expects": [
+				{
+					"type": "integer",
+					"suggested_range": {
+						"min": 1
+					}
+				},
+				{
+					"type": "interval",
+					"lower_bound": {
+						"type": "integer",
+						"suggested_range": {
+							"min": 1
+						},
+						"required": false
+					},
+					"upper_bound": {
+						"type": "integer",
+						"suggested_range": {
+							"min": 1
+						},
+						"required": false
+					}
+				}
+			],
+			"url": "https://docs.imgix.com/apis/video/imgix-video/clip/video-clip-start",
+			"short_description": "Specifies the start time for a video clip."
 		},
 		"video-codec": {
 			"display_name": "video codec",
@@ -4309,6 +4328,7 @@ return {
 			"depends": [
 				"fm=mp4"
 			],
+			"url": "https://docs.imgix.com/apis/video/imgix-video/encoding/video-codec",
 			"short_description": "Specifies the video codec to use, av1, h264, or h265."
 		},
 		"video-thumbnail": {
@@ -4331,7 +4351,7 @@ return {
 				}
 			],
 			"default": "auto",
-			"url": "https://docs.imgix.com/apis/rendering/video-rendering/video-thumbnail",
+			"url": "https://docs.imgix.com/apis/video/imgix-video/format/video-thumbnail",
 			"short_description": "Outputs a thumbnail from a video file."
 		},
 		"w": {
