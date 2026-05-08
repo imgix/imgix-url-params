@@ -15,7 +15,7 @@
 }(this, function () {
 
 return {
-	"version": "11.35.1",
+	"version": "11.36.0",
 	"parameters": {
 		"ar": {
 			"display_name": "aspect ratio",
@@ -1879,7 +1879,8 @@ return {
 						"webp",
 						"webm",
 						"blurhash",
-						"avif"
+						"avif",
+						"spritesheet"
 					]
 				}
 			],
@@ -4216,7 +4217,7 @@ return {
 					]
 				}
 			],
-			"url": "https://docs.imgix.com/apis/video/imgix-video/encoding/video-bitrate",
+			"url": "https://docs.imgix.com/en-US/apis/video/encoding/video-bitrate",
 			"short_description": "Specifies the bitrate for a video to use."
 		},
 		"video-clip-duration": {
@@ -4234,7 +4235,7 @@ return {
 					}
 				}
 			],
-			"url": "https://docs.imgix.com/apis/video/imgix-video/clip/video-clip-duration",
+			"url": "https://docs.imgix.com/en-US/apis/video/clip/video-clip-duration",
 			"short_description": "Specifies the duration for a video clip."
 		},
 		"video-clip-end": {
@@ -4269,7 +4270,7 @@ return {
 					}
 				}
 			],
-			"url": "https://docs.imgix.com/apis/video/imgix-video/clip/video-clip-end",
+			"url": "https://docs.imgix.com/en-US/apis/video/clip/video-clip-end",
 			"short_description": "Specifies the end time for a video clip."
 		},
 		"video-clip-start": {
@@ -4304,7 +4305,7 @@ return {
 					}
 				}
 			],
-			"url": "https://docs.imgix.com/apis/video/imgix-video/clip/video-clip-start",
+			"url": "https://docs.imgix.com/en-US/apis/video/clip/video-clip-start",
 			"short_description": "Specifies the start time for a video clip."
 		},
 		"video-codec": {
@@ -4328,8 +4329,220 @@ return {
 			"depends": [
 				"fm=mp4"
 			],
-			"url": "https://docs.imgix.com/apis/video/imgix-video/encoding/video-codec",
+			"url": "https://docs.imgix.com/en-US/apis/video/encoding/video-codec",
 			"short_description": "Specifies the video codec to use, av1, h264, or h265."
+		},
+		"video-generate-subtitles": {
+			"display_name": "video generate subtitles",
+			"category": "video-rendering",
+			"available_in": [
+				"url",
+				"graph"
+			],
+			"expects": [
+				{
+					"type": "string",
+					"possible_values": [
+						"true",
+						"false",
+						"on",
+						"off",
+						"auto"
+					]
+				}
+			],
+			"default": "false",
+			"aliases": [
+				"video-generate=vtt"
+			],
+			"url": "https://docs.imgix.com/en-US/apis/video/subtitles/video-generate-subtitles",
+			"short_description": "Generates an AI-transcribed subtitle track using Whisper and injects it into the output video or streaming manifest."
+		},
+		"video-renditions": {
+			"display_name": "video renditions",
+			"category": "video-rendering",
+			"available_in": [
+				"url",
+				"graph"
+			],
+			"expects": [
+				{
+					"type": "string"
+				}
+			],
+			"depends": [
+				"fm=hls",
+				"fm=dash"
+			],
+			"url": "https://docs.imgix.com/en-US/apis/video/format/video-format",
+			"short_description": "Overrides the default ABR ladder with a comma-separated list of height:bitrate pairs (e.g. 1080:6m,720:3m)."
+		},
+		"video-spritesheet-columns": {
+			"display_name": "video spritesheet columns",
+			"category": "video-rendering",
+			"available_in": [
+				"url",
+				"graph"
+			],
+			"expects": [
+				{
+					"type": "string",
+					"possible_values": [
+						"auto"
+					]
+				},
+				{
+					"type": "integer",
+					"suggested_range": {
+						"min": 1
+					}
+				}
+			],
+			"default": "auto",
+			"depends": [
+				"fm=spritesheet"
+			],
+			"url": "https://docs.imgix.com/en-US/apis/video/spritesheets/video-spritesheet-columns",
+			"short_description": "Number of columns in the spritesheet grid. Defaults to \"auto\", which lets Imgix choose a layout based on the total frame count."
+		},
+		"video-spritesheet-format": {
+			"display_name": "video spritesheet format",
+			"category": "video-rendering",
+			"available_in": [
+				"url",
+				"graph"
+			],
+			"expects": [
+				{
+					"type": "string",
+					"possible_values": [
+						"jpg",
+						"webp",
+						"avif"
+					]
+				}
+			],
+			"default": "jpg",
+			"depends": [
+				"fm=spritesheet"
+			],
+			"url": "https://docs.imgix.com/en-US/apis/video/spritesheets/video-spritesheet-format",
+			"short_description": "Output image format for the spritesheet. Choose webp or avif for better compression at the cost of broader browser support requirements."
+		},
+		"video-spritesheet-h": {
+			"display_name": "video spritesheet frame height",
+			"category": "video-rendering",
+			"available_in": [
+				"url",
+				"graph"
+			],
+			"expects": [
+				{
+					"type": "string",
+					"possible_values": [
+						"auto"
+					]
+				},
+				{
+					"type": "integer",
+					"suggested_range": {
+						"min": 1
+					}
+				}
+			],
+			"default": "auto",
+			"depends": [
+				"fm=spritesheet"
+			],
+			"url": "https://docs.imgix.com/en-US/apis/video/spritesheets/video-spritesheet-h",
+			"short_description": "Height in pixels of each individual frame tile in the spritesheet. Defaults to \"auto\", scaling proportionally from video-spritesheet-w."
+		},
+		"video-spritesheet-interval": {
+			"display_name": "video spritesheet interval",
+			"category": "video-rendering",
+			"available_in": [
+				"url",
+				"graph"
+			],
+			"expects": [
+				{
+					"type": "string",
+					"possible_values": [
+						"auto"
+					]
+				},
+				{
+					"type": "integer",
+					"suggested_range": {
+						"min": 1
+					}
+				}
+			],
+			"default": "auto",
+			"depends": [
+				"fm=spritesheet"
+			],
+			"url": "https://docs.imgix.com/en-US/apis/video/spritesheets/video-spritesheet-interval",
+			"short_description": "Controls how frequently frames are sampled for the spritesheet. Set to \"auto\" to let Imgix choose a density based on video duration, or provide an integer number of seconds between frames."
+		},
+		"video-spritesheet-smart-crop": {
+			"display_name": "video spritesheet smart crop",
+			"category": "video-rendering",
+			"available_in": [
+				"url",
+				"graph"
+			],
+			"expects": [
+				{
+					"type": "boolean"
+				}
+			],
+			"default": false,
+			"depends": [
+				"fm=spritesheet"
+			],
+			"url": "https://docs.imgix.com/en-US/apis/video/spritesheets/video-spritesheet-smart-crop",
+			"short_description": "When true, applies content-aware cropping to each spritesheet frame tile rather than a simple center crop, keeping the most visually relevant area in frame."
+		},
+		"video-spritesheet-w": {
+			"display_name": "video spritesheet frame width",
+			"category": "video-rendering",
+			"available_in": [
+				"url",
+				"graph"
+			],
+			"expects": [
+				{
+					"type": "integer",
+					"suggested_range": {
+						"min": 1
+					}
+				}
+			],
+			"default": 160,
+			"depends": [
+				"fm=spritesheet"
+			],
+			"url": "https://docs.imgix.com/en-US/apis/video/spritesheets/video-spritesheet-w",
+			"short_description": "Width in pixels of each individual frame tile in the spritesheet. Height is derived automatically from the video's aspect ratio unless video-spritesheet-h is also set."
+		},
+		"video-subtitle-translations": {
+			"display_name": "video subtitle translations",
+			"category": "video-rendering",
+			"available_in": [
+				"url",
+				"graph"
+			],
+			"expects": [
+				{
+					"type": "list"
+				}
+			],
+			"depends": [
+				"video-generate-subtitles"
+			],
+			"url": "https://docs.imgix.com/en-US/apis/video/subtitles/video-subtitle-translations",
+			"short_description": "Comma-separated list of ISO language codes to translate subtitles into using MADLAD-400. A separate subtitle track is generated for each language."
 		},
 		"video-thumbnail": {
 			"display_name": "video thumbnail",
@@ -4351,8 +4564,312 @@ return {
 				}
 			],
 			"default": "auto",
-			"url": "https://docs.imgix.com/apis/video/imgix-video/format/video-thumbnail",
+			"url": "https://docs.imgix.com/en-US/apis/video/format/video-thumbnail",
 			"short_description": "Outputs a thumbnail from a video file."
+		},
+		"video-wave-align": {
+			"display_name": "video waveform alignment",
+			"category": "video-rendering",
+			"available_in": [
+				"url",
+				"graph"
+			],
+			"expects": [
+				{
+					"type": "string"
+				}
+			],
+			"default": "bottom,center",
+			"depends": [
+				"video-wave"
+			],
+			"url": "https://docs.imgix.com/en-US/apis/video/audio-waveforms/video-wave-align",
+			"short_description": "Alignment of the waveform box on the canvas. Comma-separated vertical and horizontal values (e.g. bottom,center or top,right). Overridden by video-wave-x/y."
+		},
+		"video-wave-amplitude": {
+			"display_name": "video waveform amplitude",
+			"category": "video-rendering",
+			"available_in": [
+				"url",
+				"graph"
+			],
+			"expects": [
+				{
+					"type": "number",
+					"suggested_range": {
+						"min": 0.1,
+						"max": 10
+					}
+				}
+			],
+			"default": 1,
+			"depends": [
+				"video-wave"
+			],
+			"url": "https://docs.imgix.com/en-US/apis/video/audio-waveforms/video-wave-amplitude",
+			"short_description": "Boosts the waveform's visual sensitivity without affecting the actual audio track. Useful for quiet source audio that produces a flat visualization."
+		},
+		"video-wave-bg-color": {
+			"display_name": "video waveform background color",
+			"category": "video-rendering",
+			"available_in": [
+				"url",
+				"graph"
+			],
+			"expects": [
+				{
+					"type": "hex_color"
+				}
+			],
+			"default": "FFFFFF00",
+			"depends": [
+				"video-wave"
+			],
+			"url": "https://docs.imgix.com/en-US/apis/video/audio-waveforms/video-wave-bg-color",
+			"short_description": "The background color of the waveform bounding box. Accepts 6-digit RGB or 8-digit RGBA hex values. Defaults to transparent."
+		},
+		"video-wave-color": {
+			"display_name": "video waveform color",
+			"category": "video-rendering",
+			"available_in": [
+				"url",
+				"graph"
+			],
+			"expects": [
+				{
+					"type": "hex_color"
+				}
+			],
+			"default": "FFFFFF",
+			"depends": [
+				"video-wave"
+			],
+			"url": "https://docs.imgix.com/en-US/apis/video/audio-waveforms/video-wave-color",
+			"short_description": "The color of the waveform. Accepts 6-digit RGB or 8-digit RGBA hex values. Pipe-separate multiple values to color individual audio channels."
+		},
+		"video-wave-h": {
+			"display_name": "video waveform height",
+			"category": "video-rendering",
+			"available_in": [
+				"url",
+				"graph"
+			],
+			"expects": [
+				{
+					"type": "unit_scalar",
+					"suggested_range": {
+						"min": 0,
+						"max": 1
+					}
+				},
+				{
+					"type": "integer",
+					"suggested_range": {
+						"min": 1
+					}
+				}
+			],
+			"default": 0.2,
+			"depends": [
+				"video-wave"
+			],
+			"url": "https://docs.imgix.com/en-US/apis/video/audio-waveforms/video-wave-h",
+			"short_description": "Height of the waveform bounding box. Values <= 1.0 are a percentage of the canvas; values > 1.0 are absolute pixels. Default is 0.2 (20% height)."
+		},
+		"video-wave-mode": {
+			"display_name": "video waveform mode",
+			"category": "video-rendering",
+			"available_in": [
+				"url",
+				"graph"
+			],
+			"expects": [
+				{
+					"type": "string",
+					"possible_values": [
+						"cline",
+						"line",
+						"p2p",
+						"point"
+					]
+				}
+			],
+			"default": "cline",
+			"depends": [
+				"video-wave"
+			],
+			"url": "https://docs.imgix.com/en-US/apis/video/audio-waveforms/video-wave-mode",
+			"short_description": "The drawing style of the waveform. cline (centered lines), line (bottom-aligned), p2p (point-to-point), or point (disconnected dots)."
+		},
+		"video-wave-pad": {
+			"display_name": "video waveform padding",
+			"category": "video-rendering",
+			"available_in": [
+				"url",
+				"graph"
+			],
+			"expects": [
+				{
+					"type": "integer",
+					"suggested_range": {
+						"min": 0
+					}
+				}
+			],
+			"default": 5,
+			"depends": [
+				"video-wave"
+			],
+			"url": "https://docs.imgix.com/en-US/apis/video/audio-waveforms/video-wave-pad",
+			"short_description": "Pixels of padding between the waveform bounding box and the edge of the video frame."
+		},
+		"video-wave-scale": {
+			"display_name": "video waveform amplitude scale",
+			"category": "video-rendering",
+			"available_in": [
+				"url",
+				"graph"
+			],
+			"expects": [
+				{
+					"type": "string",
+					"possible_values": [
+						"sqrt",
+						"cbrt",
+						"log",
+						"lin"
+					]
+				}
+			],
+			"default": "sqrt",
+			"depends": [
+				"video-wave"
+			],
+			"url": "https://docs.imgix.com/en-US/apis/video/audio-waveforms/video-wave-scale",
+			"short_description": "Defines how the waveform amplitude is scaled. Options: sqrt (default), cbrt (cube root), log (logarithmic), or lin (linear)."
+		},
+		"video-wave-split": {
+			"display_name": "video waveform split channels",
+			"category": "video-rendering",
+			"available_in": [
+				"url",
+				"graph"
+			],
+			"expects": [
+				{
+					"type": "boolean"
+				}
+			],
+			"default": false,
+			"depends": [
+				"video-wave"
+			],
+			"url": "https://docs.imgix.com/en-US/apis/video/audio-waveforms/video-wave-split",
+			"short_description": "Visualizes audio channels separately (e.g. left and right stereo channels stacked vertically) instead of downmixing to a single mono waveform."
+		},
+		"video-wave-thickness": {
+			"display_name": "video waveform thickness",
+			"category": "video-rendering",
+			"available_in": [
+				"url",
+				"graph"
+			],
+			"expects": [
+				{
+					"type": "integer",
+					"strict_range": {
+						"min": 0,
+						"max": 10
+					}
+				}
+			],
+			"default": 0,
+			"depends": [
+				"video-wave"
+			],
+			"url": "https://docs.imgix.com/en-US/apis/video/audio-waveforms/video-wave-thickness",
+			"short_description": "Thickness modifier for the waveform lines, from 0 (thin) to 10 (thick). Values above 3 apply alpha-hardening to keep lines bold rather than blurry."
+		},
+		"video-wave-w": {
+			"display_name": "video waveform width",
+			"category": "video-rendering",
+			"available_in": [
+				"url",
+				"graph"
+			],
+			"expects": [
+				{
+					"type": "unit_scalar",
+					"suggested_range": {
+						"min": 0,
+						"max": 1
+					}
+				},
+				{
+					"type": "integer",
+					"suggested_range": {
+						"min": 1
+					}
+				}
+			],
+			"default": 1,
+			"depends": [
+				"video-wave"
+			],
+			"url": "https://docs.imgix.com/en-US/apis/video/audio-waveforms/video-wave-w",
+			"short_description": "Width of the waveform bounding box. Values <= 1.0 are a percentage of the canvas; values > 1.0 are absolute pixels. Default is 1.0 (full width)."
+		},
+		"video-wave-x": {
+			"display_name": "video waveform x position",
+			"category": "video-rendering",
+			"available_in": [
+				"url",
+				"graph"
+			],
+			"expects": [
+				{
+					"type": "integer"
+				}
+			],
+			"depends": [
+				"video-wave"
+			],
+			"url": "https://docs.imgix.com/en-US/apis/video/audio-waveforms/video-wave-x",
+			"short_description": "Exact horizontal coordinate for the waveform bounding box. Overrides video-wave-align and video-wave-pad."
+		},
+		"video-wave-y": {
+			"display_name": "video waveform y position",
+			"category": "video-rendering",
+			"available_in": [
+				"url",
+				"graph"
+			],
+			"expects": [
+				{
+					"type": "integer"
+				}
+			],
+			"depends": [
+				"video-wave"
+			],
+			"url": "https://docs.imgix.com/en-US/apis/video/audio-waveforms/video-wave-y",
+			"short_description": "Exact vertical coordinate for the waveform bounding box. Overrides video-wave-align and video-wave-pad."
+		},
+		"video-wave": {
+			"display_name": "video waveform",
+			"category": "video-rendering",
+			"available_in": [
+				"url",
+				"graph"
+			],
+			"expects": [
+				{
+					"type": "boolean"
+				}
+			],
+			"default": false,
+			"url": "https://docs.imgix.com/en-US/apis/video/audio-waveforms",
+			"short_description": "Overlays an audio waveform visualization onto the video or static image output. Silently ignored if the source has no audio track."
 		},
 		"w": {
 			"display_name": "image width",
@@ -4495,6 +5012,7 @@ return {
 		"txtx": "txt-x",
 		"txty": "txt-y",
 		"t": "txt",
+		"video-generate=vtt": "video-generate-subtitles",
 		"width": "w"
 	},
 	"categoryValues": [
@@ -4523,6 +5041,7 @@ return {
 		"text",
 		"typesetting",
 		"trim",
+		"video-rendering",
 		"watermark"
 	],
 	"colorKeywordValues": [
